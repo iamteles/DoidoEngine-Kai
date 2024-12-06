@@ -199,14 +199,6 @@ class SaveData
 			
 			saveSettings.data.settings = data;
 		}
-		else
-		{
-			var freeze:Null<Bool> = saveSettings.data.settings.get("Unfocus Freeze");
-			if(freeze != null) {
-				saveSettings.data.settings.set("Unfocus Pause", freeze);
-				saveSettings.data.settings.remove("Unfocus Freeze");
-			}
-		}
 		
 		if(Lambda.count(displaySettings) != Lambda.count(saveSettings.data.settings)) {
 			data = saveSettings.data.settings;
