@@ -20,7 +20,7 @@ class SaveData
 		* PREFERENCES
 		* 
 		*/
-		"Window Size" => [
+		"Resolution" => [
 			"1280x720",
 			SELECTOR,
 			"Change the game's resolution if it doesn't fit your monitor",
@@ -33,10 +33,10 @@ class SaveData
 			["ON", "REDUCED", "OFF"]
 		],
 		"Cutscenes" => [
-			"ON",
-			SELECTOR,
+			true,
+			CHECKMARK,
 			"Decides if the song cutscenes should play",
-			["ON", "FREEPLAY OFF", "OFF"],
+			["ON", "OFF"],
 		],
 		"FPS Counter" => [
 			false,
@@ -76,11 +76,6 @@ class SaveData
 			false,
 			CHECKMARK,
 			"Makes the notes go down instead of up"
-		],
-		"Middlescroll" => [
-			false,
-			CHECKMARK,
-			"Disables the opponent's notes and moves yours to the middle"
 		],
 		"Framerate Cap"	=> [
 			60, // 120
@@ -251,7 +246,7 @@ class SaveData
 	public static function updateWindowSize()
 	{
 		if(FlxG.fullscreen) return;
-		var ws:Array<String> = data.get("Window Size").split("x");
+		var ws:Array<String> = data.get("Resolution").split("x");
         	var windowSize:Array<Int> = [Std.parseInt(ws[0]),Std.parseInt(ws[1])];
         	FlxG.stage.window.width = windowSize[0];
         	FlxG.stage.window.height= windowSize[1];

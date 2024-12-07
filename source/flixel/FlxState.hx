@@ -225,7 +225,7 @@ class FlxState extends FlxGroup
 	public function onFocus():Void {}
 
 	/**
-	 * This function is called whenever the window size has been changed.
+	 * This function is called whenever the Resolution has been changed.
 	 *
 	 * @param   Width    The new window width
 	 * @param   Height   The new window Height

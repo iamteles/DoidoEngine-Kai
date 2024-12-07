@@ -77,7 +77,7 @@ class Stage extends FlxGroup
 		else
 			loadCode(curStage);
 
-		PlayState.defaultCamZoom = camZoom;
+		PlayState.camZoom = camZoom;
 	}
 
 	public function preloadScript(stage:String = "")

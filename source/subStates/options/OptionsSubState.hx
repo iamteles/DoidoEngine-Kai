@@ -27,7 +27,7 @@ class OptionsSubState extends MusicBeatSubState
 	[
         "preferences" => [
             #if desktop
-            "Window Size",
+            "Resolution",
             #end
             "Flashing Lights",
             "Cutscenes",
@@ -257,7 +257,7 @@ class OptionsSubState extends MusicBeatSubState
                         SaveData.save();
 
                         // custom stuff
-                        if(selec.label == "Window Size")
+                        if(selec.label == "Resolution")
                             SaveData.updateWindowSize();
                         // only happens when youre not holding the selector
                         if(selec.holdTimer < holdMax)

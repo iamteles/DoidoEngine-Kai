@@ -112,7 +112,7 @@ class PlayState extends MusicBeatState
 	public var camOther:FlxCamera; // used so substates dont collide with camHUD.alpha or camHUD.visible
 	
 	public static var cameraSpeed:Float = 1.0;
-	public static var defaultCamZoom:Float = 1.0;
+	public static var camZoom:Float = 1.0;
 	public static var beatCamZoom:Float = 0.0;
 	public static var extraCamZoom:Float = 0.0;
 	public static var forcedCamPos:Null<FlxPoint>;
@@ -147,7 +147,7 @@ class PlayState extends MusicBeatState
 	{
 		health = 1;
 		cameraSpeed = 1.0;
-		defaultCamZoom = 1.0;
+		camZoom = 1.0;
 		beatCamZoom = 0.0;
 		extraCamZoom = 0.0;
 		forcedCamPos = null;
@@ -252,9 +252,9 @@ class PlayState extends MusicBeatState
 		stageBuild.reloadStageFromSong(SONG.song);
 		add(stageBuild);
 
-		classicZoom = defaultCamZoom;
+		classicZoom = camZoom;
 		
-		camGame.zoom = defaultCamZoom;
+		camGame.zoom = camZoom;
 		hudBuild = new HudClass();
 		hudBuild.setAlpha(0);
 		
@@ -327,21 +327,6 @@ class PlayState extends MusicBeatState
 		bfStrumline = new Strumline(0, boyfriend, downscroll, true, false, noteskins[1]);
 		bfStrumline.ID = 1;
 		strumlines.add(bfStrumline);
-		
-		/*if(SaveData.data.get("Middlescroll"))
-		{
-			dadStrumline.x -= strumPos[0]; // goes offscreen
-			bfStrumline.x  -= strumPos[1]; // goes to the middle
-			
-			// the best thing ever
-			var guitar = new DistantNoteShader();
-			guitar.downscroll = downscroll;
-			camStrum.setFilters([new openfl.filters.ShaderFilter(cast guitar.shader)]);
-			for(strumline in strumlines.members)
-				if(!strumline.isPlayer)
-					for(strum in strumline.strumGroup)
-						strum.visible = false;
-		}*/
 		
 		for(strumline in strumlines.members)
 		{
@@ -1399,9 +1384,9 @@ class PlayState extends MusicBeatState
 			startGameOver();
 
 		if(isClassicZoom)
-			classicZoom = CoolUtil.camZoomLerp(classicZoom, defaultCamZoom);
+			classicZoom = CoolUtil.camZoomLerp(classicZoom, camZoom);
 		
-		camGame.zoom = (isClassicZoom ? classicZoom : defaultCamZoom) + beatCamZoom + extraCamZoom;
+		camGame.zoom = (isClassicZoom ? classicZoom : camZoom) + beatCamZoom + extraCamZoom;
 		beatCamZoom = CoolUtil.camZoomLerp(beatCamZoom, 0);
 		camHUD.zoom = CoolUtil.camZoomLerp(camHUD.zoom);
 		camStrum.zoom = CoolUtil.camZoomLerp(camStrum.zoom);
@@ -2055,11 +2040,11 @@ class PlayState extends MusicBeatState
 				var newZoom:Float  = CoolUtil.stringToFloat(daEvent.value1, 1);
 				var duration:Float = CoolUtil.stringToFloat(daEvent.value2, (isClassicZoom ? 0 : 4));
 				if(duration <= 0)
-					defaultCamZoom = newZoom;
+					camZoom = newZoom;
 				else
 				{
 					camZoomTween = FlxTween.tween(
-						PlayState, {defaultCamZoom: newZoom},
+						PlayState, {camZoom: newZoom},
 						duration * Conductor.stepCrochet / 1000,
 						{
 							ease: CoolUtil.stringToEase(daEvent.value3),
