@@ -94,7 +94,7 @@ class DialogueUtil
 					pages:[
 						{
 							boxSkin: 'school',
-							fontFamily: 'pixel.otf',
+							fontFamily: 'vcr.ttf',
 							fontColor: 0xFF3F2021,
 							fontScale: 0.8,
 							
@@ -126,7 +126,7 @@ class DialogueUtil
 					pages:[
 						{
 							boxSkin: 'school',
-							fontFamily: 'pixel.otf',
+							fontFamily: 'vcr.ttf',
 							fontColor: 0xFF3F2021,
 							fontScale: 0.8,
 							
@@ -165,7 +165,7 @@ class DialogueUtil
 					pages:[
 						{
 							boxSkin: 'school-evil',
-							fontFamily: 'pixel.otf',
+							fontFamily: 'vcr.ttf',
 							fontColor: 0xFFFFFFFF,
 							fontScale: 0.8,
 							fontBorderSize: 0,
