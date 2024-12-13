@@ -115,7 +115,7 @@ class Strumline extends FlxGroup
 
 	public function playSplash(note:Note, isHold:Bool = false)
 	{
-		switch(SaveData.data.get("Note Splashes"))
+		switch(DevOptions.splashes)
 		{
 			case "PLAYER ONLY": if(!isPlayer) return;
 			case "OFF": return;
@@ -137,7 +137,7 @@ class Strumline extends FlxGroup
 		}
 		else
 		{
-			if(!SaveData.data.get("Hold Splashes")) return;
+			if(!DevOptions.splashes) return;
 			//Logs.print('did it work?');
 			var splash = new SplashNote(true);
 			splash.holdStrum = thisStrum;

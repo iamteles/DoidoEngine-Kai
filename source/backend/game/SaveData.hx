@@ -23,35 +23,35 @@ class SaveData
 		"Resolution" => [
 			"1280x720",
 			SELECTOR,
-			"Change the game's resolution if it doesn't fit your monitor",
+			"The resolution the game will run at.",
 			["640x360","854x480","960x540","1024x576","1152x648","1280x720","1366x768","1600x900","1920x1080", "2560x1440", "3840x2160"],
 		],
 		'Flashing Lights' => [
 			"ON",
 			SELECTOR,
-			"Whether to show flashing lights and colors",
+			"Flashing lights and other effects that may cause epilepsy.",
 			["ON", "REDUCED", "OFF"]
 		],
 		"Cutscenes" => [
 			true,
 			CHECKMARK,
-			"Decides if the song cutscenes should play",
+			"Cutscenes, such as videos and dialogue.",
 			["ON", "OFF"],
 		],
 		"FPS Counter" => [
 			false,
 			CHECKMARK,
-			"Whether you want a counter showing your framerate and memory usage counter in the corner of the game",
+			"Text that displays useful debug info, such as the current FPS or memory usage.",
 		],
 		'Unfocus Pause' => [
 			true,
 			CHECKMARK,
-			"Pauses the game when the window is unfocused",
+			"Pauses the game when the window is unfocused.",
 		],
 		"Countdown on Unpause" => [
 			true,
 			CHECKMARK,
-			"Whether you want to have a countdown when unpausing the game",
+			"Countdown when unpausing the game, to help you resume without breaking your combo.",
 		],
 		'Discord RPC' => [
 			#if DISCORD_RPC
@@ -60,7 +60,7 @@ class SaveData
 			false,
 			#end
 			CHECKMARK,
-			"Whether to use Discord's game activity.",
+			"Displays the current game info on your discord profile.",
 		],
 		/*
 		*
@@ -70,29 +70,29 @@ class SaveData
 		"Ghost Tapping" => [
 			true,
 			CHECKMARK,
-			"Makes you able to press keys freely without missing notes"
+			"Press keys freely without breaking your combo."
 		],
 		"Downscroll" => [
 			false,
 			CHECKMARK,
-			"Makes the notes go down instead of up"
+			"Makes the notes scroll down instead of up"
 		],
-		"Framerate Cap"	=> [
+		"FPS Cap"	=> [
 			60, // 120
 			SELECTOR,
-			"Self explanatory",
-			[30, 360]
+			"How many frames are displayed in a second.",
+			["30", "60", "120", "144"]
 		],
 		'Hitsounds' => [
 			"OFF",
 			SELECTOR,
-			"Whether to play hitsounds whenever you hit a note",
+			"Clicking sounds whenever you hit a note",
 			["OFF", "OSU", "NSWITCH", "CD"]
 		],
 		'Hitsound Volume' => [
 			100,
 			SELECTOR,
-			"Only works when Hitsounds aren't off",
+			"The volume at which the hitsounds play.",
 			[0, 100]
 		],
 		/*
@@ -100,51 +100,20 @@ class SaveData
 		* APPEARANCE
 		* 
 		*/
-		"Note Splashes" => [
-			"ON",
-			SELECTOR,
-			"Whether a splash appears when you hit a note perfectly.\nDisable if it distracts you.",
-			["ON", "PLAYER ONLY", "OFF"],
-		],
-		"Hold Splashes" => [
-			true,
-			CHECKMARK,
-			"Whether a splash appears when you completely press a hold note.\nDisable if it distracts you. (Only works if Note Splashes is enabled)."
-		],
 		"Antialiasing" => [
 			true,
 			CHECKMARK,
-			"Disabling it might increase the fps at the cost of smoother sprites"
+			"Disabling smoothing on sprites. Can improve performance."
 		],
-		"Split Holds" => [
+		"Low Quality" => [
 			false,
 			CHECKMARK,
-			"Cuts the end of each hold note like classic engines did"
-		],
-		"Static Hold Anim" => [
-			true,
-			CHECKMARK,
-			"Whether the character stays static when playing a hold note."
-		],
-		"Single Rating" => [
-			false,
-			CHECKMARK,
-			"Makes only one rating appear at a time",
-		],
-		"Ratings on HUD" => [
-			true,
-			CHECKMARK,
-			"Makes the ratings stick on the HUD"
-		],
-		"Song Timer" => [
-			true,
-			CHECKMARK,
-			"Makes the song timer visible"
+			"Disables certain stage objects. Can improve performance."
 		],
 		"Shaders" => [
 			true,
 			CHECKMARK,
-			"Fancy graphical effects. Disable this if you get GPU related crashes."
+			"Fancy graphical effects. Disable this if you get GPU related crashes. Can improve performance."
 		],
 		/*
 		*
@@ -228,7 +197,7 @@ class SaveData
 
 	public static function update()
 	{
-		Main.changeFramerate(data.get("Framerate Cap"));
+		Main.changeFramerate(data.get("FPS Cap"));
 		
 		if(Main.fpsCounter != null)
 			Main.fpsCounter.visible = data.get("FPS Counter");

@@ -636,14 +636,7 @@ class PlayState extends MusicBeatState
 	#end
 	
 	public function hasCutscene():Bool
-	{
-		return switch(SaveData.data.get('Cutscenes'))
-		{
-			default: true;
-			case "FREEPLAY OFF": isStoryMode;
-			case "OFF": false;
-		}
-	}
+		return SaveData.data.get('Cutscenes') != "OFF";
 
 	public function startSong()
 	{
@@ -828,7 +821,7 @@ class PlayState extends MusicBeatState
 		if(note.noteType != "no animation" && thisChar.specialAnim != 2)
 		{
 			if(thisChar.curAnimFrame == thisChar.holdLoop
-			|| SaveData.data.get("Static Hold Anim"))
+			|| DevOptions.staticHoldAnim)
 			{
 				/*thisChar.specialAnim = 0;
 				thisChar.playAnim(singAnims[note.noteData], true);*/
@@ -942,7 +935,7 @@ class PlayState extends MusicBeatState
 		
 		var daRating = new Rating(rating, Timings.combo, note.assetModifier);
 
-		if(SaveData.data.get("Single Rating"))
+		if(DevOptions.singleRating)
 		{
 			if(prevRating != null)
 				prevRating.kill();
@@ -950,7 +943,7 @@ class PlayState extends MusicBeatState
 			prevRating = daRating;
 		}
 		
-		if(SaveData.data.get("Ratings on HUD"))
+		if(DevOptions.ratingsHUD)
 		{
 			hudBuild.ratingGrp.add(daRating);
 			
@@ -1412,7 +1405,7 @@ class PlayState extends MusicBeatState
 							hold.noteCrochet * (strumline.scrollSpeed * 0.45) + 2
 						];
 						
-						if(SaveData.data.get("Split Holds"))
+						if(DevOptions.splitHolds)
 							newHoldSize[1] *= 0.7;
 						
 						hold.setGraphicSize(
@@ -1532,7 +1525,7 @@ class PlayState extends MusicBeatState
 							if(hold.isHoldEnd)
 								holdID -= 0.4999; // 0.5
 							
-							if(SaveData.data.get("Split Holds"))
+							if(DevOptions.splitHolds)
 								holdID -= 0.2;
 							
 							// calculating the clipping by how much you held the note
@@ -1915,9 +1908,6 @@ class PlayState extends MusicBeatState
 					}
 				}
 				loopGroup(this);
-			
-			case 'Song Timer':
-				hudBuild.timeTxt.visible = SaveData.data.get('Song Timer');
 		}
 	}
 

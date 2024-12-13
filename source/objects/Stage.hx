@@ -57,7 +57,9 @@ class Stage extends FlxGroup
 		*	(remember to put the starting stage at the last spot of the array)
 		*/
 		for(i in stageList) {
-			preloadScript(i);
+			if(DevOptions.stageScripts)
+				preloadScript(i);
+			
 			reloadStage(i);
 		}
 	}

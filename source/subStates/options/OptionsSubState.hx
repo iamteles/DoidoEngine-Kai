@@ -17,18 +17,30 @@ import states.menu.MainMenuState;
 class OptionsSubState extends MusicBeatSubState
 {
     var mainShit:Array<String> = [
-        "preferences",
+        "graphics",
         "gameplay",
-        "appearance",
-        "adjust offsets",
+        "system",
+        "offsets",
         "controls",
     ];
     var optionShit:Map<String, Array<String>> =
 	[
-        "preferences" => [
+        "graphics" => [
             #if desktop
             "Resolution",
+			"Antialiasing",
+            "FPS Cap",
             #end
+            "Shaders",
+            "Low Quality"
+		],
+        "gameplay" => [
+			"Ghost Tapping",
+			"Downscroll",
+            "Hitsounds",
+            "Hitsound Volume",
+		],
+        "system" => [
             "Flashing Lights",
             "Cutscenes",
             #if desktop
@@ -39,30 +51,7 @@ class OptionsSubState extends MusicBeatSubState
             #if DISCORD_RPC
             "Discord RPC",
             #end
-            "Shaders"
         ],
-		"gameplay" => [
-			"Ghost Tapping",
-			"Downscroll",
-			"Middlescroll",
-            #if desktop
-            "Framerate Cap",
-            #end
-            "Hitsounds",
-            "Hitsound Volume",
-		],
-		"appearance" => [
-            "Note Splashes",
-            "Hold Splashes",
-            #if desktop
-			"Antialiasing",
-            #end
-            "Split Holds",
-            "Static Hold Anim",
-            "Single Rating",
-			"Ratings on HUD",
-			"Song Timer"
-		],
 	];
     
     var restartTimer:Float = 0;
@@ -71,7 +60,6 @@ class OptionsSubState extends MusicBeatSubState
     ];
     var reloadOptions:Array<String> = [ // options that need some manual reloading on playstate when changed
         "Antialiasing",
-        "Song Timer",
         "Shaders"
     ];
     // anything else already updates automatically

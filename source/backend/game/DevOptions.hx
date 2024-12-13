@@ -1,4 +1,4 @@
-package;
+package backend.game;
 
 /*
 *
@@ -11,5 +11,7 @@ class DevOptions {
     public static var ratingsHUD = true;
     public static var splitHolds = false;
     public static var autoHealthColor = true;
-    public static var stageJsons = true;
+    public static var stageScripts = true;
+    public static var splashes:String = "ON";
+    public static var holdSplashes = false;
 } 

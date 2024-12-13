@@ -42,7 +42,7 @@ class Rating extends FlxGroup
 		
 		setPos();
 		
-		var single:Bool = SaveData.data.get("Single Rating");
+		var single:Bool = DevOptions.singleRating;
 
 		if(!single)
 		{
@@ -178,7 +178,7 @@ class RatingFNF extends FlxSprite
 				isPixelSprite = true;
 				scale.set(5,5);
 		}
-		if(SaveData.data.get('Ratings on HUD')) {
+		if(DevOptions.ratingsHUD) {
 			scale.x *= 0.7;
 			scale.y *= 0.7;
 		}
@@ -227,7 +227,7 @@ class NumberFNF extends FlxSpriteGroup
 					num.isPixelSprite = true;
 					num.scale.set(5,5);
 			}
-			if(SaveData.data.get('Ratings on HUD')) {
+			if(DevOptions.ratingsHUD) {
 				num.scale.x *= 0.7;
 				num.scale.y *= 0.7;
 			}

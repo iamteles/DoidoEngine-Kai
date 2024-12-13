@@ -44,7 +44,7 @@ class HudClass extends FlxGroup
 		timeTxt = new FlxText(0, 0, 0, "nuts / balls even");
 		timeTxt.setFormat(Main.gFont, 32, 0xFFFFFFFF, CENTER);
 		timeTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
-		timeTxt.visible = SaveData.data.get('Song Timer');
+		timeTxt.visible = true;
 		add(timeTxt);
 		
 		badScoreTxt = new FlxText(0,0,0,"SCORE WILL NOT BE SAVED");
