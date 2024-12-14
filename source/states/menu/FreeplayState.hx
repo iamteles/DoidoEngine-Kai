@@ -181,14 +181,14 @@ class FreeplayState extends MusicBeatState
 			}
 			catch(e)
 			{
-				FlxG.sound.play(Paths.sound('menu/cancelMenu'));
+				FlxG.sound.play(Paths.sound('menu/cancel'));
 			}
 		}
 		
 		if(Controls.justPressed(BACK))
 		{
-			FlxG.sound.play(Paths.sound('menu/cancelMenu'));
-			Main.switchState(new MainMenuState());
+			FlxG.sound.play(Paths.sound('menu/cancel'));
+			Main.switchState(new DebugState());
 		}
 
 		for(rawItem in grpItems.members)
@@ -239,7 +239,7 @@ class FreeplayState extends MusicBeatState
 		bgTween = FlxTween.color(bg, 0.4, bg.color, songList[curSelected].color);
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
+			FlxG.sound.play(Paths.sound("menu/scroll"));
 		
 		updateScoreCount();
 	}
@@ -283,8 +283,8 @@ class ScoreCounter extends FlxGroup
 		diffTxt.setFormat(Main.gFont, txtSize, 0xFFFFFFFF, LEFT);
 		add(diffTxt);
 
-		realValues = {score: 0, accuracy: 0, misses: 0};
-		lerpValues = {score: 0, accuracy: 0, misses: 0};
+		realValues = {score: 0, accuracy: 0, breaks: 0};
+		lerpValues = {score: 0, accuracy: 0, breaks: 0};
 	}
 
 	override function update(elapsed:Float)
@@ -294,15 +294,15 @@ class ScoreCounter extends FlxGroup
 
 		text.text +=   "HIGHSCORE: " + Math.floor(lerpValues.score);
 		text.text += "\nACCURACY:  " +(Math.floor(lerpValues.accuracy * 100) / 100) + "%" + ' [$rank]';
-		text.text += "\nMISSES:    " + Math.floor(lerpValues.misses);
+		text.text += "\nBREAKS:    " + Math.floor(lerpValues.breaks);
 
 		lerpValues.score 	= FlxMath.lerp(lerpValues.score, 	realValues.score, 	 elapsed * 8);
 		lerpValues.accuracy = FlxMath.lerp(lerpValues.accuracy, realValues.accuracy, elapsed * 8);
-		lerpValues.misses 	= FlxMath.lerp(lerpValues.misses, 	realValues.misses, 	 elapsed * 8);
+		lerpValues.breaks 	= FlxMath.lerp(lerpValues.breaks, 	realValues.breaks, 	 elapsed * 8);
 
 		rank = Timings.getRank(
 			lerpValues.accuracy,
-			Math.floor(lerpValues.misses),
+			Math.floor(lerpValues.breaks),
 			false,
 			lerpValues.accuracy == realValues.accuracy
 		);
@@ -311,8 +311,8 @@ class ScoreCounter extends FlxGroup
 			lerpValues.score = realValues.score;
 		if(Math.abs(lerpValues.accuracy - realValues.accuracy) <= 0.4)
 			lerpValues.accuracy = realValues.accuracy;
-		if(Math.abs(lerpValues.misses - realValues.misses) <= 0.4)
-			lerpValues.misses = realValues.misses;
+		if(Math.abs(lerpValues.breaks - realValues.breaks) <= 0.4)
+			lerpValues.breaks = realValues.breaks;
 
 		bg.scale.x = ((text.width + 8) / 32);
 		bg.scale.y = ((text.height + diffTxt.height + 8) / 32);

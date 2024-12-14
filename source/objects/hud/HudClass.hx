@@ -73,7 +73,7 @@ class HudClass extends FlxGroup
 		
 		infoTxt.text += 			'Score: '		+ Timings.score;
 		infoTxt.text += separator + 'Accuracy: '	+ Timings.accuracy + "%" + ' [${Timings.getRank()}]';
-		infoTxt.text += separator + 'Misses: '		+ Timings.misses;
+		infoTxt.text += separator + 'Breaks: '		+ Timings.breaks;
 
 		infoTxt.screenCenter(X);
 	}

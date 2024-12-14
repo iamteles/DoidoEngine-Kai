@@ -251,7 +251,7 @@ class ChartTestSubState extends MusicBeatSubState
 		if(!noteInfo) return;
 
 		infoTxt.text = 'Accuracy: ${Timings.accuracy}%' + ' -- Step: ${curStep}\n';
-		infoTxt.text +='Hits: ${Timings.notesHit - Timings.misses} -- Misses: ${Timings.misses}';
+		infoTxt.text +='Hits: ${Timings.notesHit - Timings.breaks} -- Breaks: ${Timings.breaks}';
 		
 		infoTxt.screenCenter(X);
 		infoTxt.y = (downscroll ? 15 : FlxG.height - infoTxt.height - 15);
@@ -417,7 +417,7 @@ class ChartTestSubState extends MusicBeatSubState
 			//vocals.volume = 0;
 			FlxG.sound.play(Paths.sound('miss/missnote' + FlxG.random.int(1, 3)), 0.55);
 			
-			// when the player misses notes
+			// when the player breaks notes
 			if(strumline.isPlayer)
 				popUpRating(note, strumline, true);
 		}
@@ -469,7 +469,7 @@ class ChartTestSubState extends MusicBeatSubState
 
 		if(miss)
 		{
-			Timings.misses++;
+			Timings.breaks++;
 
 			if(Timings.combo > 0)
 				Timings.combo = 0;

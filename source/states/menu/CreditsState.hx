@@ -144,7 +144,7 @@ class CreditsState extends MusicBeatState
 		bgTween = FlxTween.color(bg, 0.4, bg.color, creditList[curSelected].color);
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
+			FlxG.sound.play(Paths.sound("menu/scroll"));
 	}
 
 	override function update(elapsed:Float)
@@ -157,7 +157,7 @@ class CreditsState extends MusicBeatState
 			changeSelection(1);
 
 		if(Controls.justPressed(BACK))
-			Main.switchState(new MainMenuState());
+			Main.switchState(new DebugState());
 
 		#if !mobile
 		if(Controls.justPressed(ACCEPT))

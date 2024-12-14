@@ -13,5 +13,6 @@ class DevOptions {
     public static var autoHealthColor = false;
     public static var stageScripts = true;
     public static var splashes:String = "ON";
-    public static var holdSplashes = false;
+    public static var holdSplashes = true;
+    public static var camDisplace = true;
 } 

@@ -85,7 +85,7 @@ class DeleteScoreSubState extends MusicBeatSubState
     {
         if(hasSound)
         {
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
             curSelection++;
             if(curSelection > 1)
                 curSelection = 0;
@@ -100,5 +100,5 @@ class DeleteScoreSubState extends MusicBeatSubState
     }
 
     function playSound()
-        FlxG.sound.play(Paths.sound('menu/cancelMenu'));
+        FlxG.sound.play(Paths.sound('menu/cancel'));
 }

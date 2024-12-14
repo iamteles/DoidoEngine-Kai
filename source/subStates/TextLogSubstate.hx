@@ -161,6 +161,6 @@ class TextLogSubstate extends MusicBeatSubState
 		curSelected = FlxMath.wrap(curSelected, 0, data.pages.length - 1);
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
+			FlxG.sound.play(Paths.sound("menu/scroll"));
 	}
 }

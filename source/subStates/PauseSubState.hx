@@ -165,7 +165,7 @@ class PauseSubState extends MusicBeatSubState
 				switch(optionShit[curSelected])
 				{
 					default:
-						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
+						FlxG.sound.play(Paths.sound("menu/cancel"));
 					
 					case "resume":
 						closePause();
@@ -175,7 +175,7 @@ class PauseSubState extends MusicBeatSubState
 						Main.resetState();
 					
 					case "botplay":
-						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
+						FlxG.sound.play(Paths.sound("menu/cancel"));
 						PlayState.botplay = !PlayState.botplay;
 
 					case "options":
@@ -225,7 +225,7 @@ class PauseSubState extends MusicBeatSubState
 			else
 			{
 				countdownTxt.text = labels[loops];
-				FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+				FlxG.sound.play(Paths.sound('menu/scroll'));
 
 				if(!cntBar.visible)
 				{
@@ -256,6 +256,6 @@ class PauseSubState extends MusicBeatSubState
 		}
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
+			FlxG.sound.play(Paths.sound("menu/scroll"));
 	}
 }

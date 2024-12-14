@@ -69,7 +69,7 @@ class WebsiteSubState extends MusicBeatSubState
     {
         if(hasSound)
         {
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
             curSelected++;
             if(curSelected > 1)
                 curSelected = 0;
@@ -90,7 +90,7 @@ class WebsiteSubState extends MusicBeatSubState
         if(Controls.justPressed(ACCEPT) || back)
         {
             if(curSelected == 0 || back)
-                FlxG.sound.play(Paths.sound('menu/cancelMenu'));
+                FlxG.sound.play(Paths.sound('menu/cancel'));
             else
                 FlxG.openURL(url);
             

@@ -59,7 +59,7 @@ class Paths
 		{
 			if(!fileExists('$key.ogg', library)) {
 				Logs.print('$key.ogg doesnt exist', WARNING);
-				key = 'sounds/beep';
+				key = 'sounds/menu/scroll';
 			}
 			Logs.print('created new sound $key');
 			renderedSounds.set(key,
@@ -299,7 +299,7 @@ class Paths
 		{
 			var soundName:String = ["3", "2", "1", "Go"][i];
 				
-			var soundPath:String = PlayState.countdownModifier;
+			var soundPath:String = PlayState.assetModifier;
 			if(!fileExists('sounds/countdown/$soundPath/intro$soundName.ogg'))
 				soundPath = 'base';
 			
@@ -309,7 +309,7 @@ class Paths
 			{
 				var countName:String = ["ready", "set", "go"][i - 1];
 				
-				var spritePath:String = PlayState.countdownModifier;
+				var spritePath:String = PlayState.assetModifier;
 				if(!fileExists('images/hud/$spritePath/$countName.png'))
 					spritePath = 'base';
 				

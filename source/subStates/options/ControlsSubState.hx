@@ -445,7 +445,7 @@ class ControlsSubState extends MusicBeatSubState
         {
             if(changinBinds < 2 && curOpt == 'edit binds')
             {
-                FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+                FlxG.sound.play(Paths.sound('menu/scroll'));
                 changinBinds++;
                 changeLane();
             }
@@ -463,7 +463,7 @@ class ControlsSubState extends MusicBeatSubState
 
         if(Controls.justPressed(ACCEPT))
         {
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
             switch(curOpt)
             {
                 case 'clear binds':
@@ -510,7 +510,7 @@ class ControlsSubState extends MusicBeatSubState
 
     function setKeyBind(key:Int = -1, valid:Bool = false)
     {
-        FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+        FlxG.sound.play(Paths.sound('menu/scroll'));
 
         if(valid)
         {
@@ -538,7 +538,7 @@ class ControlsSubState extends MusicBeatSubState
     {
         if(change)
         {
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
             isGamepad = !isGamepad;
             spawnBinds();
         }
@@ -550,7 +550,7 @@ class ControlsSubState extends MusicBeatSubState
     function changeSelection(change:Int = 0)
     {
         if(change != 0)
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
 
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, optionShit.length - 1);
@@ -567,7 +567,7 @@ class ControlsSubState extends MusicBeatSubState
     {
         if(change)
         {
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
             curLane = ((curLane == 0) ? 1 : 0);
         }
 

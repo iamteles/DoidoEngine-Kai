@@ -44,27 +44,7 @@ class SplashNote extends FlxSprite
 	{
 		isPixelSprite = false;
 		switch(assetModifier)
-		{
-			case 'doido':
-				frames = Paths.getSparrowAtlas('notes/doido/splashes');
-				animation.addByPrefix("splash", '$direction splash', 24, false);
-				scale.set(0.95,0.95);
-				updateHitbox();
-			
-			case "pixel":
-				var frameArr:Array<Int> = [0, 1, 2, 3, 4, 5];
-				for(i in 0...frameArr.length) {
-					frameArr[i] *= 4;
-					frameArr[i] += noteData;
-				}
-				
-				loadGraphic(Paths.image('notes/pixel/splashesPixel'), true, 33, 33);
-				for(i in 0...2)
-					animation.add('splash$i', frameArr, 24, false, (i == 1));
-				scale.set(6,6);
-				updateHitbox();
-				isPixelSprite = true;
-				
+		{				
 			default:
 				frames = Paths.getSparrowAtlas("notes/base/splashes");
 				

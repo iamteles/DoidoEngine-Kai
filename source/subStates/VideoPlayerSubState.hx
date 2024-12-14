@@ -66,7 +66,7 @@ class VideoPlayerSubState extends MusicBeatSubState
         for(i in 0...2)
         {
             var btn = new FlxSprite(50 + (170 * i), FlxG.height + 20);
-            btn.frames = Paths.getSparrowAtlas('hud/base/videos/${(i == 0) ? 'unpause' : 'skip'}');
+            btn.frames = Paths.getSparrowAtlas('hud/videos/${(i == 0) ? 'unpause' : 'skip'}');
             var anims:Array<Array<Dynamic>> = (i == 0) ? [
                 ['idle', true],
                 ['click', false],
@@ -121,7 +121,7 @@ class VideoPlayerSubState extends MusicBeatSubState
     public function pauseVideo(isPause:Bool)
     {
         lockControls = true;
-        FlxG.sound.play(Paths.sound('menu/cancelMenu'), 0.7);
+        FlxG.sound.play(Paths.sound('menu/cancel'), 0.7);
         if(isPause)
             video.pause();
 
@@ -150,7 +150,7 @@ class VideoPlayerSubState extends MusicBeatSubState
     {
         if(change) {
             curSelection = ((curSelection == 0) ? 1 : 0);
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+            FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
             for(btn in buttons.members)
             {
                 FlxTween.cancelTweensOf(btn);
@@ -203,11 +203,11 @@ class VideoPlayerSubState extends MusicBeatSubState
                     holdSkip = Controls.pressed(ACCEPT);
                     if(Controls.justPressed(ACCEPT)) {
                         curBtn.animation.play('hold');
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
                     }
                     if(Controls.released(ACCEPT)) {
                         curBtn.animation.play('release');
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
                     }
                 }
             }

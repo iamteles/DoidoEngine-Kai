@@ -12,7 +12,7 @@ import flixel.util.FlxColor;
 import objects.menu.Alphabet;
 import objects.menu.options.*;
 import states.PlayState;
-import states.menu.MainMenuState;
+import states.DebugState;
 
 class OptionsSubState extends MusicBeatSubState
 {
@@ -171,7 +171,7 @@ class OptionsSubState extends MusicBeatSubState
             {
                 persistentDraw = true;
                 if(playState == null)
-                    Main.switchState(new MainMenuState());
+                    Main.switchState(new DebugState());
                 else
                 {
                     CoolUtil.playMusic();
@@ -180,7 +180,7 @@ class OptionsSubState extends MusicBeatSubState
             }
             else
             {
-                FlxG.sound.play(Paths.sound('menu/cancelMenu'));
+                FlxG.sound.play(Paths.sound('menu/cancel'));
                 spawnItems('main');
             }
         }
@@ -201,11 +201,11 @@ class OptionsSubState extends MusicBeatSubState
                         Logs.print('FUCK YOU!!', WARNING);*/
                         persistentDraw = false;
                         openSubState(new ControlsSubState());
-                    case "adjust offsets":
+                    case "offsets":
                         persistentDraw = false;
                         openSubState(new OffsetsSubState());
                     default:
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+                        FlxG.sound.play(Paths.sound('menu/scroll'));
                         spawnItems(mainShit[curSelected]);
                 }
             }
@@ -217,7 +217,7 @@ class OptionsSubState extends MusicBeatSubState
             {
                 if(Std.isOfType(curAttach, OptionCheckmark))
                 {
-                    FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+                    FlxG.sound.play(Paths.sound('menu/scroll'));
                     var check:OptionCheckmark = cast curAttach;
                     check.setValue(!check.value);
                     SaveData.data.set(curOption, check.value);
@@ -260,7 +260,7 @@ class OptionsSubState extends MusicBeatSubState
                     if(selec.holdTimer >= holdMax)
                         selec.holdTimer = holdMax - 0.005; // 0.02
                     /*else
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'));*/
+                        FlxG.sound.play(Paths.sound('menu/scroll'));*/
                 }
                 
                 selec.arrowL.animation.play(Controls.pressed(UI_LEFT) ? "push" : "idle", true);
@@ -408,7 +408,7 @@ class OptionsSubState extends MusicBeatSubState
     function changeSelection(change:Int = 0)
     {
         if(change != 0)
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
         
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, grpItems.length - 1);
