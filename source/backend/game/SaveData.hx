@@ -24,7 +24,7 @@ class SaveData
 		* PREFERENCES
 		* 
 		*/
-		"Window Size" => [
+		"Resolution" => [
 			"1280x720",
 			SELECTOR,
 			"Change the game's resolution if it doesn't fit your monitor",
@@ -40,7 +40,7 @@ class SaveData
 			"ON",
 			SELECTOR,
 			"Decides if the song cutscenes should play",
-			["ON", "FREEPLAY OFF", "OFF"],
+			["ON", "OFF"],
 		],
 		"FPS Counter" => [
 			false,
@@ -91,12 +91,7 @@ class SaveData
 			CHECKMARK,
 			"Makes the notes go down instead of up"
 		],
-		"Middlescroll" => [
-			false,
-			CHECKMARK,
-			"Disables the opponent's notes and moves yours to the middle"
-		],
-		"Framerate Cap"	=> [
+		"FPS Cap"	=> [
 			60, // 120
 			SELECTOR,
 			"Self explanatory",
@@ -119,46 +114,10 @@ class SaveData
 		* APPEARANCE
 		* 
 		*/
-		"Note Splashes" => [
-			"ON",
-			SELECTOR,
-			"Whether a splash appears when you hit a note perfectly.\nDisable if it distracts you.",
-			["ON", "PLAYER ONLY", "OFF"],
-		],
-		"Hold Splashes" => [
-			true,
-			CHECKMARK,
-			"Whether a splash appears when you completely press a hold note.\nDisable if it distracts you. (Only works if Note Splashes is enabled)."
-		],
 		"Antialiasing" => [
 			true,
 			CHECKMARK,
 			"Disabling it might increase the fps at the cost of smoother sprites"
-		],
-		"Split Holds" => [
-			false,
-			CHECKMARK,
-			"Cuts the end of each hold note like classic engines did"
-		],
-		"Static Hold Anim" => [
-			true,
-			CHECKMARK,
-			"Whether the character stays static when playing a hold note."
-		],
-		"Single Rating" => [
-			false,
-			CHECKMARK,
-			"Makes only one rating appear at a time",
-		],
-		"Ratings on HUD" => [
-			true,
-			CHECKMARK,
-			"Makes the ratings stick on the HUD"
-		],
-		"Song Timer" => [
-			true,
-			CHECKMARK,
-			"Makes the song timer visible"
 		],
 		/*
 		*
@@ -250,7 +209,7 @@ class SaveData
 
 	public static function update()
 	{
-		Main.changeFramerate(data.get("Framerate Cap"));
+		Main.changeFramerate(data.get("FPS Cap"));
 		
 		if(Main.fpsCounter != null)
 			Main.fpsCounter.visible = data.get("FPS Counter");
@@ -268,7 +227,7 @@ class SaveData
 	public static function updateWindowSize()
 	{
 		if(FlxG.fullscreen) return;
-		var ws:Array<String> = data.get("Window Size").split("x");
+		var ws:Array<String> = data.get("Resolution").split("x");
         	var windowSize:Array<Int> = [Std.parseInt(ws[0]),Std.parseInt(ws[1])];
         	FlxG.stage.window.width = windowSize[0];
         	FlxG.stage.window.height= windowSize[1];

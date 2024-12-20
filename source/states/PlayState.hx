@@ -116,7 +116,7 @@ class PlayState extends MusicBeatState
 	public static var extraCamZoom:Float = 0.0;
 
 	public static var camDisplace:FlxPoint = new FlxPoint(0,0);
-	public static var camMaxDisplace:Float = 25;
+	public static var camMaxDisplace:Float = 18;
 
 	public static var zoomOpp:Float = 0;
 	public static var zoomPl:Float = 0;
@@ -151,6 +151,8 @@ class PlayState extends MusicBeatState
 		"camStrum" => []
 	];
 
+	var middlescroll:Bool = false;
+
 	public static function resetStatics()
 	{
 		health = 1;
@@ -163,7 +165,6 @@ class PlayState extends MusicBeatState
 		paused = false;
 
 		camDisplace = new FlxPoint(0,0);
-		camMaxDisplace = 25;
 	
 		zoomOpp = 0;
 		zoomPl = 0;
@@ -889,7 +890,7 @@ class PlayState extends MusicBeatState
 				item.cameras = [camHUD];
 			
 			var daX:Float = (FlxG.width / 2);
-			if(SaveData.data.get("Middlescroll"))
+			if(middlescroll)
 				daX -= FlxG.width / 4;
 
 			daRating.setPos(daX, SaveData.data.get('Downscroll') ? FlxG.height - 100 : 100);
@@ -1368,7 +1369,7 @@ class PlayState extends MusicBeatState
 								
 								var holdID:Float = hold.ID;
 								
-								if(SaveData.data.get("Split Holds"))
+								if(DevOptions.splitHolds)
 									holdID -= 0.2;
 
 								var minSize:Float = hold.holdHitLength - (hold.noteCrochet * holdID);
@@ -1720,7 +1721,7 @@ class PlayState extends MusicBeatState
 	// options substate
 	public function updateOption(option:String):Void
 	{
-		if(['Middlescroll', 'Downscroll'].contains(option))
+		if(['Downscroll'].contains(option))
 		{
 			for(strumline in strumlines.members)
 			{

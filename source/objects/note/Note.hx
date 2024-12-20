@@ -123,6 +123,9 @@ class Note extends FlxSprite
 	public var isHoldEnd:Bool = false;
 	public var holdLength:Float = 0;
 	public var holdHitLength:Float = 0;
+
+	// reusing this for clipRect later
+	public var holdClipHeight:Float = 0.0;
 	
 	public var children:Array<Note> = [];
 	public var parentNote:Note = null;

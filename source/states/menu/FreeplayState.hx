@@ -71,21 +71,6 @@ class FreeplayState extends MusicBeatState
 				addSong(song[0], song[1], week.diffs);
 		}
 
-		var extraSongs = CoolUtil.parseTxt('extra-songs');
-		for(line in extraSongs)
-		{
-			if(line.startsWith("//")) continue;
-			// if the line is empty then skip it
-			var diffArray:Array<String> = line.split(' ');
-			if(diffArray.length < 1) continue;
-			// separating the song name from the difficulties
-			var songName:String = diffArray.shift();
-			// if theres no difficulties, add easy normal and hard
-			if(diffArray.length < 1) diffArray = SongData.defaultDiffs;
-			// finally adding the song
-			addSong(songName, "face", diffArray);
-		}
-
 		grpItems = new FlxGroup();
 		add(grpItems);
 

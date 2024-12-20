@@ -3,7 +3,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNF: Doido Engine ~ Kai" file="DoidoKai" main="Main" version="3.3.1kai" company="teles" />
+	<app title="FNF: Doido Engine ~ Kai" file="DoidoKai" main="Main" version="3.4.0kai" company="teles" />
 	
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
