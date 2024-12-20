@@ -5,7 +5,13 @@ import flixel.util.FlxGradient;
 import flixel.tweens.FlxTween;
 import backend.game.GameData.MusicBeatSubState;
 
-// Simple fade-to-black transition
+/*
+	Transition between states.
+
+	Usage: When changing between states, you can choose which transition will play.
+	Main.switchState(new states.menu.MainMenuState(), "base");
+*/
+
 class GameTransition extends MusicBeatSubState
 {	
 	var fadeOut:Bool = false;
@@ -81,6 +87,7 @@ class GameTransition extends MusicBeatSubState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
 		this.cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
 		switch(transition) {

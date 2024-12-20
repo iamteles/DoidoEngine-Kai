@@ -29,6 +29,8 @@ class Stage extends FlxGroup
 	var loadedScripts:Array<Iris> = [];
 	var scripted:Array<String> = [];
 
+	var lowQuality:Bool = false;
+
 	public function new() {
 		super();
 		foreground = new FlxGroup();
@@ -45,6 +47,9 @@ class Stage extends FlxGroup
 			
 			//case "template": ["preload1", "preload2", "starting-stage"];
 		};
+
+		//this stops you from fucking stuff up by changing this mid song
+		lowQuality = SaveData.data.get("Low Quality");
 		
 		/*
 		*	makes changing stages easier by preloading
@@ -107,6 +112,8 @@ class Stage extends FlxGroup
 		newScript.set("dadCam", dadCam);
 		newScript.set("gfCam", gfCam);
 
+		newScript.set("lowQuality", lowQuality);
+
 		newScript.execute();
 
 		loadedScripts.push(newScript);
@@ -131,7 +138,7 @@ class Stage extends FlxGroup
 				var front = new FlxSprite(-580, 440);
 				front.loadGraphic(Paths.image("stages/stage/stagefront"));
 				add(front);
-				
+
 				var curtains = new FlxSprite(-600, -400).loadGraphic(Paths.image("stages/stage/stagecurtains"));
 				curtains.scrollFactor.set(1.4,1.4);
 				foreground.add(curtains);
@@ -157,10 +164,7 @@ class Stage extends FlxGroup
 		// put your song stuff here
 		
 		// beat hit
-		if(curStep % 4 == 0)
-		{
-			
-		}
+		// if(curStep % 4 == 0)
 
 		callScript("stepHit", [curStep]);
 	}

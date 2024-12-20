@@ -103,12 +103,14 @@ class Timings
 			if(accuracy > minAcc && accuracy <= maxAcc)
 				result = daRank;
 		}
+
 		// main ranks
 		calc("D", 65, 60);
 		calc("C", 75, 65);
 		calc("B", 80, 75);
 		calc("A", 95, 80);
 		calc("S", 100,95);
+
 		// pluses for your rank
 		if(breaks == 0) {
 			if(hasPlus)
@@ -116,6 +118,7 @@ class Timings
 			if(accuracy == 100.0)
 				result = "P";
 		}
+		
 		// you cant give a result without notes :/
 		if(inGame ? (notesHit <= 0) : (accuracy == 0 && breaks == 0))
 			result = "N/A";

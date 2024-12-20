@@ -1,6 +1,6 @@
 # FNF: DOIDO ENGINE
 <p align="center">
-<img src="https://www.newgrounds.com/dump/draw/27ed38c719b9761af970cac60f441e21">
+<img src="https://www.newgrounds.com/dump/draw/a7487bb1dcc15a499c00a5c5d4be5eb3">
 </p>
 
 ## Friday Night Funkin' Rewritten
@@ -26,32 +26,29 @@ FNF: Doido Engine is a rewritte of FNF's code, while still being written in Haxe
 
 and more!
 
-## Planned Features
-
-These are features that are being discussed and COULD be added in the future (which doesn't mean they will be added so don't expect much).
-- GPU Caching
-- LoadSongState rewrite (LoadingState)
-- Improved Dialogue system
-- "Doido Week"
-
 ### Supports Windows, Linux and HTML5!
 
 ## How to use
 For information on how to Build the engine, as well as guides for how to use it, please check out the [FNF: Doido Engine Wiki](https://doidoteam.github.io/wiki/)!
 
-### Versions
-The Engine is built in mind with the following versions in mind. Any others might not be supported.
+### Libraries
+The Engine is built in mind with the following libraries in mind. Any others might not be supported.
 ```
 haxe 4.3.3
-lime 8.1.2
-openfl 9.3.3
+lime 8.2.2
+openfl 9.4.1
 flixel 5.8.0
 flixel-addons 3.2.2
 flixel-ui 2.6.1
-tjson https://github.com/DoidoTeam/TJSON
-hscript-iris https://github.com/crowplexus/hscript-iris
 flxanimate-doido https://github.com/DoidoTeam/flxanimate-doido
-hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc
+tjson https://github.com/DoidoTeam/TJSON
+hscript-iris https://github.com/crowplexus/hscript-iris d9dc99526d51e63cbab86122624625aebe5349c2
+hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc 19518713cbd59fc5705f899144fffdbf9ae6695c
+hxcpp https://github.com/DoidoTeam/hxcpp
+```
+Optionally, video support is done through the following. These are only required if you need video playback.
+```
+hxvlc https://github.com/MAJigsaw77/hxvlc 243593311edcc7a8424d73806cda13bd1317bfdd
 ```
 
 ## Licenses
@@ -73,7 +70,7 @@ Some other assets, such as test sprites and music, are used under permission fro
 ### [crowplexus](https://github.com/crowplexus) - Creator of HScript Iris
 ### [yoisabo](https://bsky.app/profile/yoisabo.bsky.social) - Chart Editor's Event Icons Artist
 
-### [doubleonikoo](https://bsky.app/profile/doubleonikoo.bsky.social) - is gonna make an actual logo for Doido Engine soon
+### [doubleonikoo](https://bsky.app/profile/doubleonikoo.bsky.social) - didn't really do much but i already made the ingame icon so you can stay... for now (-DiogoTV)
 
 ## [Github Contributors](https://github.com/DoidoTeam/FNF-Doido-Engine/graphs/contributors)
 

@@ -312,6 +312,14 @@ class Character extends FlxAnimate
 		offset.y += scaleOffset.y;
 	}
 
+	public function pauseAnim()
+	{
+		if(spriteType != ATLAS)
+			animation.pause();
+		else
+			anim.pause();
+	}
+
 	public function invertDirections(axes:FlxAxes = NONE)
 	{
 		switch(axes) {

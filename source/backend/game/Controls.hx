@@ -6,6 +6,10 @@ import flixel.input.FlxInput.FlxInputState;
 
 using haxe.EnumTools;
 
+/*
+	Custom input and controller handler
+*/
+
 enum DoidoKey
 {
 	// gameplay
@@ -23,6 +27,7 @@ enum DoidoKey
 	BACK;
 	PAUSE;
 	TEXT_LOG;
+	CONTROL;
 	// none
 	NONE;
 }
@@ -110,6 +115,8 @@ class Controls
 				return PAUSE;
 			case "TEXT_LOG":
 				return TEXT_LOG;
+			case "CONTROL":
+				return CONTROL;
 			default:
 				return NONE;
 		}
@@ -201,6 +208,10 @@ class Controls
 		'TEXT_LOG' => [
 			[FlxKey.TAB],
 			[FlxPad.Y],
+		],
+		'CONTROL' => [
+			[#if mac FlxKey.WINDOWS, #end FlxKey.CONTROL],
+			[],
 		],
 	];
 
