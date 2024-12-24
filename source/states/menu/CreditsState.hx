@@ -81,9 +81,10 @@ class CreditsState extends MusicBeatState
 		addCredit('JulianoBeta', 		'juyko', 	 0xFF0BA5FF, "Composed Doido Engine's offset menu music",			'https://www.youtube.com/@prodjuyko');
 		addCredit('crowplexus',			'crowplexus',0xFF313538, "Creator of HScript Iris",							'https://github.com/crowplexus/hscript-iris');
 		addCredit('yoisabo',			'yoisabo',	 0xFF56EF19, "Chart Editor's Event Icons Artist",					'https://bsky.app/profile/yoisabo.bsky.social');
+		addCredit('cocopuffs',			'coco',	 	 0xFF56EF19, "Mobile Button Artist",								'https://x.com/cocopuffswow');
 		addCredit('doubleonikoo', 		'nikoo', 	 0xFF60458A, "didn't really do much but i already made this icon so you can stay... for now\n-DiogoTV",	'https://bsky.app/profile/doubleonikoo.bsky.social');
 		addCredit('Github Contributors','github', 	 0xFFFFFFFF, 'Thank you\n${specialCoders}!!', 		'https://github.com/DoidoTeam/FNF-Doido-Engine/graphs/contributors');
-		addCredit('Special Thanks', 	'heart', 	 0xFFC01B42, 'Thank you\n${specialPeople}!!\n<33', "https://youtu.be/rnr8Oo2RV_c");
+		addCredit('Special Thanks', 	'heart', 	 0xFFC01B42, 'Thank you\n${specialPeople}!!\n<33', "https://youtu.be/Fo7L8p1I_Hw");
 		
 		for(i in 0...creditList.length)
 		{
@@ -111,10 +112,12 @@ class CreditsState extends MusicBeatState
 			item.xTo = (FlxG.width / 2) - (icon.width / 2);
 			item.focusY = i - curSelected;
 			item.updatePos();
-
-			//item.x = FlxG.width + 200;
 		}
 		changeSelection();
+
+		#if TOUCH_CONTROLS
+		createPad("back");
+		#end
 	}
 
 	function changeSelection(change:Int = 0)
@@ -159,14 +162,12 @@ class CreditsState extends MusicBeatState
 		if(Controls.justPressed(BACK))
 			Main.switchState(new DebugState());
 
-		#if !mobile
 		if(Controls.justPressed(ACCEPT))
 		{
 			var daCredit = creditList[curSelected].link;
 			if(daCredit != null)
 				CoolUtil.openURL(daCredit);
 		}
-		#end
 		
 		infoTxt.y = infoTxtFocus.y + infoTxtFocus.height + 48;
 		for(rawItem in grpItems.members)

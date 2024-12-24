@@ -99,6 +99,9 @@ class FreeplayState extends MusicBeatState
 		scoreCounter = new ScoreCounter();
 		add(scoreCounter);
 
+		#if TOUCH_CONTROLS
+		createPad("reset");
+		#else
 		var resetTxt = new FlxText(0, 0, 0, "PRESS RESET TO DELETE SONG SCORE");
 		resetTxt.setFormat(Main.gFont, 28, 0xFFFFFFFF, RIGHT);
 		var resetBg = new FlxSprite().makeGraphic(
@@ -113,6 +116,7 @@ class FreeplayState extends MusicBeatState
 		resetTxt.y = resetBg.y + 4;
 		add(resetBg);
 		add(resetTxt);
+		#end
 
 		changeSelection();
 	}
@@ -235,6 +239,7 @@ class FreeplayState extends MusicBeatState
 		scoreCounter.updateDisplay(curSong.name, curSong.diffs[curDiff]);
 	}
 }
+
 /*
 *	instead of it being separate objects in FreeplayState
 *	its just a bunch of stuff inside an FlxGroup
@@ -303,11 +308,14 @@ class ScoreCounter extends FlxGroup
 		bg.scale.y = ((text.height + diffTxt.height + 8) / 32);
 		bg.updateHitbox();
 
-		//bg.y = 0;
+		#if TOUCH_CONTROLS
+		bg.y = FlxG.height - bg.height;
+		#end
+
 		bg.x = FlxG.width - bg.width;
 
 		text.x = FlxG.width - text.width - 4;
-		text.y = 4;
+		text.y = bg.y + 4;
 		
 		diffTxt.x = bg.x + bg.width / 2 - diffTxt.width / 2;
 		diffTxt.y = text.y + text.height;

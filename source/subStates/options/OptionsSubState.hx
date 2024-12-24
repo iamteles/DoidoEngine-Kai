@@ -21,6 +21,7 @@ class OptionsSubState extends MusicBeatSubState
         "gameplay",
         "system",
         "offsets",
+        #if TOUCH_CONTROLS "mobile", #end
         "controls",
     ];
     var optionShit:Map<String, Array<String>> =
@@ -52,6 +53,13 @@ class OptionsSubState extends MusicBeatSubState
             "Discord RPC",
             #end
         ],
+        #if TOUCH_CONTROLS
+        "mobile" => [
+            "Invert Swipes",
+            "Button Opacity",
+            "Hitbox Opacity"
+        ]
+        #end
 	];
     
     var restartTimer:Float = 0;
@@ -141,6 +149,10 @@ class OptionsSubState extends MusicBeatSubState
         add(infoTxt);
 
         spawnItems('main');
+
+        #if TOUCH_CONTROLS
+		createPad("back", [FlxG.cameras.list[FlxG.cameras.list.length - 1]]);
+		#end
     }
 
     var inputDelay:Float = 0.1;
@@ -248,6 +260,10 @@ class OptionsSubState extends MusicBeatSubState
                         // custom stuff
                         if(selec.label == "Resolution")
                             SaveData.updateWindowSize();
+                        #if TOUCH_CONTROLS
+                        else if(selec.label == "Button Opacity")
+                            pad.togglePad(true);
+                        #end
                         // only happens when youre not holding the selector
                         if(selec.holdTimer < holdMax)
                         {
@@ -404,6 +420,10 @@ class OptionsSubState extends MusicBeatSubState
             updateItemPos(1);
         }
         changeSelection();
+
+        #if TOUCH_CONTROLS
+        Controls.resetTimer();
+        #end
     }
     
     function changeSelection(change:Int = 0)

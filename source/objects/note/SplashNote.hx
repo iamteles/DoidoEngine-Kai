@@ -53,6 +53,7 @@ class SplashNote extends FlxSprite
 				scale.set(0.75,0.75);
 				updateHitbox();
 		}
+		updateHitbox();
 
 		if(isPixelSprite)
 			antialiasing = false;
@@ -81,6 +82,7 @@ class SplashNote extends FlxSprite
 				
 				updateHitbox();
 		}
+		updateHitbox();
 
 		if(isPixelSprite)
 			antialiasing = false;
