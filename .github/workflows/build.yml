@@ -76,6 +76,7 @@ jobs:
         with:
           name: DoidoEngine-Linux-${{ steps.ver.outputs.content }}-${{ github.run_id}}
           path: 'export/release/linux/bin'
+            
   build-macos:
     # hoping setting this to macos 13 will keep it working on intel macs??? i don't actually own any apple hardware so i'm just guessing here...
     runs-on: macos-13
@@ -135,9 +136,6 @@ jobs:
           haxelib --global run hmm setup
           hmm init
           hmm install
-          haxelib install flixel
-          haxelib install flixel-addons
-          haxelib install flixel-ui
       - name: Configure Android
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME

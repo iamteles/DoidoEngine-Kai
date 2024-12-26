@@ -751,7 +751,8 @@ class PlayState extends MusicBeatState
 		if(note.mustMiss)
 			health -= 0.005;
 		
-		if(note.gotHit || thisChar == null) return;
+		// playing the hold animation
+		if(note.gotHit || thisChar == null || note.holdHitLength > note.holdLength - 60) return;
 		
 		if(note.noteType != "no animation" && thisChar.specialAnim != 2)
 		{
@@ -1294,12 +1295,16 @@ class PlayState extends MusicBeatState
 				{
 					// hitting / missing notes automatically
 					if(strumline.botplay)
+					{
 						if(note.songTime - Conductor.songPos <= 0 && !note.gotHit && !note.mustMiss)
 							checkNoteHit(note, strumline);
+					}
 					else
+					{
 						if(Conductor.songPos >= note.songTime + Timings.getTimings("good")[1]
 						&& !note.gotHit && !note.missed && !note.mustMiss)
 							onNoteMiss(note, strumline);
+					}
 					
 					// doesnt actually do anything
 					if (note.scrollSpeed != strumline.scrollSpeed)
