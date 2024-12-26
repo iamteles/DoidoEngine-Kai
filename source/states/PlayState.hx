@@ -979,6 +979,7 @@ class PlayState extends MusicBeatState
 			
 			Main.switchState(new CharacterEditorState(char.curChar, true));
 		}
+		#end
 		
 		if(startedCountdown)
 			Conductor.songPos += elapsed * 1000;

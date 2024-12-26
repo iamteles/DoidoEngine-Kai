@@ -27,35 +27,35 @@ class SaveData
 		"Resolution" => [
 			"1280x720",
 			SELECTOR,
-			"Change the game's resolution if it doesn't fit your monitor",
+			"Change the game's resolution if it doesn't fit your monitor.",
 			["640x360","854x480","960x540","1024x576","1152x648","1280x720","1366x768","1600x900","1920x1080", "2560x1440", "3840x2160"],
 		],
 		'Flashing Lights' => [
 			"ON",
 			SELECTOR,
-			"Whether to show flashing lights and colors",
+			"Disable this if you have issues with Photosensitivity.",
 			["ON", "REDUCED", "OFF"]
 		],
 		"Cutscenes" => [
 			"ON",
 			SELECTOR,
-			"Decides if the song cutscenes should play",
+			"Decides if the song cutscenes should play.",
 			["ON", "OFF"],
 		],
 		"FPS Counter" => [
 			false,
 			CHECKMARK,
-			"Whether you want a counter showing your framerate and memory usage counter in the corner of the game",
+			"Counter that displays debug information, such as the framerate or the memory usage.",
 		],
 		'Unfocus Pause' => [
 			true,
 			CHECKMARK,
-			"Pauses the game when the window is unfocused",
+			"Pauses the game when the window is unfocused.",
 		],
 		"Countdown on Unpause" => [
 			true,
 			CHECKMARK,
-			"Whether you want to have a countdown when unpausing the game",
+			"When unpausing the game, this 4 beat timer will help you get back on rhythm.",
 		],
 		'Discord RPC' => [
 			#if DISCORD_RPC
@@ -64,7 +64,7 @@ class SaveData
 			false,
 			#end
 			CHECKMARK,
-			"Whether to use Discord's game activity.",
+			"Display game information on your Discord profile.",
 		],
 		"Shaders" => [
 			true,
@@ -84,29 +84,29 @@ class SaveData
 		"Ghost Tapping" => [
 			true,
 			CHECKMARK,
-			"Makes you able to press keys freely without missing notes"
+			"Makes you able to press keys freely without breaking notes."
 		],
 		"Downscroll" => [
 			false,
 			CHECKMARK,
-			"Makes the notes go down instead of up"
+			"Decides if the notes should scroll down or up."
 		],
 		"FPS Cap"	=> [
 			60, // 120
 			SELECTOR,
-			"Self explanatory",
+			"How many frames can displayed in a second.",
 			[30, 360]
 		],
 		'Hitsounds' => [
 			"OFF",
 			SELECTOR,
-			"Whether to play hitsounds whenever you hit a note",
-			["OFF", "OSU", "NSWITCH", "CD"]
+			"Clicking sounds whenever you hit a note.",
+			["OFF", "OSU", "CD"]
 		],
 		'Hitsound Volume' => [
 			100,
 			SELECTOR,
-			"Only works when Hitsounds aren't off",
+			"The volume at which hitsounds are played.",
 			[0, 100]
 		],
 		/*
@@ -117,7 +117,7 @@ class SaveData
 		"Antialiasing" => [
 			true,
 			CHECKMARK,
-			"Disabling it might increase the fps at the cost of smoother sprites"
+			"Smoothing on sprite scaling. Disabling this may improve performance."
 		],
 		/*
 		*

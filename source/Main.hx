@@ -37,7 +37,7 @@ class Main extends Sprite
 		// thanks @sqirradotdev
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onUncaughtError);
 
-		var ws:Array<String> = SaveData.displaySettings.get("Window Size")[0].split("x");
+		var ws:Array<String> = SaveData.displaySettings.get("Resolution")[0].split("x");
 		var windowSize:Array<Int> = [Std.parseInt(ws[0]),Std.parseInt(ws[1])];
 
 		addChild(new FlxGame(windowSize[0], windowSize[1], Init, 120, 120, true));
@@ -128,7 +128,7 @@ class Main extends Sprite
 	public static var skipClearMemory:Bool = false; // dont
 	public static var skipTrans:Bool = true; // starts on but it turns false inside Init
 	public static var lastTransition:String = '';
-	public static function switchState(?target:FlxState, transition:String = 'funkin'):Void
+	public static function switchState(?target:FlxState, transition:String = 'base'):Void
 	{
 		lastTransition = transition;
 		var trans = new GameTransition(false, transition);
@@ -149,7 +149,7 @@ class Main extends Sprite
 	}
 	
 	// you could just do Main.switchState() but whatever
-	public static function resetState(transition:String = 'funkin'):Void
+	public static function resetState(transition:String = 'base'):Void
 		return switchState(null, transition);
 
 	// so you dont have to type it every time

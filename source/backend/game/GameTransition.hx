@@ -15,48 +15,21 @@ import backend.game.GameData.MusicBeatSubState;
 class GameTransition extends MusicBeatSubState
 {	
 	var fadeOut:Bool = false;
-	var transition:String = 'funkin';
+	var transition:String = 'base';
 	
 	// Callback at the end of the transition
 	public var finishCallback:Void->Void;
 
 	// Sprites used in transitions
 	var sprBlack:FlxSprite;
-	var sprGrad:FlxSprite;
 	
-	public function new(fadeOut:Bool = true, transition:String = "funkin")
+	public function new(fadeOut:Bool = true, transition:String = 'base')
 	{
 		super();
 		this.fadeOut = fadeOut;
 		this.transition = transition;
 
 		switch(transition) {
-			case 'funkin':
-				sprBlack = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
-				sprBlack.screenCenter(X);
-				add(sprBlack);
-				
-				sprGrad = FlxGradient.createGradientFlxSprite(FlxG.width, Math.floor(FlxG.height / 2), [0xFF000000, 0x00], 1, 90);
-				sprGrad.screenCenter(X);
-				sprGrad.flipY = fadeOut;
-				add(sprGrad);
-				
-				var yPos:Array<Float> = [
-					-sprBlack.height - sprGrad.height - 40,	// upper
-					FlxG.height / 2 - sprBlack.height / 2, 	// middle
-					FlxG.height + sprGrad.height + 40		// bottom
-				];
-				var curY:Int = (fadeOut ? 1 : 0);
-				
-				sprBlack.y = yPos[curY];
-				updateGradPos();
-
-				FlxTween.tween(sprBlack, {y: yPos[curY + 1]}, fadeOut ? 0.6 : 0.8, {
-					onComplete: function(twn:FlxTween)
-					{
-						endTransition();
-					}
-				});
 			default:
 				sprBlack = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
 				sprBlack.screenCenter();
@@ -80,10 +53,6 @@ class GameTransition extends MusicBeatSubState
 			close();
 	}
 	
-	function updateGradPos():Void {
-		sprGrad.y = sprBlack.y + (fadeOut ? -sprGrad.height : sprBlack.height);
-	}
-	
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
@@ -91,8 +60,6 @@ class GameTransition extends MusicBeatSubState
 		this.cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
 		switch(transition) {
-			case 'funkin':
-				updateGradPos();
 			default:
 				// do nothing
 		}
