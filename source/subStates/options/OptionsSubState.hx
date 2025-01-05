@@ -27,13 +27,13 @@ class OptionsSubState extends MusicBeatSubState
     var optionShit:Map<String, Array<String>> =
 	[
         "graphics" => [
+            "Shaders",
+            "Low Quality",
             #if desktop
+            "Antialiasing",
             "Resolution",
-			"Antialiasing",
             "FPS Cap",
             #end
-            "Shaders",
-            "Low Quality"
 		],
         "gameplay" => [
 			"Ghost Tapping",
@@ -42,16 +42,16 @@ class OptionsSubState extends MusicBeatSubState
             "Hitsound Volume",
 		],
         "system" => [
-            "Flashing Lights",
-            "Cutscenes",
-            #if desktop
-            "FPS Counter",
-            "Unfocus Pause",
-            #end
             "Countdown on Unpause",
             #if DISCORD_RPC
             "Discord RPC",
             #end
+            #if desktop
+            "Unfocus Pause",
+            "FPS Counter",
+            #end
+            "Flashing Lights",
+            "Cutscenes",
         ],
         #if TOUCH_CONTROLS
         "mobile" => [

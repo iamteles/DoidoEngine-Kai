@@ -43,9 +43,10 @@ class SaveData
 			["ON", "OFF"],
 		],
 		"FPS Counter" => [
-			false,
-			CHECKMARK,
-			"Counter that displays debug information, such as the framerate or the memory usage.",
+			"OFF",
+			SELECTOR,
+			"Counter that can display debug information, such as the framerate or the memory usage.",
+			["FULL", "SIMPLE", "OFF"]
 		],
 		'Unfocus Pause' => [
 			true,
@@ -92,10 +93,10 @@ class SaveData
 			"Decides if the notes should scroll down or up."
 		],
 		"FPS Cap"	=> [
-			60, // 120
+			"60",
 			SELECTOR,
 			"How many frames can displayed in a second.",
-			[30, 360]
+			["30", "60", "75", "120", "144"]
 		],
 		'Hitsounds' => [
 			"OFF",
@@ -232,10 +233,10 @@ class SaveData
 
 	public static function update()
 	{
-		Main.changeFramerate(data.get("FPS Cap"));
+		Main.changeFramerate(Std.parseInt(data.get("FPS Cap")));
 		
 		if(Main.fpsCounter != null)
-			Main.fpsCounter.visible = data.get("FPS Counter");
+			Main.fpsCounter.setVisible(data.get("FPS Counter"));
 
 		FlxSprite.defaultAntialiasing = data.get("Antialiasing");
 

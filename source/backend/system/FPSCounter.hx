@@ -33,8 +33,8 @@ class FPSCounter extends Sprite
 		memField = new CounterField(0, 21, 14, 300, "", Main.gFont, 0xFFFFFF);
 		addChild(memField);
 
-		visible = SaveData.data.get("FPS Counter");
-		
+		setVisible(SaveData.data.get("FPS Counter"));
+
 		times = [];
 	}
 
@@ -77,6 +77,13 @@ class FPSCounter extends Sprite
 			memField.textColor = 0xFF0000;
 		else
 			memField.textColor = 0xFFFFFF;
+	}
+
+	public function setVisible(status:String)
+	{
+		fpsField.visible = status != "OFF";
+		labelField.visible = status != "OFF";
+		memField.visible = status == "FULL";
 	}
 }
 
