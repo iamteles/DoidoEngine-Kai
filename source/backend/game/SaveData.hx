@@ -5,6 +5,7 @@ import flixel.util.FlxSave;
 import openfl.system.Capabilities;
 import backend.song.Conductor;
 import backend.song.Highscore;
+import backend.native.Windows;
 
 /*
 	Save data such as options and other things.
@@ -120,6 +121,11 @@ class SaveData
 			CHECKMARK,
 			"Smoothing on sprite scaling. Disabling this may improve performance."
 		],
+		"Dark Mode" => [
+			true,
+			CHECKMARK,
+			"The theme of the Window."
+		],
 		/*
 		*
 		* MOBILE
@@ -231,6 +237,7 @@ class SaveData
 		update();
 	}
 
+	static var lastDark:Bool = false;
 	public static function update()
 	{
 		Main.changeFramerate(Std.parseInt(data.get("FPS Cap")));
@@ -246,6 +253,11 @@ class SaveData
 		Conductor.inputOffset = data.get('Input Offset');
 
 		DiscordIO.check();
+
+		if(SaveData.data.get("Dark Mode") != lastDark)
+			Windows.setDarkMode(lime.app.Application.current.window.title, SaveData.data.get("Dark Mode"));
+
+		lastDark = SaveData.data.get("Dark Mode");
 	}
 
 	public static function updateWindowSize()

@@ -34,6 +34,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+
 		// thanks @sqirradotdev
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onUncaughtError);
 
