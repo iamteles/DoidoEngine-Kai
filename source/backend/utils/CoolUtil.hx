@@ -11,8 +11,8 @@ import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
-import objects.note.Note;
-import subStates.menu.WebsiteSubState;
+import doido.objects.note.Note;
+import doido.subStates.menu.WebsiteSubState;
 
 using StringTools;
 

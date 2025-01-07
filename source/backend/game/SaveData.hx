@@ -179,7 +179,7 @@ class SaveData
 		load();
 		Controls.load();
 		Highscore.load();
-		subStates.editors.ChartAutoSaveSubState.load(); // uhhh
+		doido.subStates.editors.ChartAutoSaveSubState.load(); // uhhh
 		updateWindowSize();
 	}
 	
@@ -254,10 +254,12 @@ class SaveData
 
 		DiscordIO.check();
 
+		#if windows
 		if(SaveData.data.get("Dark Mode") != lastDark)
 			Windows.setDarkMode(lime.app.Application.current.window.title, SaveData.data.get("Dark Mode"));
 
 		lastDark = SaveData.data.get("Dark Mode");
+		#end
 	}
 
 	public static function updateWindowSize()

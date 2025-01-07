@@ -3,8 +3,8 @@ package backend.song;
 import backend.song.SongData.EventSong;
 import backend.song.SongData.SwagSection;
 import backend.song.SongData.SwagSong;
-import objects.note.EventNote;
-import objects.note.Note;
+import doido.objects.note.EventNote;
+import doido.objects.note.Note;
 
 using StringTools;
 

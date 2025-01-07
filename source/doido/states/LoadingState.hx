@@ -1,0 +1,203 @@
+package doido.states;
+
+import backend.game.GameData.MusicBeatState;
+import backend.utils.DialogueUtil;
+import backend.song.ChartLoader;
+import backend.song.SongData.SwagSong;
+import flixel.FlxG;
+import flixel.FlxBasic;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.text.FlxText;
+import flixel.group.FlxGroup;
+import flixel.math.FlxMath;
+import doido.objects.*;
+import doido.objects.hud.*;
+import doido.objects.note.*;
+import doido.objects.dialogue.Dialogue;
+
+#if PRELOAD_SONG
+import sys.thread.Mutex;
+import sys.thread.Thread;
+#end
+
+/*
+*	preloads all the stuff before going into playstate
+*	i would advise you to put your custom preloads inside here!!
+*/
+class LoadingState extends MusicBeatState
+{
+	var threadActive:Bool = true;
+
+	#if PRELOAD_SONG
+	var mutex:Mutex;
+	#end
+
+	var behind:FlxGroup;
+	
+	var loadBar:FlxSprite;
+	var loadPercent:Float = 0;
+	
+	function addBehind(item:FlxBasic)
+	{
+		behind.add(item);
+		behind.remove(item);
+	}
+	
+	override function create()
+	{
+		super.create();
+		behind = new FlxGroup();
+		add(behind);
+		
+		var color = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
+		color.screenCenter();
+		add(color);
+
+		var loadingTxt = new FlxText(0,0,0,"Loading...");
+		loadingTxt.setFormat(Main.gFont, 40, 0xFFFFFFFF, LEFT);
+		loadingTxt.x = 5;
+		loadingTxt.y = FlxG.height - loadingTxt.height - 15;
+		add(loadingTxt);
+		
+		loadBar = new FlxSprite().makeGraphic(FlxG.width - 16, 20, 0xFFFFFFFF);
+		loadBar.y = FlxG.height - loadBar.height + 10;
+		changeBarSize(0);
+		add(loadBar);
+
+		#if PRELOAD_SONG
+		mutex = new Mutex();
+		#else
+		var black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
+		#end
+		
+		var oldAnti:Bool = FlxSprite.defaultAntialiasing;
+		FlxSprite.defaultAntialiasing = false;
+		
+		PlayState.resetStatics();
+		var assetModifier = PlayState.assetModifier;
+		var SONG = PlayState.SONG;
+		var unspawnEvents = ChartLoader.getEvents(PlayState.EVENTS);
+
+		#if PRELOAD_SONG
+		var preloadThread = Thread.create(function()
+		{
+			mutex.acquire();
+		#end
+			Paths.preloadPlayStuff();
+			Rating.preload(assetModifier);
+			Paths.preloadGraphic('hud/base/healthBar');
+			
+			var stageBuild = new Stage();
+			stageBuild.reloadStageFromSong(SONG.song);
+			addBehind(stageBuild);
+
+			var playerChars:Array<String> = [SONG.player1];
+			var charList:Array<String> = [SONG.player1, SONG.player2, stageBuild.gfVersion];
+			for(daEvent in unspawnEvents)
+			{
+				switch(daEvent.eventName)
+				{
+					case 'Change Character':
+						charList.push(daEvent.value2);
+						switch(daEvent.value1)
+						{
+							case 'bf'|'boyfriend': playerChars.push(daEvent.value2);
+						}
+					case 'Change Stage':
+						stageBuild.reloadStage(daEvent.value1);
+						addBehind(stageBuild);
+						charList.push(stageBuild.gfVersion);
+				}
+			}
+			Logs.print('preloaded stage and hud');
+			loadPercent = 0.2;
+			for(i in charList)
+			{
+				var char = new Character(i, playerChars.contains(i));
+				addBehind(char);
+
+				if(char.isPlayer
+				&& !charList.contains(char.deathChar))
+				{
+					var dead = new Character(char.deathChar, true);
+					addBehind(dead);
+				}
+				
+				if(i != stageBuild.gfVersion)
+				{
+					var icon = new HealthIcon();
+					icon.setIcon(i, false);
+					addBehind(icon);
+				}
+				loadPercent += (0.6 - 0.2) / charList.length;
+			}
+			
+			Logs.print('preloaded characters');
+			loadPercent = 0.6;
+			
+			var songDiff:String = PlayState.songDiff;
+			Paths.preloadSound(Paths.songPath(SONG.song, 'Inst', songDiff));
+			if(SONG.needsVoices)
+			{
+				Paths.preloadSound(Paths.songPath(SONG.song, 'Voices', songDiff, '-player'));
+				
+				// opponent voices
+				var oppPath:String = Paths.songPath(SONG.song, 'Voices', songDiff, '-opp');
+				if(oppPath.endsWith('-opp'))
+					Paths.preloadSound(oppPath);
+			}
+
+			Logs.print('preloaded music');
+			loadPercent = 0.75;
+
+			var dialData:DialogueData = DialogueUtil.loadDialogue(SONG.song, songDiff);
+			if(dialData.pages.length > 0) {
+				var dial = new Dialogue();
+				dial.load(dialData, true);
+				addBehind(dial);
+			}
+
+			loadPercent = 0.85;
+			
+			// add custom preloads here!!
+			switch(SONG.song)
+			{
+				default:
+					Logs.print('preloaded NOTHING extra lol');
+			}
+			loadPercent = 0.95;
+			
+			loadPercent = 1.0;
+			Logs.print('finished loading');
+			threadActive = false;
+			FlxSprite.defaultAntialiasing = oldAnti;
+		#if PRELOAD_SONG
+			mutex.release();
+		});
+		#end
+	}
+	
+	var byeLol:Bool = false;
+	
+	override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+
+		if(!threadActive && !byeLol && loadBar.scale.x >= 0.98)
+		{
+			byeLol = true;
+			changeBarSize(1);
+			Main.skipClearMemory = true;
+			Main.switchState(new PlayState());
+		}
+		
+		changeBarSize(FlxMath.lerp(loadBar.scale.x, loadPercent, elapsed * 6));
+	}
+	
+	function changeBarSize(newSize:Float)
+	{
+		loadBar.scale.x = newSize;
+		loadBar.updateHitbox();
+	}
+}

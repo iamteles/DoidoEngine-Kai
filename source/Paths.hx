@@ -9,7 +9,7 @@ import flixel.sound.FlxSound;
 import lime.utils.Assets;
 import openfl.display.BitmapData;
 import openfl.media.Sound;
-import states.PlayState;
+import doido.states.PlayState;
 import tjson.TJSON;
 
 using StringTools;
@@ -21,6 +21,8 @@ class Paths
 
 	// idk
 	public static function getPath(key:String, ?library:String):String {
+		if (library == null)
+			library = "doido";
 		#if RENAME_UNDERSCORE
 		var pathArray:Array<String> = key.split("/").copy();
 		var loopCount = 0;

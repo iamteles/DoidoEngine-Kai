@@ -8,7 +8,7 @@ import flixel.input.FlxInput.FlxInputState;
 import flixel.util.FlxTimer;
 import backend.game.Mobile;
 import backend.game.GameData;
-import objects.mobile.DoidoPad;
+import doido.objects.mobile.DoidoPad;
 #end
 
 using haxe.EnumTools;

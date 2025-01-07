@@ -9,7 +9,7 @@ import backend.song.Conductor;
 import crowplexus.iris.Iris;
 
 #if TOUCH_CONTROLS
-import objects.mobile.*;
+import doido.objects.mobile.*;
 import flixel.FlxSubState;
 #end
 
