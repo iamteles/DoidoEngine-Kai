@@ -254,10 +254,12 @@ class SaveData
 
 		DiscordIO.check();
 
+		#if windows
 		if(SaveData.data.get("Dark Mode") != lastDark)
 			Windows.setDarkMode(lime.app.Application.current.window.title, SaveData.data.get("Dark Mode"));
 
 		lastDark = SaveData.data.get("Dark Mode");
+		#end
 	}
 
 	public static function updateWindowSize()

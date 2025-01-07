@@ -29,7 +29,9 @@ class OptionsSubState extends MusicBeatSubState
         "graphics" => [
             "Shaders",
             "Low Quality",
+            #if windows
             "Dark Mode",
+            #end
             #if desktop
             "Antialiasing",
             "Resolution",
