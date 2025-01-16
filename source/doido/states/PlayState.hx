@@ -128,7 +128,7 @@ class PlayState extends MusicBeatState
 	public var camZoomTween:FlxTween;
 	public var curSection:SwagSection;
 
-	public static var camFollow:FlxObject = new FlxObject();
+	public static var camFollow:FlxObject;
 
 	public static var playedCutscene:Bool = false;
 	public static var startedCountdown:Bool = false;
@@ -167,6 +167,7 @@ class PlayState extends MusicBeatState
 		forcedCamSection = "none";
 		paused = false;
 
+		camFollow = new FlxObject();
 		camDisplace = new FlxPoint(0,0);
 	
 		zoomOpp = 0;
