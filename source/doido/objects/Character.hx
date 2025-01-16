@@ -20,6 +20,7 @@ class Character extends FlxAnimate
 	public var specialAnim:Int = 0;
 	public var curAnimFrame(get, never):Int;
 	public var curAnimFinished(get, never):Bool;
+	public var curDirection(get, never):String;
 	public var holdTimer:Float = Math.NEGATIVE_INFINITY;
 
 	// time (in seconds) that takes to the character return to their idle anim

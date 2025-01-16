@@ -167,7 +167,6 @@ class PlayState extends MusicBeatState
 		forcedCamSection = "none";
 		paused = false;
 
-		camFollow = new FlxObject();
 		camDisplace = new FlxPoint(0,0);
 	
 		zoomOpp = 0;
@@ -387,10 +386,9 @@ class PlayState extends MusicBeatState
 		Conductor.songPos = -Conductor.crochet * 5;
 		
 		// setting up the camera following
+		camFollow = new FlxObject();
 		followCamSection(SONG.notes[0]);
 		FlxG.camera.focusOn(camFollow.getPosition());
-
-		
 		
 		for(note in unspawnNotes)
 		{

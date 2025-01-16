@@ -37,7 +37,7 @@ jobs:
             haxelib --global run hmm install
         shell: cmd
       - name: Compile
-        run: haxelib run lime build windows --app-version="${{ steps.ver.outputs.content }}-${{ github.run_id}}"
+        run: haxelib run lime build windows
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
@@ -70,7 +70,7 @@ jobs:
           hmm install
       - name: Compile
         run:
-          haxelib run lime build linux --app-version="${{ steps.ver.outputs.content }}-${{ github.run_id}}"
+          haxelib run lime build linux
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
@@ -104,7 +104,7 @@ jobs:
           hmm install
       - name: Compile
         run:
-          haxelib run lime build mac --app-version="${{ steps.ver.outputs.content }}-${{ github.run_id}}"
+          haxelib run lime build mac
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
@@ -144,7 +144,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
       - name: Compile
         run:
-          haxelib run lime build android --app-version="${{ steps.ver.outputs.content }}-${{ github.run_id}}"
+          haxelib run lime build android
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
