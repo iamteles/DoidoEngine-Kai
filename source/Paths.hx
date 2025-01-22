@@ -9,7 +9,7 @@ import flixel.sound.FlxSound;
 import lime.utils.Assets;
 import openfl.display.BitmapData;
 import openfl.media.Sound;
-import doido.states.PlayState;
+import states.PlayState;
 import tjson.TJSON;
 
 using StringTools;

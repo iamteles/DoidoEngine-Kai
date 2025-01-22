@@ -9,7 +9,7 @@ import backend.game.GameData.MusicBeatSubState;
 	Transition between states.
 
 	Usage: When changing between states, you can choose which transition will play.
-	Main.switchState(new doido.states.menu.MainMenuState(), "base");
+	Main.switchState(new states.menu.MainMenuState(), "base");
 */
 
 class GameTransition extends MusicBeatSubState

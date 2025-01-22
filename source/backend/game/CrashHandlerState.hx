@@ -63,7 +63,7 @@ class CrashHandlerState extends MusicBeatState
             if(FlxG.keys.justPressed.ESCAPE)
             {
                 Main.skipTrans = true;
-                Main.switchState(new doido.states.DebugState());
+                Main.switchState(new states.DebugState());
             }
             if(FlxG.keys.justPressed.ENTER)
             {

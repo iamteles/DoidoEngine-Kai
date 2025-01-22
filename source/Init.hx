@@ -4,7 +4,7 @@ import backend.game.GameData.MusicBeatState;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.FlxGraphic;
-import doido.states.*;
+import states.*;
 
 class Init extends MusicBeatState
 {
@@ -32,7 +32,7 @@ class Init extends MusicBeatState
 		#elseif MENU
 		Main.switchState(new DebugState());
 		#elseif FREEPLAY
-		Main.switchState(new doido.states.menu.FreeplayState());
+		Main.switchState(new states.menu.FreeplayState());
 		#else
 		if(FlxG.save.data.beenWarned == null)
 			Main.switchState(new WarningState());

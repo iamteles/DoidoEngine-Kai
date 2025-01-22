@@ -179,7 +179,7 @@ class SaveData
 		load();
 		Controls.load();
 		Highscore.load();
-		doido.subStates.editors.ChartAutoSaveSubState.load(); // uhhh
+		subStates.editors.ChartAutoSaveSubState.load(); // uhhh
 		updateWindowSize();
 	}
 	
