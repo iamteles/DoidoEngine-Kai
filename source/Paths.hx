@@ -66,7 +66,7 @@ class Paths
 				#if desktop
 				Sound.fromFile(getPath('$key.ogg', library))
 				#else
-				openfl.Assets.getSound(getPath('$key.ogg', library))
+				openfl.Assets.getSound(getPath('$key.ogg', library), false)
 				#end
 			);
 		}
@@ -84,7 +84,7 @@ class Paths
 				#if desktop
 				var bitmap = BitmapData.fromFile(path);
 				#else
-				var bitmap = openfl.Assets.getBitmapData(path);
+				var bitmap = openfl.Assets.getBitmapData(path, false);
 				#end
 				
 				var newGraphic = FlxGraphic.fromBitmapData(bitmap, false, key, false);
@@ -122,7 +122,9 @@ class Paths
 				openfl.Assets.cache.removeBitmapData(key);
 			
 			FlxG.bitmap.remove(graphic);
+			#if (flixel < "6.0.0")
 			graphic.dump();
+			#end
 			graphic.destroy();
 		}
 
@@ -138,7 +140,9 @@ class Paths
 			{
 				openfl.Assets.cache.removeBitmapData(key);
 				FlxG.bitmap._cache.remove(key);
+				#if (flixel < "6.0.0")
 				obj.dump();
+				#end
 				obj.destroy();
 			}
 		}

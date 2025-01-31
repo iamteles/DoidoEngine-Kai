@@ -11,6 +11,7 @@ import haxe.io.Path;
 import openfl.Lib;
 import openfl.display.Sprite;
 import openfl.events.UncaughtErrorEvent;
+import flixel.util.typeLimit.NextState;
 
 #if desktop
 import backend.system.ALSoftConfig;
@@ -116,7 +117,10 @@ class Main extends Sprite
 		Logs.print('Crash dump saved in $normalPath', WARNING, true, true, false, false);
 
 		// byebye
+		#if (flixel < "6.0.0")
 		FlxG.bitmap.dumpCache();
+		#end
+
 		FlxG.bitmap.clearCache();
 		CoolUtil.playMusic();
 
@@ -129,7 +133,7 @@ class Main extends Sprite
 	public static var skipClearMemory:Bool = false; // dont
 	public static var skipTrans:Bool = true; // starts on but it turns false inside Init
 	public static var lastTransition:String = '';
-	public static function switchState(?target:FlxState, transition:String = 'base'):Void
+	public static function switchState(?target:NextState, transition:String = 'base'):Void
 	{
 		lastTransition = transition;
 		var trans = new GameTransition(false, transition);
