@@ -21,8 +21,6 @@ class Paths
 
 	// idk
 	public static function getPath(key:String, ?library:String):String {
-		if (library == null)
-			library = "doido";
 		#if RENAME_UNDERSCORE
 		var pathArray:Array<String> = key.split("/").copy();
 		var loopCount = 0;

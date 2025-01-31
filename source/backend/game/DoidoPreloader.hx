@@ -9,7 +9,7 @@ import openfl.geom.Rectangle;
 import flixel.math.FlxMath;
 import flixel.system.FlxBasePreloader;
 
-@:keep @:bitmap("assets/doido/images/doido_logo.png")
+@:keep @:bitmap("assets/images/doido_logo.png")
 private class DoidoLogo extends BitmapData {}
 
 class DoidoPreloader extends FlxBasePreloader
