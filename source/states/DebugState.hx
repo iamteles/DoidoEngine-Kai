@@ -62,6 +62,9 @@ class DebugState extends MusicBeatState
 	{
 		super.update(elapsed);
 
+		if(FlxG.keys.justPressed.R)
+			null.draw();
+
 		if(Controls.justPressed(UI_UP))
 			changeSelection(-1);
 		if(Controls.justPressed(UI_DOWN))

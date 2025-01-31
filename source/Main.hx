@@ -125,7 +125,7 @@ class Main extends Sprite
 		CoolUtil.playMusic();
 
 		Main.skipTrans = true;
-		Main.switchState(new CrashHandlerState(stackTraceString + '\n\nCrash log created at: "${normalPath}"'));
+		Main.switchState(() -> new CrashHandlerState(stackTraceString + '\n\nCrash log created at: "${normalPath}"'));
 	}
 	
 	public static var activeState:FlxState;

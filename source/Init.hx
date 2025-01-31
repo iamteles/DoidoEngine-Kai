@@ -14,7 +14,7 @@ class Init extends MusicBeatState
 		SaveData.init();
 		DiscordIO.check();
 				
-		FlxG.fixedTimestep = false;
+		//FlxG.fixedTimestep = false;
 		FlxG.mouse.useSystemCursor = true;
 		FlxG.mouse.visible = false;
 		FlxGraphic.defaultPersist = true;

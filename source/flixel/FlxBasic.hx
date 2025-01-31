@@ -1,8 +1,6 @@
 package flixel;
 
-#if(flixel > "5.6.2")
 import flixel.group.FlxContainer;
-#end
 import flixel.util.FlxDestroyUtil;
 import flixel.util.FlxStringUtil;
 
@@ -23,7 +21,11 @@ class FlxBasic implements IFlxDestroyable
 	static var visibleCount:Int = 0;
 	#end
 
-	public var _dynamic:Map<String, Dynamic> = [];
+    /**
+	 * Doido Engine related stuff.
+	 */
+
+    public var _dynamic:Map<String, Dynamic> = [];
 	public dynamic function _update(elapsed:Float) {};
 	public dynamic function _stepHit(curStep:Int) {};
 
@@ -77,13 +79,11 @@ class FlxBasic implements IFlxDestroyable
 	@:noCompletion
 	var _cameras:Array<FlxCamera>;
 	
-	#if(flixel > "5.6.2")
 	/**
 	 * The parent containing this basic, typically if you check this recursively you should reach the state
 	 * @since 5.7.0
 	 */
 	public var container(get, null):Null<FlxContainer>;
-	#end
 
 	public function new() {}
 
@@ -99,12 +99,10 @@ class FlxBasic implements IFlxDestroyable
 	 */
 	public function destroy():Void
 	{
-		#if(flixel > "5.6.2")
 		if (container != null)
 			container.remove(this);
 		
 		container = null;
-		#end
 		exists = false;
 		_cameras = null;
 	}
@@ -202,7 +200,7 @@ class FlxBasic implements IFlxDestroyable
 			_cameras[0] = Value;
 		return Value;
 	}
-
+	
 	/**
 	 * The main camera that will draw this. Use `this.cameras` to set specific cameras for this
 	 * object, otherwise the container's camera is used, or the container's container and so on.
@@ -224,14 +222,12 @@ class FlxBasic implements IFlxDestroyable
 	 * default draw cameras are returned.
 	 * @since 5.7.0
 	 */
-	public function getCameras()
+	public function getCameras():Array<FlxCamera>
 	{
 		return if (_cameras != null)
 				_cameras;
-			#if(flixel > "5.6.2")
 			else if (_cameras == null && container != null)
 				container.getCameras();
-			#end
 			else
 				@:privateAccess FlxCamera._defaultCameras;
 	}
@@ -257,7 +253,7 @@ class FlxBasic implements IFlxDestroyable
 	{
 		return _cameras = Value;
 	}
-	#if(flixel > "5.6.2")
+	
 	// Only needed for FlxSpriteContainer.SpriteContainer
 	// TODO: remove this when FlxSpriteContainer is removed
 	@:noCompletion
@@ -265,7 +261,6 @@ class FlxBasic implements IFlxDestroyable
 	{
 		return this.container;
 	}
-	#end
 }
 
 /**

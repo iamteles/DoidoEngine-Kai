@@ -110,7 +110,8 @@ class PlayState extends MusicBeatState
 	public var camStrum:FlxCamera;
 	public var camOther:FlxCamera; // used so substates dont collide with camHUD.alpha or camHUD.visible
 	
-	public static var cameraSpeed:Float = 1.0;
+	public static var cameraSpeed(get, set):Float;
+
 	public static var camZoom:Float = 1.0;
 	public static var beatCamZoom:Float = 0.0;
 	public static var extraCamZoom:Float = 0.0;
@@ -159,7 +160,6 @@ class PlayState extends MusicBeatState
 	public static function resetStatics()
 	{
 		health = 1;
-		cameraSpeed = 1.0;
 		camZoom = 1.0;
 		beatCamZoom = 0.0;
 		extraCamZoom = 0.0;
@@ -388,7 +388,10 @@ class PlayState extends MusicBeatState
 		// setting up the camera following
 		camFollow = new FlxObject();
 		followCamSection(SONG.notes[0]);
-		FlxG.camera.focusOn(camFollow.getPosition());
+		camGame.focusOn(camFollow.getPosition());
+		camGame.follow(camFollow, LOCKON);
+
+		cameraSpeed = 1.0;
 		
 		for(note in unspawnNotes)
 		{
@@ -429,7 +432,7 @@ class PlayState extends MusicBeatState
 		add(hitbox);
 		#end
 		
-		if(hasCutscene() && !playedCutscene)
+		if(hasCutscene && !playedCutscene)
 		{
 			playedCutscene = true;
 			startDialogue(DialogueUtil.loadDialogue(SONG.song, songDiff));
@@ -577,7 +580,8 @@ class PlayState extends MusicBeatState
 	}
 	#end
 	
-	public function hasCutscene():Bool
+	public var hasCutscene(get, never):Bool;
+	public function get_hasCutscene():Bool
 		return SaveData.data.get('Cutscenes') != "OFF";
 
 	public function startSong()
@@ -609,6 +613,8 @@ class PlayState extends MusicBeatState
 	override function closeSubState()
 	{
 		CoolUtil.activateTimers(true);
+		camGame.paused = false;
+
 		super.closeSubState();
 		if(startedSong)
 		{
@@ -921,15 +927,23 @@ class PlayState extends MusicBeatState
 			//case 'camother'|'other': camOther; // meant for transitions only
 		}
 	}
+
+	public static function get_cameraSpeed()
+	{
+		// you should probably NOT be getting the cameraSpeed unless you REALLY have to
+		return FlxG.camera.followLerp / 5;
+	}
+
+	public static function set_cameraSpeed(speed:Float)
+	{
+		FlxG.camera.followLerp = speed * 5;
+		return speed;
+	}
 	
 	override function update(elapsed:Float)
 	{
 		callScript("update", [elapsed]);
 		super.update(elapsed);
-		var followLerp:Float = cameraSpeed * 5 * elapsed;
-		if(followLerp > 1) followLerp = 1;
-		
-		CoolUtil.camPosLerp(camGame, camFollow, followLerp);
 		
 		if(Controls.justPressed(PAUSE))
 			pauseSong();
@@ -1599,6 +1613,7 @@ class PlayState extends MusicBeatState
 		if(!startedCountdown || endedSong || paused || isDead) return;
 		
 		paused = true;
+		camGame.paused = true;
 		CoolUtil.activateTimers(false);
 		discordUpdateTime = 0.0;
 		openSubState(new PauseSubState());
