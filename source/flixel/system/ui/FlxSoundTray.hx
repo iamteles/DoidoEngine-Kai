@@ -108,11 +108,11 @@ class FlxSoundTray extends Sprite
 		// Animate stupid sound tray thing
 		if (_timer > 0)
 		{
-			_timer -= (MS / 1000);
+			_timer -= MS / 1000;
 		}
 		else if (y > -height)
 		{
-			y -= (MS / 1000) * height * 5;
+			y -= (MS / 1000) * FlxG.height * 2;
 
 			if (y <= -height)
 			{
