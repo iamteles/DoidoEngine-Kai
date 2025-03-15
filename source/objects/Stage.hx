@@ -30,15 +30,13 @@ class Stage extends FlxGroup
 
 	var lowQuality:Bool = false;
 
-	var gfSong:String = "stage-set";
-
 	public function new() {
 		super();
 		foreground = new FlxGroup();
 		instance = this;
 	}
 
-	public function reloadStageFromSong(song:String = "test", gfSong:String = "stage-set"):Void
+	public function reloadStageFromSong(song:String = "test"):Void
 	{
 		var stageList:Array<String> = [];
 		
@@ -51,9 +49,7 @@ class Stage extends FlxGroup
 
 		//this stops you from fucking stuff up by changing this mid song
 		lowQuality = SaveData.data.get("Low Quality");
-
-		this.gfSong = gfSong;
-
+		
 		/*
 		*	makes changing stages easier by preloading
 		*	a bunch of stages at the create function
@@ -126,6 +122,7 @@ class Stage extends FlxGroup
 	public function loadCode(curStage:String = "")
 	{
 		gfVersion = getGfVersion(curStage);
+
 		switch(curStage)
 		{
 			default:
@@ -148,9 +145,6 @@ class Stage extends FlxGroup
 
 	public function getGfVersion(curStage:String)
 	{
-		if(gfSong != "stage-set")
-			return gfSong;
-
 		return switch(curStage)
 		{
 			default: "gf";
