@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import flixel.text.FlxText.FlxTextFormat;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
@@ -20,6 +21,9 @@ class HudClass extends FlxGroup
 	var botplaySin:Float = 0;
 	var botplayTxt:FlxText;
 	var badScoreTxt:FlxText;
+
+	public var subtitleA:FlxText;
+	public var subtitleB:FlxText;
 
 	// health bar
 	public var healthBar:HealthBar;
@@ -60,11 +64,80 @@ class HudClass extends FlxGroup
 		botplayTxt.screenCenter();
 		botplayTxt.visible = false;
 		add(botplayTxt);
+		
+		subtitleA = new FlxText(0,0,0,"");
+		subtitleA.setFormat(Main.gFont, 30, 0xFFFFFFFF, CENTER);
+		subtitleA.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
+		subtitleA.screenCenter(X);
+		subtitleA.y = FlxG.height - subtitleA.height - 160;
+		add(subtitleA);
+
+		subtitleB = new FlxText(0,0,0,"");
+		subtitleB.setFormat(Main.gFont, 30, 0xFFFFFFFF, CENTER);
+		subtitleB.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
+		subtitleB.screenCenter(X);
+		subtitleB.y = subtitleA.y - subtitleB.height - 2;
+		add(subtitleB);
 
 		updateHitbox();
 		health = PlayState.health;
 	}
 
+	public function updateLyrics(lineA:String = "", lineB:String = "") {
+		var colorMap:Map<String, FlxColor> = [
+			"(Gi)" 		=> 0xFF794D6F,
+			"(???)"		=> 0xFF000000
+		];
+
+		var formatA:FlxTextFormat = new FlxTextFormat(0xFFFFFFFF, false, false, FlxColor.BLACK, false);
+		var formatB:FlxTextFormat = new FlxTextFormat(0xFFFFFFFF, false, false, FlxColor.BLACK, false);
+
+		var formats:Array<FlxTextFormat> = [formatA, formatB];
+		var lines:Array<String> = [lineA,lineB];
+
+		for (line in lines) {
+			var format:FlxTextFormat;
+
+			if(line.startsWith("(")) {
+				var name:String = line.split(":")[0];
+				var color:FlxColor = FlxColor.WHITE;
+				var outline:FlxColor = FlxColor.BLACK;
+
+				if(name == "(???)")
+					outline = FlxColor.WHITE;
+
+				if(colorMap.exists(name))
+					color = colorMap.get(name);
+
+				format = new FlxTextFormat(color, false, false, outline, false);
+			}
+			else {
+				format = new FlxTextFormat(0xFFFFFFFF, false, false, FlxColor.BLACK, false);
+			}
+
+			var index:Int = lines.indexOf(line);
+			formats[index] = format;
+		}
+
+		var indexA:Int = lineA.indexOf(':');
+		var indexB:Int = lineB.indexOf(':');
+
+		if(indexA < 0)
+			indexA = 10;
+		if(indexB < 0)
+			indexB = 10;
+
+		subtitleA.addFormat(formats[0], 0, indexA);
+		subtitleB.addFormat(formats[1], 0, indexB);
+
+		subtitleA.text = lineA;
+		subtitleB.text = lineB;
+
+		subtitleA.screenCenter(X);
+		subtitleA.y = FlxG.height - subtitleA.height - 160;
+		subtitleB.screenCenter(X);
+		subtitleB.y = subtitleA.y - subtitleB.height - 2;
+	}
 	public final separator:String = " | ";
 
 	public function updateText()

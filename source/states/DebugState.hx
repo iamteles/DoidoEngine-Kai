@@ -9,6 +9,7 @@ import flixel.util.FlxColor;
 import backend.game.GameData.MusicBeatState;
 import objects.menu.Alphabet;
 import flixel.text.FlxText;
+import backend.song.SongData;
 
 using StringTools;
 
@@ -67,10 +68,29 @@ class DebugState extends MusicBeatState
 		if(Controls.justPressed(UI_DOWN))
 			changeSelection(1);
 
+		if(FlxG.keys.justPressed.ONE)
+			SongData.unlockAll();
+
 		if(Controls.justPressed(ACCEPT))
 		{
 			switch(optionShit[curSelected])
 			{
+				case "week 1": // any week
+					var daWeek = SongData.weeks[1];
+					
+					PlayState.curWeek = daWeek.weekFile;
+					PlayState.songDiff = "normal";
+					PlayState.isStoryMode = true;
+					PlayState.weekScore = 0;
+
+					var songList:Array<String> = [];
+					for(song in daWeek.songs)
+						songList.push(song[0]);
+					
+					PlayState.playList = songList;
+					PlayState.loadSong(songList[0]);
+					
+					Main.switchState(new LoadingState());
 				case "freeplay":
 					Main.switchState(new states.menu.FreeplayState());
 
@@ -78,7 +98,7 @@ class DebugState extends MusicBeatState
 					Main.switchState(new states.menu.CreditsState());
 						
 				case "options":
-					Main.switchState(new states.menu.OptionsState());
+					openSubState(new subStates.options.OptionsSubState());
 					
 			}
 		}

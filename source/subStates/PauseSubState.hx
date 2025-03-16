@@ -16,6 +16,7 @@ import objects.menu.Alphabet;
 import objects.menu.AlphabetMenu;
 import states.*;
 import subStates.options.OptionsSubState;
+import flixel.math.FlxPoint;
 
 class PauseSubState extends MusicBeatSubState
 {
@@ -23,6 +24,7 @@ class PauseSubState extends MusicBeatSubState
 		"resume",
 		"restart song",
 		"botplay",
+		"photo mode",
 		"options",
 		"exit to menu",
 	];
@@ -36,6 +38,11 @@ class PauseSubState extends MusicBeatSubState
 	var pauseSong:FlxSound;
 
 	var onCountdown:Bool = false;
+
+	var onPhoto:Bool = false;
+	var storedZoom:Float = 1;
+	var storedScrollX:Float;
+	var storedScrollY:Float;
 
 	public function new()
 	{
@@ -77,7 +84,7 @@ class PauseSubState extends MusicBeatSubState
 		
 		var textArray:Array<String> = [
 			PlayState.SONG.song,
-			PlayState.songDiff,
+			//PlayState.songDiff,
 			'BLUEBALLED: ' + PlayState.blueballed,
 		];
 		for(i in 0...textArray.length)
@@ -150,7 +157,7 @@ class PauseSubState extends MusicBeatSubState
 			return;
 		}
 
-		if(!onCountdown)
+		if(!onCountdown && !onPhoto)
 		{
 			if(!pauseSong.playing && Conductor.songPos >= 0)
 				pauseSong.play(false, pauseSong.time);
@@ -188,12 +195,54 @@ class PauseSubState extends MusicBeatSubState
 						//Main.switchState(new MenuState());
 						persistentDraw = true;
 						PlayState.sendToMenu();
+
+					case "photo mode":
+						for (i in 0...FlxG.cameras.list.length) {
+							if(i != 0)
+								FlxG.cameras.list[i].alpha = 0;
+						}
+
+						storedZoom = FlxG.camera.zoom;
+						storedScrollX = FlxG.camera.scroll.x;
+						storedScrollY = FlxG.camera.scroll.y;
+
+						onPhoto = true;
 				}
 			}
 
 			// works the same as resume
 			if(Controls.justPressed(BACK))
 				closePause();
+		}
+		else if(onPhoto) {
+			var camSpeed:Float = elapsed * 400;
+			var zoomSpeed:Float = elapsed * FlxG.camera.zoom;
+
+			if(FlxG.keys.pressed.SHIFT) {
+				camSpeed = elapsed * 1200;
+				zoomSpeed = elapsed * FlxG.camera.zoom * 2;
+			}
+
+			if(Controls.pressed(UI_LEFT)) FlxG.camera.scroll.x -= camSpeed;
+			if(Controls.pressed(UI_RIGHT)) FlxG.camera.scroll.x += camSpeed;
+			if(Controls.pressed(UI_UP)) FlxG.camera.scroll.y -= camSpeed;
+			if(Controls.pressed(UI_DOWN)) FlxG.camera.scroll.y += camSpeed;
+
+			if(FlxG.keys.pressed.Q && FlxG.camera.zoom > 0.05) FlxG.camera.zoom -= zoomSpeed;
+			if(FlxG.keys.pressed.E && FlxG.camera.zoom < 2.5) FlxG.camera.zoom += zoomSpeed;
+
+			if(Controls.justPressed(ACCEPT) || Controls.justPressed(BACK)) {
+				for (i in 0...FlxG.cameras.list.length) {
+					if(i != 0)
+						FlxG.cameras.list[i].alpha = 1;
+				}
+
+				FlxG.camera.zoom = storedZoom;
+				FlxG.camera.scroll.x = storedScrollX;
+				FlxG.camera.scroll.y = storedScrollY;
+
+				onPhoto = false;
+			}
 		}
 		else
 		{

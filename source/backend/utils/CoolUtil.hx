@@ -110,12 +110,15 @@ class CoolUtil
 	*/
 
 	public static var curMusic:String = "none";
+	public static var prevMusic:String = "none";
 	public static function playMusic(?key:String, ?forceRestart:Bool = false, ?vol:Float = 0.5)
 	{
+		prevMusic = curMusic;
+
 		if (Paths.dumpExclusions.contains('music/' + curMusic + '.ogg'))
 			Paths.dumpExclusions.remove  ('music/' + curMusic + '.ogg');
 		
-		if(key == null)
+		if(key == null || key == "none")
 		{
 			curMusic = "none";
 			FlxG.sound.music.stop();
@@ -132,6 +135,11 @@ class CoolUtil
 				FlxG.sound.music.play(true);
 			}
 		}
+	}
+
+	public static function playPrev()
+	{
+		playMusic(prevMusic);
 	}
 
 	public static function playHitSound(?sound:String, ?volume:Float)

@@ -156,7 +156,7 @@ class Character extends FlxAnimate
 				spriteType = ASEPRITE;
 			}
 			else if(doidoChar.extrasheets != null) {
-				frames = Paths.getMultiSparrowAtlas(doidoChar.spritesheet, doidoChar.extrasheets);
+				frames = Paths.getMultiSparrowAtlas(doidoChar.spritesheet, doidoChar.extrasheets, '', 'characters/');
 				spriteType = MULTISPARROW;
 			}
 			else
@@ -271,7 +271,7 @@ class Character extends FlxAnimate
 
 	public var singAnims:Array<String> = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
 	public var absoluteAnims:Array<String> = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
-	public function playNote(note:Note, miss:Bool = false)
+	public function playNote(note:Note, miss:Bool = false, alt:String = '')
 	{
 		var daAnim:String = singAnims[note.noteData];
 		if(animExists(daAnim + 'miss') && miss)
@@ -279,6 +279,9 @@ class Character extends FlxAnimate
 
 		if(animExists(daAnim + altSing))
 			daAnim += altSing;
+
+		if(animExists(daAnim + alt))
+			daAnim += alt;
 
 		holdTimer = 0;
 		specialAnim = 0;

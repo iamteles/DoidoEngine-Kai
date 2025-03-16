@@ -236,12 +236,12 @@ class Paths
 		return FlxAtlasFrames.fromAseprite(getGraphic(key, library), getPath('images/$key.json', library));
 
 	// sparrow (.xml) sheets but split into multiple graphics
-	public static function getMultiSparrowAtlas(baseSheet:String, otherSheets:Array<String>, ?library:String) {
+	public static function getMultiSparrowAtlas(baseSheet:String, otherSheets:Array<String>, ?library:String, ?prefix:String) {
 		var frames:FlxFramesCollection = getSparrowAtlas(baseSheet);
 
 		if(otherSheets.length > 0) {
 			for(i in 0...otherSheets.length) {
-				var newFrames:FlxFramesCollection = getSparrowAtlas(otherSheets[i]);
+				var newFrames:FlxFramesCollection = getSparrowAtlas(prefix + otherSheets[i]);
 				for(frame in newFrames.frames) {
 					frames.pushFrame(frame);
 				}

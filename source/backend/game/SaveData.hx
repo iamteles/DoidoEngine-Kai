@@ -6,6 +6,7 @@ import openfl.system.Capabilities;
 import backend.song.Conductor;
 import backend.song.Highscore;
 import backend.native.Windows;
+import backend.song.SongData;
 
 /*
 	Save data such as options and other things.
@@ -177,6 +178,7 @@ class SaveData
 		FlxG.save.bind("save-data"); // these are for other stuff, not recquiring to access the SaveData class
 		
 		load();
+		SongData.load();
 		Controls.load();
 		Highscore.load();
 		subStates.editors.ChartAutoSaveSubState.load(); // uhhh
