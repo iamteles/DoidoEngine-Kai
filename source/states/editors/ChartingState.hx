@@ -76,6 +76,7 @@ class ChartingState extends MusicBeatState
 		// character
 		['Change Char Zoom', 	'Value 1: Opponent Zoom\nValue 2: Player Zoom\nValue 3: GF Zoom'],
 		['Play Animation',		'Value 1: Character (dad/gf/bf)\nValue 2: Animation to play\nValue 3: Override singing? (true/false)\n(if the character presses a note, does the animation stop?)'],
+		['Change Idle', 	'Value 1: Character (dad/gf/bf)\nValue 2: Idles to play (Separated by commas)'],
 		// notes
 		['Freeze Notes',		'Value 1: Freeze? (true/false)\nValue 2: Strumline? (dad/bf/both)'],
 		['Change Note Speed', 	'Value 1: New Speed\nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
@@ -90,6 +91,7 @@ class ChartingState extends MusicBeatState
 		['Change Middlescroll',		'Value 1: Middlescroll (true/false)\nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
 		['Health Drain', '']
 		//
+
 
 	];
 	public var eventsLabels:Array<String> = [];

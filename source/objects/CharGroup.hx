@@ -1,6 +1,9 @@
 package objects;
 
+import backend.utils.CharacterUtil;
 import flixel.group.FlxGroup;
+import backend.shaders.*;
+import flixel.util.FlxColor;
 
 class CharGroup extends FlxTypedGroup<Character>
 {
@@ -8,6 +11,9 @@ class CharGroup extends FlxTypedGroup<Character>
     public var isPlayer:Bool = false;
     public var curChar:String = 'bf';
     public var char:Character;
+
+    public var rim:DropShadowShader;
+    public var riminfo:Rimlight = null;
     
     public function new(isPlayer:Bool = false, curChar:String = "bf")
     {
@@ -15,6 +21,30 @@ class CharGroup extends FlxTypedGroup<Character>
         this.isPlayer = isPlayer;
         this.curChar = curChar;
         addChar(curChar);
+        reload();
+    }
+
+    public function setRim(?angle:Int, ?threshold:Float, ?brightness:Int, ?hue:Int, ?contrast:Int, ?saturation:Int, ?color:FlxColor)
+    {
+        riminfo = CharacterUtil.defaultRim();
+        
+        if(angle != null)
+            riminfo.angle = angle;
+        if(threshold != null)
+            riminfo.threshold = threshold;
+
+        if(brightness != null)
+            riminfo.brightness = brightness;
+        if(hue != null)
+            riminfo.hue = hue;
+        if(contrast != null)
+            riminfo.contrast = contrast;
+        if(saturation != null)
+            riminfo.saturation = saturation;
+
+        if(color != null)
+            riminfo.color = color;
+
         reload();
     }
 
@@ -43,6 +73,9 @@ class CharGroup extends FlxTypedGroup<Character>
 
     public function reload()
     {
+        if(char != null)
+            char.shader = null;
+
         for(i in members)
         {
             if(i.curChar != curChar)
@@ -57,7 +90,22 @@ class CharGroup extends FlxTypedGroup<Character>
             curChar = members[0].curChar;
             reload();
             return;
-        } 
+        }
         char.alpha = 1.0;
+
+        if(riminfo != null && SaveData.data.get("Shaders")) {
+            rim = new DropShadowShader();
+            rim.setAdjustColor(riminfo.brightness, riminfo.hue, riminfo.contrast, riminfo.saturation);
+            rim.color = riminfo.color;
+            char.shader = rim;
+            rim.attachedSprite = char;
+    
+            rim.angle = riminfo.angle;
+            rim.threshold = riminfo.threshold;
+    
+            char.animation.callback = function(animName : String, frameNumber : Int, frameIndex : Int) {
+              rim.updateFrameInfo(char.frame);
+            };
+        }
     }
 }

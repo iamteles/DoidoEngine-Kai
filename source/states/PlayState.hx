@@ -108,6 +108,7 @@ class PlayState extends MusicBeatState
 	
 	// cameras!!
 	public var camGame:FlxCamera;
+	public var camFilter:FlxCamera;
 	public var camHUD:FlxCamera;
 	public var camStrum:FlxCamera;
 	public var camOther:FlxCamera; // used so substates dont collide with camHUD.alpha or camHUD.visible
@@ -153,6 +154,7 @@ class PlayState extends MusicBeatState
 	// This map holds which shaders are loaded, to help with disabling and enabling them in the options!
 	var tempShaders:Map<String,Array<BitmapFilter>> = [
 		"camGame" => [],
+		"camFilter" => [],
 		"camHUD" => [],
 		"camStrum" => []
 	];
@@ -244,6 +246,9 @@ class PlayState extends MusicBeatState
 		
 		// setting up the cameras
 		camGame = new FlxCamera();
+
+		camFilter = new FlxCamera();
+		camFilter.bgColor.alphaFloat = 0;
 		
 		camHUD = new FlxCamera();
 		camHUD.bgColor.alphaFloat = 0;
@@ -256,6 +261,7 @@ class PlayState extends MusicBeatState
 		
 		// adding the cameras
 		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(camFilter, false);
 		FlxG.cameras.add(camHUD, false);
 		FlxG.cameras.add(camStrum, false);
 		FlxG.cameras.add(camOther, false);
@@ -319,7 +325,7 @@ class PlayState extends MusicBeatState
 		gradient = FlxGradient.createGradientFlxSprite(FlxG.width + 20, (FlxG.height * 2) + 20, [0xff009440, 0xffffcb00]);
 		gradient.x = -10;
 		gradient.y = -10;
-		gradient.cameras = [camHUD];
+		gradient.cameras = [camFilter];
 		gradient.blend = BlendMode.ADD;
 		gradient.alpha = 0; // best: 0.3
 		FlxTween.tween(gradient, {y: -FlxG.height}, 3, {
@@ -332,7 +338,7 @@ class PlayState extends MusicBeatState
 		vgblack.scale.set(1.1,1.1);
 		vgblack.updateHitbox();
 		vgblack.screenCenter();
-		vgblack.cameras = [camHUD];
+		vgblack.cameras = [camFilter];
 		vgblack.alpha = 0;
 		add(vgblack);
 
@@ -481,11 +487,15 @@ class PlayState extends MusicBeatState
 		
 		if(hasCutscene() && !playedCutscene)
 		{
+			switch(SONG.song) {
+				case "song":
+					startVideo("test");
+				default:
+					startDialogue(DialogueUtil.loadDialogue(SONG.song, songDiff));
+			}
+
 			playedCutscene = true;
-			startDialogue(DialogueUtil.loadDialogue(SONG.song, songDiff));
-			#if VIDEOS_ALLOWED
-				//startVideo("test");
-			#end
+
 		}
 		else
 			startCountdown();
@@ -652,17 +662,17 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	#if VIDEOS_ALLOWED
 	public function startVideo(key:String, onEnd:Bool = false):Void
 	{
+	#if VIDEOS_ALLOWED
 		openSubState(new VideoPlayerSubState(key, function() {
 			if(onEnd)
 				endSong();
 			else
 				startCountdown();
 		}));
-	}
 	#end
+	}
 	
 	public function hasCutscene():Bool
 		return SaveData.data.get('Cutscenes') != "OFF";
@@ -1063,7 +1073,7 @@ class PlayState extends MusicBeatState
 				if(startedSong)
 					presenceTxt += ' - ${CoolUtil.posToTimer(Conductor.songPos)} / ${CoolUtil.posToTimer(songLength)}';
 
-				DiscordIO.changePresence(presenceTxt, null, 'icon-' + backend.utils.CharacterUtil.formatChar(dad.char.curChar), true);
+				DiscordIO.changePresence(presenceTxt, null, 'icon-' + backend.utils.CharacterUtil.formatChar(dad.char.curChar), false);
 			}
 		}
 		
@@ -1816,6 +1826,11 @@ class PlayState extends MusicBeatState
 				for(i in ["camGame", "camHUD", "camStrum"])
 					stringToCam(i).filters = (SaveData.data.get("Shaders") ? tempShaders.get(i) : []);
 
+				for(char in [boyfriend, gf, dad]) {
+					if(char.riminfo != null)
+						char.reload();
+				}
+
 			case 'Song Offset':
 				for(note in unspawnNotes)
 					note.setSongOffset();
@@ -1988,6 +2003,19 @@ class PlayState extends MusicBeatState
 				var char = strToChar(daEvent.value1);
 				char.char.specialAnim = (CoolUtil.stringToBool(daEvent.value3) ? 2 : 1);
 				char.char.playAnim(daEvent.value2, true);
+
+			case 'Change Idle':
+				var char = strToChar(daEvent.value1);
+				var change:Bool = false;
+				char.char.curDance = 0;
+				for(anim in daEvent.value2.split(",")) {
+					if(char.char.animExists(anim)) {
+						if(!change)
+							char.char.idleAnims = [];
+
+						char.char.idleAnims.push(anim);
+					}
+				}
 
 			case 'Change Character':
 				var char = strToChar(daEvent.value1);

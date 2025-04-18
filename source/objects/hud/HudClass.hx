@@ -172,7 +172,7 @@ class HudClass extends FlxGroup
 		
 		updateText();
 		infoTxt.screenCenter(X);
-		infoTxt.y = healthBar.bg.y + healthBar.bg.height + 4;
+		infoTxt.y = healthBar.bg.y + healthBar.bg.height + 10;
 		
 		badScoreTxt.y = healthBar.bg.y - badScoreTxt.height - 4;
 		

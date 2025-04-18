@@ -15,6 +15,7 @@ class Note extends FlxSprite
 	public var noteSize:Float = 1.0;
 	public var assetModifier:String = "base";
 	public var hasHoldSplash:Bool = true;
+	private var colArray:Array<String> = ['purple', 'blue', 'green', 'red']; // for classic psych like noteskins
 
 	public function updateData(songTime:Float, noteData:Int, ?noteType:String = "default", ?assetModifier:String = "base")
 	{

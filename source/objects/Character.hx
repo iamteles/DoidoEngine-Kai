@@ -233,7 +233,7 @@ class Character extends FlxAnimate
 		dance();
 	}
 
-	private var curDance:Int = 0;
+	public var curDance:Int = 0;
 
 	public function dance(forced:Bool = false)
 	{
