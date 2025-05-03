@@ -68,9 +68,6 @@ class DebugState extends MusicBeatState
 		if(Controls.justPressed(UI_DOWN))
 			changeSelection(1);
 
-		if(FlxG.keys.justPressed.ONE)
-			SongData.unlockAll();
-
 		if(Controls.justPressed(ACCEPT))
 		{
 			switch(optionShit[curSelected])

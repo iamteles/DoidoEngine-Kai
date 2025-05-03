@@ -66,6 +66,7 @@ class ChartingState extends MusicBeatState
 		['Flash Screen',		'Value 1: Duration (in seconds)\nValue 2: Color\n$colorDesc'],
 		['Fade Screen',			'Value 1: Fade Out (true/false)\nValue 2: Duration (in seconds)\nValue 3: Color\n$colorDesc'],
 		['Shake Screen',		'Value 1: Intensity\nValue 2: Duration (in seconds)\nValue 3: Camera? (camGame, camHUD, camStrum)'],
+		['Single Cam Beat',		'Value 1: Game Zoom\nValue 2: HUD Zoom'],
 		['Change Beat', 		'Value 1: Beat Speed (Default: 4)\nValue 2: Beat Zoom (Default: 0)'],
 		//['Change Gradient Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
 		['Change Vignette Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
@@ -81,7 +82,7 @@ class ChartingState extends MusicBeatState
 		['Freeze Notes',		'Value 1: Freeze? (true/false)\nValue 2: Strumline? (dad/bf/both)'],
 		['Change Note Speed', 	'Value 1: New Speed\nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
 		// outras coisas sla
-		['Change Bars', 'Value 1: Duration (in seconds)\nValue 2: Bar Size\nValue 3: In or Out'],
+		['Change Bars',  'Value 1: Position\nValue 2: Speed\nSetting Value 1 to true will default to 20, otherwise will default to 320'],
 		['Change Subtitles', 	'Value 1: Line A\nValue 2: Line B'],
 		['Change Subtitle Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
 		//

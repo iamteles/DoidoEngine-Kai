@@ -63,51 +63,6 @@ class SongData
 		},
 	];
 
-	public static function load()
-	{
-		if(FlxG.save.data.weeks == null)
-		{
-			for(fWeek in weeks) {
-				var week:String = fWeek.weekFile;
-				savedWeeks.set(week, false);
-			}
-
-			FlxG.save.data.weeks = savedWeeks;
-		}
-
-		if(weeks.length != Lambda.count(FlxG.save.data.weeks)) {
-			savedWeeks = FlxG.save.data.weeks;
-			
-			for(fWeek in weeks) {
-				var week:String = fWeek.weekFile;
-				trace("try week " + week);
-				if(savedWeeks.get(week) == null) {
-					savedWeeks.set(week, false);
-					trace("set week " + week);
-				}
-			}
-
-			FlxG.save.data.weeks = savedWeeks;
-		}
-
-		savedWeeks = FlxG.save.data.weeks;
-		save();
-	}
-
-	public static function save()
-	{
-		FlxG.save.data.weeks = savedWeeks;
-		FlxG.save.flush();
-	}
-
-	public static function unlockAll()
-	{
-		for(key => values in savedWeeks)
-			savedWeeks[key] = true;
-
-		save();
-	}
-
 	inline public static function getWeek(index:Int):FunkyWeek
 	{
 		var week = weeks[index];

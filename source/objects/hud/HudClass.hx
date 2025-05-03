@@ -119,6 +119,10 @@ class HudClass extends FlxGroup
 			formats[index] = format;
 		}
 
+		for(text in [subtitleA, subtitleB]) {
+			text.scale.set(1.2 + 0.3,1.2);
+		}
+
 		var indexA:Int = lineA.indexOf(':');
 		var indexB:Int = lineB.indexOf(':');
 
@@ -138,7 +142,7 @@ class HudClass extends FlxGroup
 		subtitleB.screenCenter(X);
 		subtitleB.y = subtitleA.y - subtitleB.height - 2;
 	}
-	public final separator:String = " | ";
+	public static final separator:String = " | ";
 
 	public function updateText()
 	{
@@ -222,6 +226,13 @@ class HudClass extends FlxGroup
 
 		healthBar.updateIconPos();
 		updateTimeTxt();
+
+		for(text in [subtitleA, subtitleB]) {
+			text.scale.set(
+				FlxMath.lerp(text.scale.x, 1 + 0.3, FlxG.elapsed * 6),
+				FlxMath.lerp(text.scale.y, 1, FlxG.elapsed * 6)
+			);
+		}
 	}
 
 	public function changeIcon(iconID:Int = 0, newIcon:String = "face")

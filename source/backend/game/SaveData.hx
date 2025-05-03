@@ -171,14 +171,15 @@ class SaveData
 	
 	public static var saveSettings:FlxSave = new FlxSave();
 	public static var saveControls:FlxSave = new FlxSave();
+	public static var saveProgression:FlxSave = new FlxSave();
 	public static function init()
 	{
 		saveSettings.bind("settings"); // use these for settings
 		saveControls.bind("controls"); // controls :D
-		FlxG.save.bind("save-data"); // these are for other stuff, not recquiring to access the SaveData class
+		saveProgression.bind("save-data"); // these are for other stuff, not recquiring to access the SaveData class
+		FlxG.save.bind("extra"); //well.
 		
 		load();
-		SongData.load();
 		Controls.load();
 		Highscore.load();
 		subStates.editors.ChartAutoSaveSubState.load(); // uhhh
@@ -236,6 +237,7 @@ class SaveData
 	{
 		saveSettings.data.settings = data;
 		saveSettings.flush();
+		saveProgression.flush();
 		update();
 	}
 

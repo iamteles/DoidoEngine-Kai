@@ -29,16 +29,16 @@ class Highscore
 	
 	public static function save()
 	{
-		FlxG.save.data.highscoreMap = highscoreMap;
+		SaveData.saveProgression.data.highscoreMap = highscoreMap;
 		SaveData.save();
 	}
 
 	public static function load()
 	{
-		if(FlxG.save.data.highscoreMap == null)
-			FlxG.save.data.highscoreMap = highscoreMap;
+		if(SaveData.saveProgression.data.highscoreMap == null)
+			SaveData.saveProgression.data.highscoreMap = highscoreMap;
 
-		highscoreMap = FlxG.save.data.highscoreMap;
+		highscoreMap = SaveData.saveProgression.data.highscoreMap;
 
 		save();
 	}

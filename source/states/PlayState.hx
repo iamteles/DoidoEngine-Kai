@@ -127,6 +127,7 @@ class PlayState extends MusicBeatState
 	public static var zoomGf:Float = 0;
 	public static var beatSpeed:Int = 4;
 	public static var beatZoom:Float = 0;
+	public static var beatBias:Float = 0;
 
 	public static var forcedCamPos:Null<FlxPoint>;
 	public static var forcedCamSection:String = "none";
@@ -166,12 +167,13 @@ class PlayState extends MusicBeatState
 
 	var doNoteUp:Bool = true;
 	var doHudBAlpha:Bool = true;
+	var doCountdown:Bool = true;
 
 	var gradient:FlxSprite;
 	var vgblack:FlxSprite;
+	var logo:FlxSprite;
 
-	var barUp:FlxSprite;
-	var barDown:FlxSprite;
+	public var cinemaBars:CinemaBars;
 
 	public static function resetStatics()
 	{
@@ -192,6 +194,7 @@ class PlayState extends MusicBeatState
 		zoomGf = 0;
 		beatSpeed = 4;
 		beatZoom = 0;
+		beatBias = 0;
 		
 		hasModchart = false;
 		validScore = true;
@@ -342,17 +345,9 @@ class PlayState extends MusicBeatState
 		vgblack.alpha = 0;
 		add(vgblack);
 
-		barUp = new FlxSprite();
-		barUp.makeGraphic(FlxG.width + 20, 130 + 10, 0xFF000000);
-		barUp.y = -barUp.height; // -10
-		barUp.cameras = [camHUD];
-		add(barUp);
-
-		barDown = new FlxSprite();
-		barDown.makeGraphic(FlxG.width + 20, 130 + 10, 0xFF000000);
-		barDown.y = FlxG.height; // FlxG.height - barDown.height + 10
-		barDown.cameras = [camHUD];
-		add(barDown);
+		cinemaBars = new CinemaBars();
+		cinemaBars.cameras = [camFilter];
+		add(cinemaBars);
 		
 		hudBuild.cameras = [camHUD];
 		add(hudBuild);
@@ -503,16 +498,6 @@ class PlayState extends MusicBeatState
 		callScript("createPost");
 	}
 
-	function bars(inOrOut:Bool = true, time:Float = 0.3, ?size:Float = 10) {
-		var values:Array<Float> = [0 - size, FlxG.height - barDown.height + size];
-
-		if(!inOrOut)
-			values = [-barUp.height, FlxG.height];
-
-		FlxTween.tween(barUp, {y: values[0]}, time, {ease: FlxEase.cubeOut});
-		FlxTween.tween(barDown, {y: values[1]}, time, {ease: FlxEase.cubeOut});
-	}
-
 	function noteUp()
 	{
 		for(strumline in strumlines.members)
@@ -583,6 +568,24 @@ class PlayState extends MusicBeatState
 		createPad("pause", [camOther]);
 		hitbox.toggleHbx(true);
 		#end
+		if(!doCountdown) {
+			startedCountdown = true;
+
+			if(doNoteUp)
+				noteUp();
+
+			if(doHudBAlpha)
+				hudBuild.setAlpha(1, Conductor.crochet * 2 / 1000);
+			
+			startSong();
+			/*
+			Conductor.songPos = -3;
+			var countTimer = new FlxTimer().start(0.7, function(tmr:FlxTimer)
+			{
+				startSong();
+			});*/
+			return;
+		}
 
 		var daCount:Int = 0;
 		
@@ -674,8 +677,15 @@ class PlayState extends MusicBeatState
 	#end
 	}
 	
-	public function hasCutscene():Bool
-		return SaveData.data.get('Cutscenes') != "OFF";
+	public static function hasCutscene():Bool
+	{
+		return switch(SaveData.data.get('Cutscenes'))
+		{
+			default: true;
+			case "FREEPLAY OFF": isStoryMode;
+			case "OFF": false;
+		}
+	}
 
 	public function startSong()
 	{
@@ -1044,6 +1054,7 @@ class PlayState extends MusicBeatState
 			default: camGame;
 			case 'camhud'|'hud': camHUD;
 			case 'camstrum'|'strum': camStrum;
+			case 'camfilter'|'filter': camFilter;
 			//case 'camother'|'other': camOther; // meant for transitions only
 		}
 	}
@@ -1331,6 +1342,7 @@ class PlayState extends MusicBeatState
 		camGame.zoom = (isClassicZoom ? classicZoom : camZoom) + beatCamZoom + tweenedZoom;
 		beatCamZoom = CoolUtil.camZoomLerp(beatCamZoom, 0);
 		camHUD.zoom = CoolUtil.camZoomLerp(camHUD.zoom);
+		camFilter.zoom = CoolUtil.camZoomLerp(camFilter.zoom);
 		camStrum.zoom = CoolUtil.camZoomLerp(camStrum.zoom);
 		
 		health = FlxMath.bound(health, 0, 2); // bounds the health
@@ -1587,7 +1599,7 @@ class PlayState extends MusicBeatState
 
 		hudBuild.beatHit(curBeat);
 		
-		if(curBeat % beatSpeed == 0)
+		if((curBeat + beatBias) % beatSpeed == 0)
 			zoomCamera(0.05 + beatZoom, 0.025 + beatZoom);
 
 		for(i in characters)
@@ -1693,9 +1705,6 @@ class PlayState extends MusicBeatState
 					accuracy: 	0,
 					breaks: 	0,
 				});
-
-				SongData.savedWeeks.set(curWeek, true);
-				SongData.save();
 			}
 			
 			sendToMenu();
@@ -1742,6 +1751,7 @@ class PlayState extends MusicBeatState
 	public function zoomCamera(gameZoom:Float = 0, hudZoom:Float = 0)
 	{
 		beatCamZoom = gameZoom;
+		camFilter.zoom += hudZoom;
 		camHUD.zoom += hudZoom;
 		camStrum.zoom += hudZoom;
 	}
@@ -1988,13 +1998,24 @@ class PlayState extends MusicBeatState
 						},
 					);
 				}
-			case 'Change Bars':
-				bars(CoolUtil.stringToBool(daEvent.value3), CoolUtil.stringToFloat(daEvent.value1, 0.3), CoolUtil.stringToFloat(daEvent.value2, 10));
+			case 'Single Cam Beat':
+				zoomCamera(CoolUtil.stringToFloat(daEvent.value1, 0), CoolUtil.stringToFloat(daEvent.value2, 0));
+
+			case 'Change Bars' | 'Cinematic': // cinematic is like the old
+				var newPos = CoolUtil.stringToFloat(daEvent.value1, 320);
+				var newSpeed = CoolUtil.stringToFloat(daEvent.value2, 6);
+
+				if(daEvent.value1 == "true")
+					newPos = 20;
+				
+				cinemaBars.pos = newPos;
+				cinemaBars.speed = newSpeed;
 			case 'Do Countdown':
 				countdown(CoolUtil.stringToInt(daEvent.value1, 0));
 			case 'Change Beat':
 				beatSpeed = CoolUtil.stringToInt(daEvent.value1, beatSpeed);
 				beatZoom = CoolUtil.stringToFloat(daEvent.value2, beatZoom);
+				beatBias = CoolUtil.stringToFloat(daEvent.value3, beatBias);
 			case 'Change Char Zoom':
 				zoomOpp = CoolUtil.stringToFloat(daEvent.value1, zoomOpp);
 				zoomPl = CoolUtil.stringToFloat(daEvent.value2, zoomPl);
@@ -2124,13 +2145,13 @@ class PlayState extends MusicBeatState
 			
 			case 'Flash Screen':
 				CoolUtil.flash(
-					camGame,
+					camFilter,
 					CoolUtil.stringToFloat(daEvent.value1, 2),
 					CoolUtil.stringToColor(daEvent.value2)
 				);
 
 			case 'Fade Screen':
-				camGame.fade(
+				camFilter.fade(
 					CoolUtil.stringToColor(daEvent.value3),
 					CoolUtil.stringToFloat(daEvent.value2, 1),
 					CoolUtil.stringToBool(daEvent.value1)
