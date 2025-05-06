@@ -29,6 +29,7 @@ import openfl.filters.BitmapFilter;
 import openfl.filters.ShaderFilter;
 import objects.*;
 import objects.hud.*;
+import objects.hud.game.*;
 import objects.note.*;
 import objects.dialogue.Dialogue;
 import shaders.*;
@@ -282,7 +283,7 @@ class PlayState extends MusicBeatState
 		classicZoom = camZoom;
 		
 		camGame.zoom = camZoom;
-		hudBuild = new HudClass();
+		hudBuild = new DoidoHud();
 		hudBuild.setAlpha(0);
 		
 		/*
