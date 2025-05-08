@@ -29,19 +29,19 @@ class DoidoHud extends HudClass
 		add(healthBar);
 		
         infoTxt = new FlxText(0, 0, 0, "hi there! i am using whatsapp");
-        infoTxt.setFormat(Main.gFont, 20, 0xFFFFFFFF, CENTER);
-        infoTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
+        infoTxt.setFormat(Main.gFont, 18, 0xFFFFFFFF, CENTER);
+        infoTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
         add(infoTxt);
 		
 		timeTxt = new FlxText(0, 0, 0, "nuts / balls even");
-		timeTxt.setFormat(Main.gFont, 32, 0xFFFFFFFF, CENTER);
-		timeTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
+		timeTxt.setFormat(Main.gFont, 30, 0xFFFFFFFF, CENTER);
+		timeTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		timeTxt.visible = true;
 		add(timeTxt);
 		
 		badScoreTxt = new FlxText(0,0,0,"SCORE WILL NOT BE SAVED");
-		badScoreTxt.setFormat(Main.gFont, 26, 0xFFFF0000, CENTER);
-		badScoreTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
+		badScoreTxt.setFormat(Main.gFont, 18, 0xFFFF0000, CENTER);
+		badScoreTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		badScoreTxt.screenCenter(X);
 		badScoreTxt.visible = false;
 		add(badScoreTxt);
@@ -90,12 +90,12 @@ class DoidoHud extends HudClass
 		updateText();
 
         infoTxt.screenCenter(X);
-        infoTxt.y = healthBar.bg.y + healthBar.bg.height + 10;
+        infoTxt.y = healthBar.bg.y + 30;
 		
 		badScoreTxt.y = healthBar.bg.y - badScoreTxt.height - 4;
 		
 		updateTimeTxt();
-		timeTxt.y = downscroll ? (FlxG.height - timeTxt.height - 8) : (8);
+		timeTxt.y = downscroll ? FlxG.height - 40 : 10;
 	}
 	
 	override public function setAlpha(hudAlpha:Float = 1, ?tweenTime:Float = 0, ?ease:String = "cubeout")

@@ -509,7 +509,7 @@ class PlayState extends MusicBeatState
 				var strumMult:Int = (strumline.isPlayer ? strum.strumData : 3 - strum.strumData);
 
 				// actual tween
-				FlxTween.tween(strum, {y: strum.initialPos.y, alpha: 0.9}, Conductor.crochet / 1000, {
+				FlxTween.tween(strum, {y: strum.initialPos.y, alpha: 0.7}, Conductor.crochet / 1000, {
 					ease: FlxEase.cubeOut,
 					startDelay: Conductor.crochet / 2 / 1000 * strumMult,
 				});
