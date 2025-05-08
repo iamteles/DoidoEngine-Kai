@@ -80,6 +80,7 @@ class CharacterUtil
 	{
 		return [
 			"face",
+			"face-underscore",
 			"gf",
 			"bf",
 			"bf-dead",

@@ -87,6 +87,16 @@ class Character extends FlxAnimate
 					['idle', 'idle'],
 				];
 
+			case "face-underscore":
+				doidoChar.spritesheet += 'underscore/placeholder';
+				doidoChar.anims = [
+					['idle', 			'Idle', 		24, false],
+
+					['singLEFT', 		'Left', 		24, false],
+					['singDOWN', 		'Down', 		24, false],
+					['singUP', 			'Up', 		24, false],
+					['singRIGHT', 		'Right', 		24, false],
+				];
 			default: // case "bf"
 				if(!["bf", "face"].contains(curChar))
 					curChar = (isPlayer ? "bf" : "face");

@@ -283,7 +283,7 @@ class PlayState extends MusicBeatState
 		classicZoom = camZoom;
 		
 		camGame.zoom = camZoom;
-		hudBuild = new DoidoHud();
+		hudBuild = new UnderscoreHud();
 		hudBuild.setAlpha(0);
 		
 		/*

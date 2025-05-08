@@ -397,4 +397,15 @@ class CoolUtil
 		countByColor = [];
 		return maxKey;
 	}
+
+
+	public static function formatName(string:String):String
+	{
+		var array:Array<String> = string.split("-").copy();
+		var finalName:String = '';
+		for(name in array) {
+			finalName += name.charAt(0).toUpperCase() + name.substr(1) + ' ';
+		}
+		return finalName.substr(finalName.length - 1);
+	}
 }
