@@ -24,6 +24,11 @@ enum DoidoKey
 	DOWN;
 	UP;
 	RIGHT;
+	LEFT_2;
+	DOWN_2;
+	UP_2;
+	RIGHT_2;
+	// reset
 	RESET;
 	// ui stuff
 	UI_LEFT;
@@ -111,6 +116,14 @@ class Controls
 				return UP;
 			case "RIGHT":
 				return RIGHT;
+			case "LEFT_2":
+				return LEFT;
+			case "DOWN_2":
+				return DOWN;
+			case "UP_2":
+				return UP;
+			case "RIGHT_2":
+				return RIGHT;
 			case "RESET":
 				return RESET;
 			case "UI_LEFT":
@@ -176,13 +189,31 @@ class Controls
 			[FlxPad.LEFT_SHOULDER, FlxPad.DPAD_DOWN],
 		],
 		'UP' => [
-			[FlxKey.W, FlxKey.UP],
+			[FlxKey.D, FlxKey.UP],
 			[FlxPad.RIGHT_SHOULDER, FlxPad.DPAD_UP],
 		],
 		'RIGHT' => [
-			[FlxKey.D, FlxKey.RIGHT],
+			[FlxKey.F, FlxKey.RIGHT],
 			[FlxPad.RIGHT_TRIGGER, FlxPad.DPAD_RIGHT],
 		],
+
+		'LEFT_2' => [
+			[FlxKey.H, FlxKey.LEFT],
+			[FlxPad.LEFT_TRIGGER, FlxPad.DPAD_LEFT],
+		],
+		'DOWN_2' => [
+			[FlxKey.J, FlxKey.DOWN],
+			[FlxPad.LEFT_SHOULDER, FlxPad.DPAD_DOWN],
+		],
+		'UP_2' => [
+			[FlxKey.K, FlxKey.UP],
+			[FlxPad.RIGHT_SHOULDER, FlxPad.DPAD_UP],
+		],
+		'RIGHT_2' => [
+			[FlxKey.L, FlxKey.RIGHT],
+			[FlxPad.RIGHT_TRIGGER, FlxPad.DPAD_RIGHT],
+		],
+
 		'RESET' => [
 			[FlxKey.R, FlxKey.NONE],
 			[FlxPad.BACK, FlxPad.NONE],

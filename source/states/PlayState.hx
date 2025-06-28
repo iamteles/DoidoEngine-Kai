@@ -1129,18 +1129,30 @@ class PlayState extends MusicBeatState
 			Controls.pressed(DOWN),
 			Controls.pressed(UP),
 			Controls.pressed(RIGHT),
+			Controls.pressed(LEFT_2),
+			Controls.pressed(DOWN_2),
+			Controls.pressed(UP_2),
+			Controls.pressed(RIGHT_2),
 		];
 		justPressed = [
 			Controls.justPressed(LEFT),
 			Controls.justPressed(DOWN),
 			Controls.justPressed(UP),
 			Controls.justPressed(RIGHT),
+			Controls.justPressed(LEFT_2),
+			Controls.justPressed(DOWN_2),
+			Controls.justPressed(UP_2),
+			Controls.justPressed(RIGHT_2),
 		];
 		released = [
 			Controls.released(LEFT),
 			Controls.released(DOWN),
 			Controls.released(UP),
 			Controls.released(RIGHT),
+			Controls.released(LEFT_2),
+			Controls.released(DOWN_2),
+			Controls.released(UP_2),
+			Controls.released(RIGHT_2),
 		];
 
 		#if TOUCH_CONTROLS
