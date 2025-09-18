@@ -11,6 +11,8 @@ import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
+import lime.app.Application;
+import lime.ui.MouseCursor;
 import objects.note.Note;
 import subStates.menu.WebsiteSubState;
 
@@ -43,14 +45,19 @@ class CoolUtil
 			return shit;
 		}
 		
-		var disSec:String = '${sec % 60}';
+		var disSec:String = forceZero('${sec % 60}');
 		var disMin:String = '$min';
-		disSec = forceZero(disSec);
 		
 		if(!hasMil)
 			return '$disMin:$disSec';
 		else
-			return '$disMin:${disSec}.${Math.floor((mil % 1000) / 10)}';
+		{
+			var disMil:String = forceZero('${Math.floor((mil % 1000) / 10)}');
+			if(SaveData.data.get('Song Timer Style') == "MIN:SEC")
+				return '$disMin:$disSec.$disMil';
+			else
+				return '$disMin\'$disSec"$disMil';
+		}
 	}
 	
 	inline public static function intArray(end:Int, start:Int = 0):Array<Int>
@@ -110,15 +117,12 @@ class CoolUtil
 	*/
 
 	public static var curMusic:String = "none";
-	public static var prevMusic:String = "none";
 	public static function playMusic(?key:String, ?forceRestart:Bool = false, ?vol:Float = 0.5)
 	{
-		prevMusic = curMusic;
-
 		if (Paths.dumpExclusions.contains('music/' + curMusic + '.ogg'))
 			Paths.dumpExclusions.remove  ('music/' + curMusic + '.ogg');
 		
-		if(key == null || key == "none")
+		if(key == null)
 		{
 			curMusic = "none";
 			FlxG.sound.music.stop();
@@ -135,11 +139,6 @@ class CoolUtil
 				FlxG.sound.music.play(true);
 			}
 		}
-	}
-
-	public static function playPrev()
-	{
-		playMusic(prevMusic);
 	}
 
 	public static function playHitSound(?sound:String, ?volume:Float)
@@ -294,6 +293,10 @@ class CoolUtil
 		return finalArray;
 	}
 
+	public static function setCursor(cursor:MouseCursor) {
+        Application.current.window.cursor = cursor;
+    }
+
 	public static function openURL(url:String)
 	{
 		if(Main.activeState != null)
@@ -368,33 +371,5 @@ class CoolUtil
 			daList[i] = daList[i].trim();
 
 		return daList;
-	}
-
-	inline public static function dominantColor(sprite:flixel.FlxSprite):Int
-	{
-		var countByColor:Map<Int, Int> = [];
-		for(col in 0...sprite.frameWidth) {
-			for(row in 0...sprite.frameHeight) {
-				var colorOfThisPixel:Int = sprite.pixels.getPixel32(col, row);
-				if(colorOfThisPixel != 0) {
-					if(countByColor.exists(colorOfThisPixel))
-						countByColor[colorOfThisPixel] = countByColor[colorOfThisPixel] + 1;
-					else if(countByColor[colorOfThisPixel] != 13520687 - (2*13520687))
-						countByColor[colorOfThisPixel] = 1;
-				}
-			}
-		}
-
-		var maxCount = 0;
-		var maxKey:Int = 0; //after the loop this will store the max color
-		countByColor[FlxColor.BLACK] = 0;
-		for(key in countByColor.keys()) {
-			if(countByColor[key] >= maxCount) {
-				maxCount = countByColor[key];
-				maxKey = key;
-			}
-		}
-		countByColor = [];
-		return maxKey;
 	}
 }

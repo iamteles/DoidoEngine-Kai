@@ -12,6 +12,9 @@ typedef SwagSong =
 
 	var player1:String;
 	var player2:String;
+
+	// Parity with other engines
+	var ?gfVersion:String;
 }
 typedef SwagSection =
 {
@@ -34,17 +37,23 @@ typedef FunkyWeek = {
 	var ?weekName:String;
 	var ?chars:Array<String>;
 	var ?freeplayOnly:Bool;
-	var ?freeplayUnlock:String;
 	var ?storyModeOnly:Bool;
 	var ?diffs:Array<String>;
 }
 
 class SongData
 {
-	public static var defaultDiffs:Array<String> = ['normal'];
-	public static var savedWeeks:Map<String, Bool> = [];
+	public static var defaultDiffs:Array<String> = ['easy', 'normal', 'hard'];
 	public static var weeks:Array<FunkyWeek> = [
-		/*{
+		{
+			songs: [
+				['tutorial', 'gf'],
+			],
+			weekFile: 'tutorial',
+			weekName: 'funky beginnings',
+			chars: ['', 'bf', 'gf'],
+		},
+		{
 			songs: [
 				['bopeebo', 	'dad'],
 				['fresh', 		'dad'],
@@ -54,10 +63,27 @@ class SongData
 			weekName: 'daddy dearest',
 			chars: ['dad', 'bf', 'gf'],
 			diffs: ['easy', 'normal', 'hard', 'erect', 'nightmare'],
-		},*/
+		},
 		{
 			songs: [
-				["useless",			"dad"]
+				['senpai', 	'senpai'],
+				['roses', 	'senpai'],
+				['thorns', 	'spirit'],
+			],
+			weekFile: 'week6',
+			weekName: 'hating simulator (ft. moawling)',
+			chars: ['senpai', 'bf', 'gf'],
+			diffs: ['easy', 'normal', 'hard', 'erect', 'nightmare'],
+		},
+		{
+			songs: [
+				["bittersweet", 	"spooky"],
+				["blam", 			"pico"],
+				["-debug", 			"bf-pixel"],
+				["useless",			"bf-pixel"],
+				["collision", 		"gemamugen"], // CU PINTO BOSTA
+				["lunar-odyssey",	"luano-day"],
+				["beep-power", 		"dad"],
 			],
 			freeplayOnly: true,
 		},
@@ -88,14 +114,15 @@ class SongData
 	{
 		return
 		{
-			song: "useless",
+			song: "-debug",
 			notes: [],
 			bpm: 100,
 			needsVoices: true,
 			speed: 1.0,
 
 			player1: "bf",
-			player2: "face",
+			player2: "dad",
+			gfVersion: "stage-set",
 		};
 	}
 
@@ -128,12 +155,6 @@ class SongData
 		
 		var daSong:SwagSong = cast Paths.json('songs/$jsonInput/chart/$diff').song;
 		
-		// no need for SONG.song.toLowerCase() every time
-		// the game auto-lowercases it now
-		daSong.song = daSong.song.toLowerCase();
-		if(daSong.song.contains(' '))
-			daSong.song = daSong.song.replace(' ', '-');
-		
 		// formatting it
 		daSong = formatSong(daSong);
 		
@@ -163,6 +184,11 @@ class SongData
 	// Removes duplicated notes from a chart.
 	inline public static function formatSong(SONG:SwagSong):SwagSong
 	{
+		// Normalize song name to use only lowercases and no spaces
+		SONG.song = SONG.song.toLowerCase();
+		if(SONG.song.contains(' '))
+			SONG.song = SONG.song.replace(' ', '-');
+
 		// cleaning multiple notes at the same place
 		var removed:Int = 0;
 		for(section in SONG.notes)
@@ -192,6 +218,9 @@ class SongData
 		}
 		if(removed > 0)
 			Logs.print('removed $removed duplicated notes');
+
+		if(SONG.gfVersion == null)
+			SONG.gfVersion = "stage-set";
 		
 		return SONG;
 	}

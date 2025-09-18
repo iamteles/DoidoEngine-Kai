@@ -1,6 +1,5 @@
 package subStates;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.song.Conductor;
 import backend.utils.DialogueUtil;
 import flixel.FlxG;
@@ -166,6 +165,6 @@ class DialogueHistorySubState extends MusicBeatSubState
 		curSelected = FlxMath.wrap(curSelected, 0, data.pages.length - 1);
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scroll"));
+			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
 	}
 }

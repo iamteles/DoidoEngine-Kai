@@ -1,6 +1,5 @@
 package subStates.options;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.song.Conductor;
 import flixel.FlxG;
 import flixel.FlxBasic;
@@ -127,7 +126,7 @@ class OffsetsSubState extends MusicBeatSubState
 
     function changeOption(change:Int = 0)
     {
-        if(change != 0) FlxG.sound.play(Paths.sound('menu/scroll'));
+        if(change != 0) FlxG.sound.play(Paths.sound('menu/scrollMenu'));
 
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, optionShit.length - 1);
@@ -152,7 +151,7 @@ class OffsetsSubState extends MusicBeatSubState
     function changeSelector(change:Int = 0)
     {
         if(change != 0 && holdTimer < 0.5)
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
         
         var selector = grpSelectors.members[curSelected];
         selector.changeSelection(change);

@@ -1,6 +1,5 @@
 package subStates.menu;
 
-import backend.game.GameData.MusicBeatSubState;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.tweens.FlxTween;
@@ -69,7 +68,7 @@ class WebsiteSubState extends MusicBeatSubState
     {
         if(hasSound)
         {
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
             curSelected++;
             if(curSelected > 1)
                 curSelected = 0;
@@ -90,7 +89,7 @@ class WebsiteSubState extends MusicBeatSubState
         if(Controls.justPressed(ACCEPT) || back)
         {
             if(curSelected == 0 || back)
-                FlxG.sound.play(Paths.sound('menu/cancel'));
+                FlxG.sound.play(Paths.sound('menu/cancelMenu'));
             else
                 FlxG.openURL(url);
             

@@ -3,7 +3,7 @@ package backend.song;
 typedef ScoreData = {
 	var score:Float;
 	var accuracy:Float;
-	var breaks:Float;
+	var misses:Float;
 }
 class Highscore
 {
@@ -22,23 +22,23 @@ class Highscore
 	public static function getScore(song:String):ScoreData
 	{
 		if(!highscoreMap.exists(song))
-			return {score: 0, accuracy: 0, breaks: 0};
+			return {score: 0, accuracy: 0, misses: 0};
 		else
 			return highscoreMap.get(song);
 	}
 	
 	public static function save()
 	{
-		SaveData.saveProgression.data.highscoreMap = highscoreMap;
+		FlxG.save.data.highscoreMap = highscoreMap;
 		SaveData.save();
 	}
 
 	public static function load()
 	{
-		if(SaveData.saveProgression.data.highscoreMap == null)
-			SaveData.saveProgression.data.highscoreMap = highscoreMap;
+		if(FlxG.save.data.highscoreMap == null)
+			FlxG.save.data.highscoreMap = highscoreMap;
 
-		highscoreMap = SaveData.saveProgression.data.highscoreMap;
+		highscoreMap = FlxG.save.data.highscoreMap;
 
 		save();
 	}

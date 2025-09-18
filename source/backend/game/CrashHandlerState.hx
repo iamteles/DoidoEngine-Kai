@@ -1,7 +1,7 @@
 package backend.game;
 
 import flixel.text.FlxText;
-import backend.game.GameData.MusicBeatState;
+import backend.game.MusicBeatData.MusicBeatState;
 import flixel.FlxSprite;
 import flixel.util.FlxGradient;
 
@@ -63,7 +63,7 @@ class CrashHandlerState extends MusicBeatState
             if(FlxG.keys.justPressed.ESCAPE)
             {
                 Main.skipTrans = true;
-                Main.switchState(new states.DebugState());
+                Main.switchState(new states.menu.MainMenuState());
             }
             if(FlxG.keys.justPressed.ENTER)
             {

@@ -1,6 +1,5 @@
 package subStates.options;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.song.Conductor;
 import flixel.FlxG;
 import flixel.FlxBasic;
@@ -449,7 +448,7 @@ class ControlsSubState extends MusicBeatSubState
         {
             if(changinBinds < 2 && curOpt == 'edit binds')
             {
-                FlxG.sound.play(Paths.sound('menu/scroll'));
+                FlxG.sound.play(Paths.sound('menu/scrollMenu'));
                 changinBinds++;
                 changeLane();
             }
@@ -467,7 +466,7 @@ class ControlsSubState extends MusicBeatSubState
 
         if(Controls.justPressed(ACCEPT))
         {
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
             switch(curOpt)
             {
                 case 'clear binds':
@@ -514,7 +513,7 @@ class ControlsSubState extends MusicBeatSubState
 
     function setKeyBind(key:Int = -1, valid:Bool = false)
     {
-        FlxG.sound.play(Paths.sound('menu/scroll'));
+        FlxG.sound.play(Paths.sound('menu/scrollMenu'));
 
         if(valid)
         {
@@ -542,7 +541,7 @@ class ControlsSubState extends MusicBeatSubState
     {
         if(change)
         {
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
             isGamepad = !isGamepad;
             spawnBinds();
         }
@@ -554,7 +553,7 @@ class ControlsSubState extends MusicBeatSubState
     function changeSelection(change:Int = 0)
     {
         if(change != 0)
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
 
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, optionShit.length - 1);
@@ -571,7 +570,7 @@ class ControlsSubState extends MusicBeatSubState
     {
         if(change)
         {
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
             curLane = ((curLane == 0) ? 1 : 0);
         }
 

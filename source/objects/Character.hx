@@ -20,7 +20,6 @@ class Character extends FlxAnimate
 	public var specialAnim:Int = 0;
 	public var curAnimFrame(get, never):Int;
 	public var curAnimFinished(get, never):Bool;
-	public var curDirection(get, never):String;
 	public var holdTimer:Float = Math.NEGATIVE_INFINITY;
 
 	// time (in seconds) that takes to the character return to their idle anim
@@ -43,7 +42,6 @@ class Character extends FlxAnimate
 	// you can modify these manually but i reccomend using the offset editor instead
 	public var globalOffset:FlxPoint = new FlxPoint();
 	public var cameraOffset:FlxPoint = new FlxPoint();
-	public var ratingsOffset:FlxPoint = new FlxPoint();
 	private var scaleOffset:FlxPoint = new FlxPoint();
 
 	// you're probably gonna use sparrow by default?
@@ -62,6 +60,169 @@ class Character extends FlxAnimate
 		var doidoChar = CharacterUtil.defaultChar();
 		switch(curChar)
 		{
+			case "zero":
+				doidoChar.spritesheet += 'zero/zero';
+				doidoChar.anims = [
+					["idle", 	 'idle', 24, false],
+					['intro', 	'intro', 24, false],
+
+					["singLEFT", 'left', 24, false],
+					["singDOWN", 'down', 24, false],
+					["singUP",   'up', 	 24, false],
+					["singRIGHT",'right',24, false],
+				];
+				isPixelSprite = true;
+				scale.set(12,12);
+			case "gemamugen":
+				doidoChar.spritesheet += 'gemamugen/gemamugen';
+				doidoChar.anims = [
+					["idle", 	 'idle', 24, true],
+					['idle-alt', 'chacharealsmooth', 24, true],
+
+					["singLEFT", 'left', 24, false],
+					["singDOWN", 'down', 24, false],
+					["singUP",   'up', 	 24, false],
+					["singRIGHT",'right',24, false],
+				];
+				scale.set(2,2);
+			
+			case "senpai" | "senpai-angry":
+				doidoChar.spritesheet = 'characters/senpai/senpai';
+
+				if(curChar == "senpai") {
+					doidoChar.anims = [
+						['idle', 		'Senpai Idle instance 1', 		24, false],
+						['singLEFT', 	'SENPAI LEFT NOTE instance 1', 	24, false],
+						['singDOWN', 	'SENPAI DOWN NOTE instance 1', 	24, false],
+						['singUP', 		'SENPAI UP NOTE instance 1', 	24, false],
+						['singRIGHT', 	'SENPAI RIGHT NOTE instance 1',	24, false],
+					];
+				} else {
+					doidoChar.anims = [
+						['idle', 		'Angry Senpai Idle instance 1', 		24, false],
+						['singLEFT', 	'Angry Senpai LEFT NOTE instance 1', 	24, false],
+						['singDOWN', 	'Angry Senpai DOWN NOTE instance 1', 	24, false],
+						['singUP', 		'Angry Senpai UP NOTE instance 1', 		24, false],
+						['singRIGHT', 	'Angry Senpai RIGHT NOTE instance 1',	24, false],
+					];
+				}
+				isPixelSprite = true;
+				scale.set(6,6);
+				
+			case "spirit":
+				doidoChar.spritesheet += 'senpai/spirit';
+				doidoChar.anims = [
+					['idle', 		"idle spirit_", 24, true],
+					['singLEFT', 	"left_", 		24, false],
+					['singDOWN', 	"spirit down_", 24, false],
+					['singUP', 		"up_", 			24, false],
+					['singRIGHT', 	"right_", 		24, false],
+				];
+
+				isPixelSprite = true;
+				scale.set(6,6);
+				
+			case "bf-pixel":
+				deathChar = "bf-pixel-dead";
+				doidoChar.spritesheet += 'bf-pixel/bfPixel';
+				doidoChar.anims = [
+					['idle', 			'BF IDLE', 		24, false],
+					['singUP', 			'BF UP NOTE', 	24, false],
+					['singLEFT', 		'BF LEFT NOTE', 24, false],
+					['singRIGHT', 		'BF RIGHT NOTE',24, false],
+					['singDOWN', 		'BF DOWN NOTE', 24, false],
+					['singUPmiss', 		'BF UP MISS', 	24, false],
+					['singLEFTmiss', 	'BF LEFT MISS', 24, false],
+					['singRIGHTmiss', 	'BF RIGHT MISS',24, false],
+					['singDOWNmiss', 	'BF DOWN MISS', 24, false],
+				];
+
+				flipX = true;
+				isPixelSprite = true;
+				scale.set(6,6);
+
+				if(!isPlayer)
+					invertDirections(X);
+
+			case "bf-pixel-dead":
+				deathChar = "bf-pixel-dead";
+				doidoChar.spritesheet += 'bf-pixel/bfPixelsDEAD';
+				doidoChar.anims = [
+					['firstDeath', 		"BF Dies pixel",24, false, CoolUtil.intArray(55)],
+					['deathLoop', 		"Retry Loop", 	24, true],
+					['deathConfirm', 	"RETRY CONFIRM",24, false],
+				];
+
+				idleAnims = ["firstDeath"];
+
+				flipX = true;
+				scale.set(6,6);
+				isPixelSprite = true;
+				
+			case "gf-pixel":
+				doidoChar.spritesheet += 'gf-pixel/gfPixel';
+				doidoChar.anims = [
+					['danceLeft', 	"GF IDLE", 24, false, [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]],
+					['danceRight', 	"GF IDLE", 24, false, [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]],
+				];
+
+				idleAnims = ["danceLeft", "danceRight"];
+				
+				scale.set(6,6);
+				isPixelSprite = true;
+				quickDancer = true;
+				flipX = isPlayer;
+			
+			case 'luano-day'|'luano-night':
+				var pref:String = (curChar == 'luano-night') ? 'night ' : '';
+				doidoChar.spritesheet += 'luano/luano';
+				doidoChar.anims = [
+					['idle', 		'${pref}idle', 24, false],
+					['singLEFT', 	'${pref}left', 24, false],
+					['singDOWN', 	'${pref}down', 24, false],
+					['singUP', 		'${pref}up',   24, false],
+					['singRIGHT', 	'${pref}right',24, false],
+					['jump', 		'${pref}jump', 24, false],
+				];
+
+				holdLoop = 0;
+			
+			case 'spooky'|'spooky-player':
+				doidoChar.spritesheet += 'spooky/SpookyKids';
+				doidoChar.anims = [
+					['danceLeft',	'Idle', 12, false, [0,2,4,8]],
+					['danceRight',	'Idle', 12, false, [10,12,14,16]],
+
+					['singLEFT',	'SingLEFT', 24, false],
+					['singDOWN', 		'SingDOWN', 24, false],
+					['singUP', 			'SingUP',   24, false],
+					['singRIGHT',	'SingRIGHT',24, false],
+				];
+				
+				idleAnims = ["danceLeft", "danceRight"];
+				quickDancer = true;
+
+				if(curChar == 'spooky-player')
+					invertDirections(X);
+			
+			case "pico":
+				doidoChar.spritesheet += 'pico/Pico_Basic';
+				doidoChar.extrasheets = ['characters/pico/Pico_Playable'];
+
+				doidoChar.anims = [
+					['idle',		'Pico Idle Dance', 24, false],
+					['singRIGHT',	'Pico NOTE LEFT0', 24, false],
+					['singDOWN', 	'Pico Down Note0', 24, false],
+					['singUP', 		'pico Up note0',   24, false],
+					['singLEFT',	'Pico Note Right0',24, false],
+
+					['singRIGHTmiss',	'Pico Left Note MISS', 24, false],
+					['singDOWNmiss',	'Pico Down Note MISS', 24, false],
+					['singUPmiss', 		'Pico Up Note MISS',   24, false],
+					['singLEFTmiss',	'Pico Right Note MISS',24, false],
+				];
+				flipX = true;
+
 			case "gf":
 				spriteType = ATLAS;
 				doidoChar.spritesheet += 'gf/gf-spritemap';
@@ -87,6 +248,21 @@ class Character extends FlxAnimate
 					['idle', 'idle'],
 				];
 
+			case "dad":
+				doidoChar.spritesheet += 'dad/DADDY_DEAREST';
+				doidoChar.anims = [
+					['idle', 		'Dad idle dance', 		24, false],
+					['singUP', 		'Dad Sing Note UP', 	24, false],
+					['singRIGHT', 	'Dad Sing Note RIGHT', 	24, false],
+					['singDOWN', 	'Dad Sing Note DOWN', 	24, false],
+					['singLEFT', 	'Dad Sing Note LEFT', 	24, false],
+
+					['idle-loop', 		'Dad idle dance', 		24, true, [11,12,13,14]],
+					['singUP-loop', 	'Dad Sing Note UP', 	24, true, [3,4,5,6]],
+					['singRIGHT-loop',	'Dad Sing Note RIGHT', 	24, true, [3,4,5,6]],
+					['singLEFT-loop', 	'Dad Sing Note LEFT', 	24, true, [3,4,5,6]],
+				];
+			
 			default: // case "bf"
 				if(!["bf", "face"].contains(curChar))
 					curChar = (isPlayer ? "bf" : "face");
@@ -156,7 +332,7 @@ class Character extends FlxAnimate
 				spriteType = ASEPRITE;
 			}
 			else if(doidoChar.extrasheets != null) {
-				frames = Paths.getMultiSparrowAtlas(doidoChar.spritesheet, doidoChar.extrasheets, '', 'characters/');
+				frames = Paths.getMultiSparrowAtlas(doidoChar.spritesheet, doidoChar.extrasheets);
 				spriteType = MULTISPARROW;
 			}
 			else
@@ -216,7 +392,6 @@ class Character extends FlxAnimate
 					}
 					globalOffset.set(charData.globalOffset[0], charData.globalOffset[1]);
 					cameraOffset.set(charData.cameraOffset[0], charData.cameraOffset[1]);
-					ratingsOffset.set(charData.ratingsOffset[0], charData.ratingsOffset[1]);
 				} catch(e) {
 					Logs.print('$curChar offsets not found', WARNING);
 				}
@@ -233,7 +408,7 @@ class Character extends FlxAnimate
 		dance();
 	}
 
-	public var curDance:Int = 0;
+	private var curDance:Int = 0;
 
 	public function dance(forced:Bool = false)
 	{
@@ -270,8 +445,7 @@ class Character extends FlxAnimate
 	}
 
 	public var singAnims:Array<String> = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
-	public var absoluteAnims:Array<String> = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
-	public function playNote(note:Note, miss:Bool = false, alt:String = '')
+	public function playNote(note:Note, miss:Bool = false)
 	{
 		var daAnim:String = singAnims[note.noteData];
 		if(animExists(daAnim + 'miss') && miss)
@@ -279,9 +453,6 @@ class Character extends FlxAnimate
 
 		if(animExists(daAnim + altSing))
 			daAnim += altSing;
-
-		if(animExists(daAnim + alt))
-			daAnim += alt;
 
 		holdTimer = 0;
 		specialAnim = 0;
@@ -363,17 +534,5 @@ class Character extends FlxAnimate
 			return animation.curAnim.finished;
 		else
 			return anim.finished;
-	}
-
-	public function get_curDirection():String
-	{
-		for (i in 0...singAnims.length) {
-			if(curAnimName.startsWith(singAnims[i]) && !curAnimName.endsWith('miss')) {
-				//trace(absoluteAnims[i]);
-				return absoluteAnims[i];	
-			}
-		}
-
-		return 'none';
 	}
 }

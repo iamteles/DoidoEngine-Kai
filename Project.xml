@@ -3,7 +3,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNF: Doido Engine ~ Kai" file="DoidoKai" packageName="com.teles.doidoengine" package="com.teles.doidoengine" main="Main" version="3.4.1kai" company="teles" />
+	<app title="FNF: Doido Engine" file="DoidoEngine" packageName="com.diogotv.doidoengine" package="com.diogotv.doidoengine" main="Main" version="3.4.1" company="DiogoTV" />
 	
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -18,7 +18,7 @@
 	<window width="1280" height="720" fps="144" background="#000000" hardware="true" vsync="false" />
 
 	<!--HTML5-specific-->
-	<window if="html5" resizable="false" />
+	<window if="html5" resizable="true" />
 
 	<!--Desktop-specific-->
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
@@ -35,8 +35,8 @@
 	<define name="ROUND_ICON" 			if="mac"/>
 	<define name="TOUCH_CONTROLS"		if="mobile"/>
 	<!--Uncomment-this-to-use-videos-in-your-mod!!-->
-	<!--<define name="VIDEOS_ALLOWED" if="desktop || android" />-->
-	<define name="HXVLC_NO_SHARE_DIRECTORY" if="VIDEOS_ALLOWED" />
+	<!--<define name="VIDEOS_ALLOWED" 		if="desktop || android || html5"/>-->
+	<define name="HXVLC_NO_SHARE_DIRECTORY" if="desktop || android" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
@@ -45,8 +45,8 @@
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 
 	<source path="source" />
-	<assets path="assets" if="VIDEOS_ALLOWED" />
-	<assets path="assets" exclude="videos" unless="VIDEOS_ALLOWED" />
+	<assets path="assets" /> <!-- if="VIDEOS_ALLOWED" /> -->
+	<!--<assets path="assets" exclude="videos" unless="VIDEOS_ALLOWED" />-->
 	<assets path="art/mobile" rename="assets/images/mobile" if="TOUCH_CONTROLS" />
 
 	<!-- RENAME UNDERSCORE FOLDERS -->
@@ -71,7 +71,7 @@
 	<haxelib name="hscript-iris" />
 	<haxedef name="hscriptPos" />
 	<haxelib name="hxdiscord_rpc" if="DISCORD_RPC" />
-	<haxelib name="hxvlc" if="VIDEOS_ALLOWED" />
+	<haxelib name="hxvlc" if="VIDEOS_ALLOWED" unless="html5" />
 	
 	<!-- ______ Custom Doido Libraries ______ -->
 	<haxelib name="flxanimate-doido"/>

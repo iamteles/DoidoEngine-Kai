@@ -1,6 +1,5 @@
 package subStates.menu;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.song.Highscore;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
@@ -85,7 +84,7 @@ class DeleteScoreSubState extends MusicBeatSubState
     {
         if(hasSound)
         {
-            FlxG.sound.play(Paths.sound('menu/scroll'));
+            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
             curSelection++;
             if(curSelection > 1)
                 curSelection = 0;
@@ -100,5 +99,5 @@ class DeleteScoreSubState extends MusicBeatSubState
     }
 
     function playSound()
-        FlxG.sound.play(Paths.sound('menu/cancel'));
+        FlxG.sound.play(Paths.sound('menu/cancelMenu'));
 }

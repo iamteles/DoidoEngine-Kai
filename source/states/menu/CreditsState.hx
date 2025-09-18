@@ -1,37 +1,27 @@
 package states.menu;
 
 import flixel.FlxSprite;
-import flixel.FlxObject;
 import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import backend.game.GameData.MusicBeatState;
-import backend.song.Highscore;
-import backend.song.Highscore.ScoreData;
-import backend.song.SongData;
 import objects.menu.AlphabetMenu;
-import objects.hud.HealthIcon;
-import states.*;
-import states.editors.ChartingState;
-import subStates.menu.DeleteScoreSubState;
-import flixel.addons.display.FlxBackdrop;
 
 using StringTools;
 
 typedef CreditData = {
 	var name:String;
-    var icon:String;
-    var info:String;
-	var link:Null<String>;
-	var color:Null<FlxColor>;
+    var ?icon:String;
+    var ?color:FlxColor;
+    var ?info:String;
+	var ?link:Null<String>;
 }
 class CreditsState extends MusicBeatState
 {
 	var creditList:Array<CreditData> = [];
     
-	function addCredit(name:String, icon:String, info:String, ?link:Null<String>, ?color:Null<FlxColor>)
+	function addCredit(name:String, icon:String = "", color:FlxColor, info:String = "", ?link:Null<String>)
 	{
 		creditList.push({
             name: name,
@@ -42,7 +32,19 @@ class CreditsState extends MusicBeatState
         });
 	}
 
-	static var curSelected:Int = 0;
+	function addCategory(name:String)
+	{
+		creditList.push({
+			name: name,
+			icon: "",
+			color: FlxColor.WHITE,
+			info: "",
+			link: null
+		});
+	}
+
+	static var curSelected:Int = 1;
+	var skipSelected:Array<Int> = [];
 
 	var bg:FlxSprite;
 	var bgTween:FlxTween;
@@ -50,13 +52,36 @@ class CreditsState extends MusicBeatState
 	var infoTxtFocus:AlphabetMenu;
 	var infoTxt:FlxText;
 
-	public static var doido:Bool = false;
-
 	override function create()
 	{
 		super.create();
+		/*
+		*	Modify these to add your own credits!!
+		*/
+		final nikoo:Bool = (FlxG.random.bool(1));
+		final specialPeople = 'Anakim, ArturYoshi, BeastlyChip♧, Bnyu, Evandro, NxtVithor, Pi3tr0, Raphalitos, ZieroSama';
+		final specialCoders = 'ShadzXD, pisayesiwsi, crowplexus, Lasystuff, Gazozoz, Joalor64GH, LeonGamerPS1';
+		// yes, this implies coders aren't people :D
+		
+		// btw you dont need to credit everyone here on your mod
+		// just credit doido engine as a whole and we're good
+		addCategory("Doido Engine's Crew");
+		addCredit('DiogoTV', 			'diogotv', 	 0xFFC385FF, "Doido Engine's Owner and Main Coder", 				'https://bsky.app/profile/diogotv.bsky.social');
+		addCredit('teles', 				'teles', 	 0xFFFF95AC, "Doido Engine's Additional Coder",					'https://youtube.com/@telesfnf');
+		addCredit('GoldenFoxy',			'anna', 	 0xFFFFE100, "Main designer of Doido Engine's chart editor",		'https://bsky.app/profile/goldenfoxy.bsky.social');
+		addCredit('JulianoBeta', 		'juyko', 	 0xFF0BA5FF, "Composed Doido Engine's offset menu music",			'https://www.youtube.com/@prodjuyko');
+		addCredit('crowplexus',			'crowplexus',0xFF313538, "Creator of HScript Iris",							'https://github.com/crowplexus/hscript-iris');
+		addCredit('yoisabo',			'yoisabo',	 0xFF56EF19, "Chart Editor's Event Icons Artist",					'https://bsky.app/profile/yoisabo.bsky.social');
+		addCategory('Other Credits');
+		addCredit('cocopuffs',			'coco',	 	 0xFF56EF19, "Mobile Button Artist", 'https://x.com/cocopuffswow');
+		if(nikoo) addCredit('doubleonikoo', 'nikoo', 0xFF60458A, "Hey! What are you doing here?!",		'https://bsky.app/profile/doubleonikoo.bsky.social');
+		addCredit('Github Contributors','github', 	 0xFFFFFFFF, 'Thank you\n${specialCoders}!!', 		'https://github.com/DoidoTeam/FNF-Doido-Engine/graphs/contributors');
+		addCredit('Special Thanks', 	'heart', 	 0xFFC01B42, 'Thank you\n${specialPeople}!!\n<33', "https://youtu.be/N0IkgKHdgIc");
+		
+		/*
+		*	Don't modify the rest of the code unless you know what you're doing!!
+		*/
 		CoolUtil.playMusic("freakyMenu");
-
 		DiscordIO.changePresence("Credits - Thanks!!");
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menu/backgrounds/menuDesat'));
@@ -72,63 +97,48 @@ class CreditsState extends MusicBeatState
         infoTxt.setBorderStyle(OUTLINE, 0xFF000000, 1.5);
         add(infoTxt);
 
-		final specialPeople = 'Anakim, ArturYoshi, BeastlyChip♧, Bnyu, Evandro, NxtVithor, Pi3tr0, Raphalitos, ZieroSama';
-		final specialCoders = 'Crowplexus, Gazozoz, Joalor64GH, soushimiya';
-		// yes, this implies coders aren't people
-		// :D
-		
-		if(!doido) {
-			addCredit('teles', 					'doido/teles', 	 	"Placeholder for mod / engine credits",	'https://www.youtube.com/@telesfnf');
-			addCredit('Doido Engine ~ Kai', 	'doido', 	  	"Press ACCEPT to see engine credits",	'_DOIDO', 0xFFFFFFFF);
-		}
-		else {
-			addCredit('DiogoTV', 			'diogotv', 	  "Doido Engine's Owner and Main Coder", 							'https://bsky.app/profile/diogotv.bsky.social');
-			addCredit('teles', 				'teles', 	  "Doido Engine's Additional Coder\nKAI fork Owner and Main Coder",				'https://youtube.com/@telesfnf');
-			addCredit('GoldenFoxy',			'anna', 	  "Main designer of Doido Engine's chart editor",					'https://bsky.app/profile/goldenfoxy.bsky.social');
-			addCredit('JulianoBeta', 		'juyko', 	  "Composed Doido Engine's offset menu music",			'https://www.youtube.com/@prodjuyko');
-			addCredit('crowplexus',			'crowplexus', "Creator of HScript Iris",							'https://github.com/crowplexus/hscript-iris');
-			addCredit('yoisabo',			'yoisabo',	  "Chart Editor's Event Icons Artist",					'https://bsky.app/profile/yoisabo.bsky.social');
-			addCredit('cocopuffs',			'coco',	 	  "Mobile Button Artist",								'https://x.com/cocopuffswow');
-			addCredit('doubleonikoo', 		'nikoo', 	  "didn't really do much but i already made this icon so you can stay... for now\n-DiogoTV",	'https://bsky.app/profile/doubleonikoo.bsky.social');
-			addCredit('Github Contributors','github', 	  'Thank you\n${specialCoders}!!', 		'https://github.com/DoidoTeam/FNF-Doido-Engine/graphs/contributors');
-			addCredit('Special Thanks', 	'heart', 	  'Thank you\n${specialPeople}!!', "https://youtu.be/Fo7L8p1I_Hw");
-			addCredit('MOD', 		'mod', 	  	  "Press ACCEPT to return to mod credits",	'_MOD');
-		}
-		
+		var addLater:Array<AlphabetMenu> = [];
 		for(i in 0...creditList.length)
 		{
 			var credit = creditList[i];
 
-			var item = new AlphabetMenu(0, 0, credit.name, false);
+			var item = new AlphabetMenu(0, 0, credit.name, (credit.icon == ""));
 			item.align = CENTER;
 			item.updateHitbox();
-			grpItems.add(item);
 
-			var iconName:String = 'credits/';
-			if(doido)
-				iconName += 'doido/';
-			iconName += credit.icon;
+			var xTo:Float = (FlxG.width / 2);
+			if(!item.bold)
+			{
+				grpItems.add(item);
 
-			var icon = new FlxSprite();
-			icon.loadGraphic(Paths.image(iconName));
-			grpItems.add(icon);
+				var icon = new FlxSprite();
+				icon.loadGraphic(Paths.image('credits/${credit.icon}'));
+				grpItems.add(icon);
 
-			// big ears
-			if(credit.icon == "anna")
-				icon.offset.y = 30;
-			if(credit.icon == "tagaki" || credit.icon == "doido" || credit.icon == "br")
-				icon.offset.x = -10;
+				// BIG ASS EARS
+				if(credit.icon == "anna")
+					icon.offset.y = 30;
 
-			item.icon = icon;
+				xTo -= (icon.width / 2);
+				item.icon = icon;
+				icon.ID = i;
+			}
+			else
+			{
+				item.yTo = 380;
+				skipSelected.push(i);
+				addLater.push(item);
+			}
+
 			item.ID = i;
-			icon.ID = i;
-
 			item.spaceX = 0;
 			item.spaceY = 200;
-			item.xTo = (FlxG.width / 2) - (icon.width / 2);
+			item.xTo = xTo;
 			item.focusY = i - curSelected;
 			item.updatePos();
 		}
+		for(i in addLater)
+			grpItems.add(i);
 		changeSelection();
 
 		#if TOUCH_CONTROLS
@@ -136,13 +146,14 @@ class CreditsState extends MusicBeatState
 		#end
 	}
 
-	function changeSelection(change:Int = 0)
+	function changeSelection(change:Int = 0, skipping:Bool = false):Void
 	{
 		curSelected += change;
 		curSelected = FlxMath.wrap(curSelected, 0, creditList.length - 1);
-
-		var color:FlxColor = 0xFF696969;
+		if(skipSelected.contains(curSelected))
+			return changeSelection((change == 0) ? 1 : change, true);
 		
+		var titleItem:AlphabetMenu = null;
 		for(rawItem in grpItems.members)
 		{
 			if(Std.isOfType(rawItem, AlphabetMenu))
@@ -150,40 +161,40 @@ class CreditsState extends MusicBeatState
 				var item = cast(rawItem, AlphabetMenu);
 				item.focusY = item.ID - curSelected;
 
-				item.alpha = 0.4;
+				if(!item.bold)
+					item.alpha = 0.4;
+				else
+				{
+					if(curSelected > item.ID + 1)
+						titleItem = item;
+					else
+					{
+						if(curSelected > item.ID)
+							titleItem = null;
+						item.yTo = 380;
+					}
+				}
+				
 				if(item.ID == curSelected) {
 					infoTxtFocus = item;
 					item.alpha = 1;
-
-					if(creditList[curSelected].color != null)
-						color = creditList[curSelected].color;
-					else
-						color = CoolUtil.dominantColor(item.icon);
 				}
 			}
+		}
+		if(titleItem != null)
+		{
+			titleItem.focusY = 0;
+			titleItem.yTo = 36;
 		}
 
 		infoTxt.text = creditList[curSelected].info;
 		infoTxt.screenCenter(X);
 		
 		if(bgTween != null) bgTween.cancel();
-		bgTween = FlxTween.color(bg, 0.4, bg.color, color);
+		bgTween = FlxTween.color(bg, 0.4, bg.color, creditList[curSelected].color);
 
-		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scroll"));
-	}
-
-	function goBack() {
-		if(doido)
-			switchCreds()
-		else
-			Main.switchState(new states.DebugState());
-	}
-
-	function switchCreds() {
-		doido = !doido;
-		Main.resetState();
-		curSelected = 0;
+		if(change != 0 && !skipping)
+			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
 	}
 
 	override function update(elapsed:Float)
@@ -196,17 +207,13 @@ class CreditsState extends MusicBeatState
 			changeSelection(1);
 
 		if(Controls.justPressed(BACK))
-			goBack();
+			Main.switchState(new MainMenuState());
 
 		if(Controls.justPressed(ACCEPT))
 		{
 			var daCredit = creditList[curSelected].link;
-			if(daCredit != null) {
-				if(daCredit == "_DOIDO" || daCredit == "_MOD")
-					switchCreds();
-				else
-					CoolUtil.openURL(daCredit);
-			}
+			if(daCredit != null)
+				CoolUtil.openURL(daCredit);
 		}
 		
 		infoTxt.y = infoTxtFocus.y + infoTxtFocus.height + 48;
@@ -215,6 +222,7 @@ class CreditsState extends MusicBeatState
 			if(Std.isOfType(rawItem, AlphabetMenu))
 			{
 				var item = cast(rawItem, AlphabetMenu);
+				if(item.icon == null) continue;
 				item.icon.x = item.x + (item.width / 2);
 				item.icon.y = item.y - item.icon.height / 6;
 				item.icon.alpha = item.alpha;

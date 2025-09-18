@@ -1,6 +1,6 @@
 package;
 
-import backend.game.GameData.MusicBeatState;
+import backend.game.MusicBeatData.MusicBeatState;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.FlxGraphic;
@@ -13,7 +13,7 @@ class Init extends MusicBeatState
 		super.create();
 		SaveData.init();
 		DiscordIO.check();
-				
+		
 		FlxG.fixedTimestep = false;
 		FlxG.mouse.useSystemCursor = true;
 		FlxG.mouse.visible = false;
@@ -27,17 +27,26 @@ class Init extends MusicBeatState
 
 	function firstState()
 	{
-		#if html5
-		Main.switchState(new WarningState());
-		#elseif MENU
-		Main.switchState(new DebugState());
+		var openWarningMenu:Bool = #if html5 true #else false #end;
+
+		if(FlxG.save.data.beenWarned == null || openWarningMenu)
+			Main.switchState(new WarningState());
+		else
+			Main.switchState(new TitleState());
+	}
+
+	/*
+	* A function to call some of the engines build flags from
+	* other states.
+	*/
+	public static function flagState()
+	{
+		#if MENU
+		Main.switchState(new states.menu.MainMenuState());
 		#elseif FREEPLAY
 		Main.switchState(new states.menu.FreeplayState());
 		#else
-		if(FlxG.save.data.beenWarned == null)
-			Main.switchState(new WarningState());
-		else
-			Main.switchState(new DebugState());
+		Main.switchState(new TitleState());
 		#end
 	}
 }

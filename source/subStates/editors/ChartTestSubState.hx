@@ -1,6 +1,5 @@
 package subStates.editors;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.utils.DialogueUtil;
 import backend.song.*;
 import backend.song.Conductor;
@@ -251,7 +250,7 @@ class ChartTestSubState extends MusicBeatSubState
 		if(!noteInfo) return;
 
 		infoTxt.text = 'Accuracy: ${Timings.accuracy}%' + ' -- Step: ${curStep}\n';
-		infoTxt.text +='Hits: ${Timings.notesHit - Timings.breaks} -- Breaks: ${Timings.breaks}';
+		infoTxt.text +='Hits: ${Timings.notesHit} -- Misses: ${Timings.misses}';
 		
 		infoTxt.screenCenter(X);
 		infoTxt.y = (downscroll ? 15 : FlxG.height - infoTxt.height - 15);
@@ -417,7 +416,7 @@ class ChartTestSubState extends MusicBeatSubState
 			//vocals.volume = 0;
 			FlxG.sound.play(Paths.sound('miss/missnote' + FlxG.random.int(1, 3)), 0.55);
 			
-			// when the player breaks notes
+			// when the player misses notes
 			if(strumline.isPlayer)
 				popUpRating(note, strumline, true);
 		}
@@ -439,19 +438,18 @@ class ChartTestSubState extends MusicBeatSubState
 
 	public function popUpRating(note:Note, strumline:Strumline, miss:Bool = false)
 	{
-		// return;
-		var noteDiff:Float = Math.abs(note.songTime - Conductor.songPos);
-		if(strumline.botplay)
-			noteDiff = 0;
-
-		if(note.isHold && !miss)
+		var noteDiff:Float = 0;
+		if(!strumline.botplay && !miss)
 		{
-			noteDiff = Timings.minTiming;
-			var holdPercent:Float = (note.holdHitLength / note.holdLength);
-			for(timing in Timings.holdTimings)
+			if(!note.isHold)
+				noteDiff = Math.abs(note.noteDiff());
+			else
 			{
-				if(holdPercent >= timing[0] && noteDiff > timing[1])
-					noteDiff = timing[1];
+				noteDiff = Timings.minTiming;
+				var holdPercent:Float = (note.holdHitLength / note.holdLength);
+				for(timing in Timings.holdTimings)
+					if(holdPercent >= timing[0] && noteDiff > timing[1])
+						noteDiff = timing[1];
 			}
 		}
 
@@ -469,7 +467,7 @@ class ChartTestSubState extends MusicBeatSubState
 
 		if(miss)
 		{
-			Timings.breaks++;
+			Timings.misses++;
 
 			if(Timings.combo > 0)
 				Timings.combo = 0;
@@ -480,6 +478,10 @@ class ChartTestSubState extends MusicBeatSubState
 			if(Timings.combo < 0)
 				Timings.combo = 0;
 			Timings.combo++;
+
+			// adding timings
+			Timings.notesHit++;
+			Timings.ratingCount.set(rating, Timings.ratingCount.get(rating) + 1);
 			
 			if(rating == "shit")
 			{
@@ -491,15 +493,18 @@ class ChartTestSubState extends MusicBeatSubState
 		
 		//hudBuild.updateText();
 		var daRating = new Rating(rating, Timings.combo, note.assetModifier);
-		if(DevOptions.singleRating)
+		if(SaveData.data.get("Single Rating"))
 		{
 			if(prevRating != null)
 				prevRating.kill();
 			
 			prevRating = daRating;
 		}
+		daRating.ratingScale = 0.7;
+		daRating.numberScale = 0.7;
 		daRating.setPos(FlxG.width / 2, downscroll ? FlxG.height - 100 : 100);
 		backGroup.add(daRating);
+		daRating.playRating();
 		
 		updateInfo();
 	}
@@ -642,7 +647,7 @@ class ChartTestSubState extends MusicBeatSubState
 							hold.noteCrochet * (strumline.scrollSpeed * 0.45) + 1
 						];
 						
-						if(DevOptions.splitHolds)
+						if(SaveData.data.get("Split Holds"))
 							newHoldSize[1] -= 20;
 						
 						hold.setGraphicSize(
@@ -754,7 +759,7 @@ class ChartTestSubState extends MusicBeatSubState
 						if(hold.isHoldEnd)
 							holdID -= 0.4999; // 0.5
 						
-						if(DevOptions.splitHolds)
+						if(SaveData.data.get("Split Holds"))
 							holdID -= 0.2;
 						
 						// calculating the clipping by how much you held the note

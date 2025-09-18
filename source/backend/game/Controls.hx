@@ -7,7 +7,7 @@ import flixel.input.FlxInput.FlxInputState;
 #if TOUCH_CONTROLS
 import flixel.util.FlxTimer;
 import backend.game.Mobile;
-import backend.game.GameData;
+import backend.game.MusicBeatData;
 import objects.mobile.DoidoPad;
 #end
 
@@ -35,9 +35,6 @@ enum DoidoKey
 	PAUSE;
 	TEXT_LOG;
 	CONTROL;
-	SHIFT;
-	ZOOM_IN;
-	ZOOM_OUT;
 	// none
 	NONE;
 }
@@ -209,7 +206,7 @@ class Controls
 		// ui buttons
 		'ACCEPT' => [
 			[FlxKey.SPACE, FlxKey.ENTER],
-			[FlxPad.A, FlxPad.START],
+			[FlxPad.A, FlxPad.X, FlxPad.START],
 		],
 		'BACK' => [
 			[FlxKey.BACKSPACE, FlxKey.ESCAPE],
@@ -225,19 +222,7 @@ class Controls
 		],
 		'CONTROL' => [
 			[#if mac FlxKey.WINDOWS, #end FlxKey.CONTROL],
-			[FlxPad.X],
-		],
-		'SHIFT' => [
-			[FlxKey.SHIFT],
-			[FlxPad.A],
-		],
-		'ZOOM_IN' => [
-			[FlxKey.E],
-			[FlxPad.RIGHT_SHOULDER],
-		],
-		'ZOOM_OUT' => [
-			[FlxKey.Q],
-			[FlxPad.LEFT_SHOULDER],
+			[],
 		],
 	];
 

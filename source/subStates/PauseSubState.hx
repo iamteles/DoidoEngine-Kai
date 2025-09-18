@@ -1,6 +1,5 @@
 package subStates;
 
-import backend.game.GameData.MusicBeatSubState;
 import backend.song.Conductor;
 import flixel.FlxG;
 import flixel.FlxBasic;
@@ -16,7 +15,6 @@ import objects.menu.Alphabet;
 import objects.menu.AlphabetMenu;
 import states.*;
 import subStates.options.OptionsSubState;
-import flixel.math.FlxPoint;
 
 class PauseSubState extends MusicBeatSubState
 {
@@ -24,7 +22,6 @@ class PauseSubState extends MusicBeatSubState
 		"resume",
 		"restart song",
 		"botplay",
-		"photo mode",
 		"options",
 		"exit to menu",
 	];
@@ -38,10 +35,15 @@ class PauseSubState extends MusicBeatSubState
 	var pauseSong:FlxSound;
 
 	var onCountdown:Bool = false;
+	var delayTween:FlxTween;
+
+	var playstate:PlayState;
+
 	public function new()
 	{
 		super();
-		PlayState.instance.setScript("this", this);
+		playstate = PlayState.instance;
+		playstate.setScript("this", this);
 		DiscordIO.changePresence("Paused - Restin' a bit");
 		this.cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 		var banana = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
@@ -78,7 +80,7 @@ class PauseSubState extends MusicBeatSubState
 		
 		var textArray:Array<String> = [
 			PlayState.SONG.song,
-			//PlayState.songDiff,
+			PlayState.songDiff,
 			'BLUEBALLED: ' + PlayState.blueballed,
 		];
 		for(i in 0...textArray.length)
@@ -103,7 +105,7 @@ class PauseSubState extends MusicBeatSubState
 		if(Conductor.songPos > 0)
 		{
 			@:privateAccess
-			pauseSong.loadEmbedded(PlayState.instance.inst._sound, true, false);
+			pauseSong.loadEmbedded(playstate.inst._sound, true, false);
 			
 			pauseSong.play(Conductor.songPos);
 			pauseSong.pitch = 0.9;
@@ -118,18 +120,26 @@ class PauseSubState extends MusicBeatSubState
 	function closePause()
 	{
 		pauseSong.stop();
-		if(SaveData.data.get('Countdown on Unpause'))
-			startCountdown();
+		if(SaveData.data.get('Delay on Unpause') && PlayState.startedSong)
+		{
+			playstate.songSpeed = 0.0;
+			if(delayTween != null) delayTween.cancel();
+			delayTween = FlxTween.tween(playstate, {songSpeed: 1.0}, Conductor.crochet * 1 / 1000, {
+				ease: FlxEase.sineIn
+			});
+		}
 		else
-			close();
+			playstate.songSpeed = 1.0;
+
+		close();
 	}
 	override function close()
 	{
 		pauseSong.stop();
 		PlayState.paused = false;
-		PlayState.instance.updateOption('Song Offset');
-		PlayState.instance.callScript('onUnpause');
-		PlayState.instance.setScript("this", PlayState.instance);
+		playstate.updateOption('Song Offset');
+		playstate.callScript('onUnpause');
+		playstate.setScript("this", playstate);
 		super.close();
 	}
 
@@ -166,7 +176,7 @@ class PauseSubState extends MusicBeatSubState
 				switch(optionShit[curSelected])
 				{
 					default:
-						FlxG.sound.play(Paths.sound("menu/cancel"));
+						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
 					
 					case "resume":
 						closePause();
@@ -176,23 +186,19 @@ class PauseSubState extends MusicBeatSubState
 						Main.resetState();
 					
 					case "botplay":
-						FlxG.sound.play(Paths.sound("menu/cancel"));
+						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
 						PlayState.botplay = !PlayState.botplay;
 
 					case "options":
 						//Main.switchState(new states.menu.OptionsState(new LoadSongState()));
 						persistentDraw = false;
 						pauseSong.pause();
-						this.openSubState(new OptionsSubState(PlayState.instance));
+						this.openSubState(new OptionsSubState(playstate));
 
 					case "exit to menu":
 						//Main.switchState(new MenuState());
 						persistentDraw = true;
 						PlayState.sendToMenu();
-
-					case "photo mode":
-						persistentDraw = false;
-						this.openSubState(new PhotoSubState());
 				}
 			}
 
@@ -205,45 +211,6 @@ class PauseSubState extends MusicBeatSubState
 			for(item in optionsGrp)
 				item.alpha = FlxMath.lerp(item.alpha, 0, elapsed * 12);
 		}
-	}
-
-	function startCountdown()
-	{
-		var labels:Array<String> = ["3", "2", "1", "GO"];
-		var countdownTxt = new Alphabet(FlxG.width / 2, FlxG.height / 2 - 70 / 2,"",true);
-		countdownTxt.align = CENTER;
-		countdownTxt.updateHitbox();
-		add(countdownTxt);
-
-		var barTween:FlxTween = null;
-		var cntBar = new FlxSprite().makeGraphic(180, 8, 0xFFFFFFFF);
-		cntBar.screenCenter(X);
-		cntBar.visible = false;
-		add(cntBar);
-
-		var loops:Int = 0;
-		onCountdown = true;
-		var countTimer = new FlxTimer().start(0.5, function(tmr:FlxTimer)
-		{
-			if(loops == 4)
-				close();
-			else
-			{
-				countdownTxt.text = labels[loops];
-				FlxG.sound.play(Paths.sound('menu/scroll'));
-
-				if(!cntBar.visible)
-				{
-					cntBar.visible = true;
-					cntBar.y = FlxG.height / 2 + 48;
-				}
-				cntBar.scale.x = 1.0;
-				if(barTween != null)
-					barTween.cancel();
-				barTween = FlxTween.tween(cntBar.scale, {x: 0.0}, 0.5);
-			}
-			loops++;
-		}, 5);
 	}
 
 	function changeSelection(change:Int = 0)
@@ -261,6 +228,6 @@ class PauseSubState extends MusicBeatSubState
 		}
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scroll"));
+			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
 	}
 }

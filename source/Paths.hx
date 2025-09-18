@@ -59,7 +59,7 @@ class Paths
 		{
 			if(!fileExists('$key.ogg', library)) {
 				Logs.print('$key.ogg doesnt exist', WARNING);
-				key = 'sounds/menu/scroll';
+				key = 'sounds/beep';
 			}
 			Logs.print('created new sound $key');
 			renderedSounds.set(key,
@@ -236,12 +236,12 @@ class Paths
 		return FlxAtlasFrames.fromAseprite(getGraphic(key, library), getPath('images/$key.json', library));
 
 	// sparrow (.xml) sheets but split into multiple graphics
-	public static function getMultiSparrowAtlas(baseSheet:String, otherSheets:Array<String>, ?library:String, ?prefix:String) {
+	public static function getMultiSparrowAtlas(baseSheet:String, otherSheets:Array<String>, ?library:String) {
 		var frames:FlxFramesCollection = getSparrowAtlas(baseSheet);
 
 		if(otherSheets.length > 0) {
 			for(i in 0...otherSheets.length) {
-				var newFrames:FlxFramesCollection = getSparrowAtlas(prefix + otherSheets[i]);
+				var newFrames:FlxFramesCollection = getSparrowAtlas(otherSheets[i]);
 				for(frame in newFrames.frames) {
 					frames.pushFrame(frame);
 				}
@@ -307,7 +307,7 @@ class Paths
 		{
 			var soundName:String = ["3", "2", "1", "Go"][i];
 				
-			var soundPath:String = PlayState.assetModifier;
+			var soundPath:String = PlayState.countdownModifier;
 			if(!fileExists('sounds/countdown/$soundPath/intro$soundName.ogg'))
 				soundPath = 'base';
 			
@@ -317,7 +317,7 @@ class Paths
 			{
 				var countName:String = ["ready", "set", "go"][i - 1];
 				
-				var spritePath:String = PlayState.assetModifier;
+				var spritePath:String = PlayState.countdownModifier;
 				if(!fileExists('images/hud/$spritePath/$countName.png'))
 					spritePath = 'base';
 				

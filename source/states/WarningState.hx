@@ -1,6 +1,5 @@
 package states;
 
-import backend.game.GameData.MusicBeatState;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.sound.FlxSound;
@@ -29,7 +28,7 @@ class WarningState extends MusicBeatState
 		
 		if(Controls.justPressed(ACCEPT))
 		{
-            Main.switchState(new states.DebugState());
+           	Init.flagState();
 
             FlxG.save.data.beenWarned = true;
             FlxG.save.flush();
