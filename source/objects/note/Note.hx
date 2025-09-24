@@ -16,6 +16,7 @@ class Note extends FlxSprite
 	public var noteSize:Float = 1.0;
 	public var assetModifier:String = "base";
 	public var hasHoldSplash:Bool = true;
+	private var colArray:Array<String> = ['purple', 'blue', 'green', 'red']; // for classic psych like noteskins
 
 	public function updateData(songTime:Float, noteData:Int, ?noteType:String = "default", ?assetModifier:String = "base")
 	{
@@ -37,50 +38,23 @@ class Note extends FlxSprite
 
 		switch(assetModifier)
 		{
-			case "pixel":
-				noteSize = 6;
-				hasHoldSplash = true;
-				if(!isHold)
-				{
-					loadGraphic(Paths.image("notes/pixel/notesPixel"), true, 17, 17);
-
-					animation.add(direction, [noteData + 4], 0, false);
-				}
-				else
-				{
-					loadGraphic(Paths.image("notes/pixel/notesEnds"), true, 7, 6);
-
-					animation.add(direction, [noteData + (isHoldEnd ? 4 : 0)], 0, false);
-				}
-				antialiasing = false;
-				isPixelSprite = true;
-				animation.play(direction);
-
 			default:
 				switch(noteType)
 				{
 					default:
-						switch(assetModifier)
-						{
-							case "doido":
-								frames = Paths.getSparrowAtlas("notes/doido/notes");
-								noteSize = 0.95;
-							default:
-								noteSize = 0.7;
-								frames = Paths.getSparrowAtlas("notes/base/notes");
-						}
+						noteSize = 0.7;
+						frames = Paths.getSparrowAtlas("notes/base/notes");
 
 						var typeName:String = (isHold ? (isHoldEnd ? " hold end" : " hold") : "");
 
-						// oxi
 						animation.addByPrefix('${direction}${typeName}', 'note ${direction}${typeName}0', 24, true);
-
 						animation.play('${direction}${typeName}');
 				}
 		}
 
 		switch(noteType)
 		{
+			/*
 			case "bomb":
 				mustMiss = true;
 				if(!isHold)
@@ -114,6 +88,7 @@ class Note extends FlxSprite
 				
 				animation.addByPrefix('warn', '$typeName', 0, false);
 				animation.play('warn');
+			*/
 		}
 
 		scale.set(noteSize, noteSize);

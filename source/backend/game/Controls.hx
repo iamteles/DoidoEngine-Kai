@@ -35,6 +35,10 @@ enum DoidoKey
 	PAUSE;
 	TEXT_LOG;
 	CONTROL;
+	// photo mode
+	SHIFT;
+	ZOOM_IN;
+	ZOOM_OUT;
 	// none
 	NONE;
 }
@@ -128,6 +132,12 @@ class Controls
 				return TEXT_LOG;
 			case "CONTROL":
 				return CONTROL;
+			case "SHIFT":
+				return SHIFT;
+			case "ZOOM_IN":
+				return ZOOM_IN;
+			case "ZOOM_OUT":
+				return ZOOM_OUT;
 			default:
 				return NONE;
 		}
@@ -206,7 +216,7 @@ class Controls
 		// ui buttons
 		'ACCEPT' => [
 			[FlxKey.SPACE, FlxKey.ENTER],
-			[FlxPad.A, FlxPad.X, FlxPad.START],
+			[FlxPad.A, FlxPad.START],
 		],
 		'BACK' => [
 			[FlxKey.BACKSPACE, FlxKey.ESCAPE],
@@ -222,7 +232,19 @@ class Controls
 		],
 		'CONTROL' => [
 			[#if mac FlxKey.WINDOWS, #end FlxKey.CONTROL],
-			[],
+			[FlxPad.X],
+		],
+		'SHIFT' => [
+			[FlxKey.SHIFT],
+			[FlxPad.A],
+		],
+		'ZOOM_IN' => [
+			[FlxKey.E],
+			[FlxPad.RIGHT_SHOULDER],
+		],
+		'ZOOM_OUT' => [
+			[FlxKey.Q],
+			[FlxPad.LEFT_SHOULDER],
 		],
 	];
 

@@ -52,7 +52,7 @@ class HudDoido extends HudClass
 		timeTxt = new FlxText(0, 0, 0, "nuts / balls even");
 		timeTxt.setFormat(Main.gFont, 32, 0xFFFFFFFF, CENTER);
 		timeTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
-		enableTimeTxt(SaveData.data.get('Song Timer'));
+		enableTimeTxt(DevOptions.songTimer);
 		add(timeTxt);
 		
 		badScoreTxt = new FlxText(0,0,0,"SCORE WILL NOT BE SAVED");
@@ -87,7 +87,7 @@ class HudDoido extends HudClass
 		
 		infoTxt.text += 			'Score: '		+ FlxStringUtil.formatMoney(Timings.score, false, true);
 		infoTxt.text += separator + 'Accuracy: '	+ Timings.accuracy + "%" + ' [${Timings.getRank()}]';
-		infoTxt.text += separator + 'Misses: '		+ Timings.misses;
+		infoTxt.text += separator + 'Breaks: '		+ Timings.breaks;
 
 		infoTxt.screenCenter(X);
 	}
@@ -97,8 +97,8 @@ class HudDoido extends HudClass
 		super.updateTimeTxt();
 		if(!timeTxt.visible) return;
 
-		var hasMil:Bool = (SaveData.data.get('Song Timer Style') == "MIN'SEC\"MIL");
-		switch(SaveData.data.get('Song Timer Info'))
+		var hasMil:Bool = (DevOptions.timerStyle== "MIN'SEC\"MIL");
+		switch(DevOptions.timerInfo)
 		{
 			case "ELAPSED TIME": 
 				timeTxt.text = CoolUtil.posToTimer(songTime, hasMil);
@@ -182,7 +182,7 @@ class HudDoido extends HudClass
     {
         super.addRating(rating);
 		var daX:Float = (FlxG.width / 2);
-		if(SaveData.data.get("Middlescroll"))
+		if(PlayState.middlescroll)
 			daX -= FlxG.width / 4;
 
 		rating.ratingScale = 0.7;

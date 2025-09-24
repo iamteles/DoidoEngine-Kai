@@ -3,6 +3,7 @@ package objects.hud;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
+import flixel.text.FlxText;
 import backend.song.Conductor;
 import states.PlayState;
 
@@ -18,6 +19,9 @@ class HudClass extends FlxGroup
 	public var health:Float = 1;
     public var songTime:Float = 0.0;
     public var downscroll:Bool = false;
+
+    public var subtitleA:FlxText;
+	public var subtitleB:FlxText;
 
     public var ratingGrp:FlxGroup;
 
@@ -41,6 +45,34 @@ class HudClass extends FlxGroup
         ratingGrp = new FlxGroup();
 		health = PlayState.health;
         songTime = 0;
+
+        subtitleA = new FlxText(0,0,0,"");
+		subtitleA.setFormat(Main.gFont, 30, 0xFFFFFFFF, CENTER);
+		subtitleA.setBorderStyle(OUTLINE, 0xFF000000, 2);
+		subtitleA.screenCenter(X);
+		subtitleA.y = FlxG.height - subtitleA.height - 160;
+		add(subtitleA);
+
+        subtitleB = new FlxText(0,0,0,"");
+		subtitleB.setFormat(Main.gFont, 30, 0xFFFFFFFF, CENTER);
+		subtitleB.setBorderStyle(OUTLINE, 0xFF000000, 2);
+		subtitleB.screenCenter(X);
+		subtitleB.y = subtitleA.y - subtitleB.height - 2;
+		add(subtitleB);
+	}
+
+    public function updateLyrics(lineA:String = "", lineB:String = "") {
+		subtitleA.text = lineA;
+		subtitleB.text = lineB;
+
+		for(text in [subtitleA, subtitleB]) {
+			text.scale.set(1.2 + 0.3,1.2);
+		}
+
+		subtitleA.screenCenter(X);
+		subtitleA.y = FlxG.height - subtitleA.height - 160;
+		subtitleB.screenCenter(X);
+		subtitleB.y = subtitleA.y - subtitleB.height - 2;
 	}
 
 	public function updateInfoTxt() {}

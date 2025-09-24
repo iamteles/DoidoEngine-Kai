@@ -28,6 +28,7 @@ class GameOverSubState extends MusicBeatSubState
 	}
 
 	public var loopTimer:FlxTimer;
+	var camZoom:Float = 1;
 	
 	override function create()
 	{
@@ -58,6 +59,7 @@ class GameOverSubState extends MusicBeatSubState
 		{
 			bf.char.playAnim("deathLoop");
 			CoolUtil.playMusic("death/deathMusic");
+			camZoom = 1;
 		});
 		callScript("gameOverCreatePost");
 
@@ -76,6 +78,8 @@ class GameOverSubState extends MusicBeatSubState
 		callScript("gameOverUpdate", [elapsed]);
 		if(bfFollow != null)
 			CoolUtil.camPosLerp(FlxG.camera, bfFollow, elapsed * 2);
+
+		FlxG.camera.zoom = CoolUtil.camZoomLerp(FlxG.camera.zoom, camZoom);
 
 		if(!ended)
 		{

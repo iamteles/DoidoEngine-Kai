@@ -349,7 +349,7 @@ class DoidoVideoSprite extends FlxSprite
 		if (bitmap != null)
 		{
 			if (autoVolumeHandle)
-				bitmap.volume = Math.floor(FlxMath.bound(getCalculatedVolume(), 0, 2.55) * Define.getFloat('HXVLC_FLIXEL_VOLUME_MULTIPLIER', 100));
+				bitmap.volume = Math.floor(FlxMath.bound(getCalculatedVolume(), 0, 2.55) * Define.getFloat('HXVLC_FLIXEL_VOLUME_MULTIPLIER', 125));
 		}
 	}
 	#end

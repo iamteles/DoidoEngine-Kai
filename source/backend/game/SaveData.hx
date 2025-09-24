@@ -5,6 +5,8 @@ import flixel.util.FlxSave;
 import openfl.system.Capabilities;
 import backend.song.Conductor;
 import backend.song.Highscore;
+import backend.native.Windows;
+import backend.song.SongData;
 
 /*
 	Save data such as options and other things.
@@ -24,38 +26,38 @@ class SaveData
 		* PREFERENCES
 		* 
 		*/
-		"Window Size" => [
+		"Resolution" => [
 			"1280x720",
 			SELECTOR,
-			"Change the game's resolution if it doesn't fit your monitor",
+			"Change the game's resolution if it doesn't fit your monitor.",
 			["640x360","854x480","960x540","1024x576","1152x648","1280x720","1366x768","1600x900","1920x1080", "2560x1440", "3840x2160"],
 		],
 		'Flashing Lights' => [
 			"ON",
 			SELECTOR,
-			"Whether to show flashing lights and colors",
+			"Disable this if you have issues with Photosensitivity.",
 			["ON", "REDUCED", "OFF"]
 		],
 		"Cutscenes" => [
 			"ON",
 			SELECTOR,
-			"Decides if the song cutscenes should play",
+			"Decides if the song cutscenes should play.",
 			["ON", "FREEPLAY OFF", "OFF"],
 		],
 		"FPS Counter" => [
 			false,
 			CHECKMARK,
-			"Whether you want a counter showing your framerate and memory usage counter in the corner of the game",
+			"Counter that can display debug information, such as the framerate or the memory usage.",
 		],
 		'Unfocus Pause' => [
 			true,
 			CHECKMARK,
-			"Pauses the game when the window is unfocused",
+			"Pauses the game when the window is unfocused.",
 		],
 		"Delay on Unpause" => [
 			#if desktop true #else false #end,
 			CHECKMARK,
-			"Whether you want to have a delay when unpausing the game",
+			"When unpausing the game, this small delay will help you get back on rhythm.",
 		],
 		'Discord RPC' => [
 			#if DISCORD_RPC
@@ -64,7 +66,7 @@ class SaveData
 			false,
 			#end
 			CHECKMARK,
-			"Whether to use Discord's game activity.",
+			"Display game information on your Discord profile.",
 		],
 		"Shaders" => [
 			true,
@@ -81,38 +83,33 @@ class SaveData
 		* GAMEPLAY
 		* 
 		*/
-		"Can Ghost Tap" => [
+		"Ghost Tapping" => [
 			"WHILE IDLING",
 			SELECTOR,
-			"Makes you able to press keys freely without missing notes",
+			"Makes you able to press keys freely without breaking notes.",
 			["ALWAYS", "WHILE IDLING", "NEVER"]
 		],
 		"Downscroll" => [
 			false,
 			CHECKMARK,
-			"Makes the notes go down instead of up"
+			"Decides if the notes should scroll down or up."
 		],
-		"Middlescroll" => [
-			false,
-			CHECKMARK,
-			"Disables the opponent's notes and moves yours to the middle"
-		],
-		"Framerate Cap"	=> [
-			60, // 120
+		"FPS Cap"	=> [
+			"60", // 120
 			SELECTOR,
-			"Self explanatory",
-			[30, 360]
+			"How many frames can displayed in a second.",
+			["30", "60", "75", "120", "144"]
 		],
 		'Hitsounds' => [
 			"OFF",
 			SELECTOR,
-			"Whether to play hitsounds whenever you hit a note",
-			["OFF", "OSU", "NSWITCH", "CD"]
+			"Clicking sounds whenever you hit a note",
+			["OFF", "OSU", "CD"]
 		],
 		'Hitsound Volume' => [
 			100,
 			SELECTOR,
-			"Only works when Hitsounds aren't off",
+			"The volume at which hitsounds are played.",
 			[0, 100]
 		],
 		/*
@@ -120,53 +117,15 @@ class SaveData
 		* APPEARANCE
 		* 
 		*/
-		"Note Splashes" => [
-			"ON",
-			SELECTOR,
-			"Whether a splash appears when you hit a note perfectly.\nDisable if it distracts you.",
-			["ON", "PLAYER ONLY", "OFF"],
-		],
-		"Hold Splashes" => [
-			true,
-			CHECKMARK,
-			"Whether a splash appears when you completely press a hold note.\nDisable if it distracts you. (Only works if Note Splashes is enabled)."
-		],
 		"Antialiasing" => [
 			true,
 			CHECKMARK,
-			"Disabling it might increase the fps at the cost of smoother sprites"
+			"Smoothing on sprite scaling. Disabling this may improve performance."
 		],
-		"Split Holds" => [
-			false,
-			CHECKMARK,
-			"Cuts the end of each hold note like classic engines did"
-		],
-		"Static Hold Anim" => [
+		"Dark Mode" => [
 			true,
 			CHECKMARK,
-			"Whether the character stays static when playing a hold note."
-		],
-		"Single Rating" => [
-			false,
-			CHECKMARK,
-			"Makes only one rating appear at a time",
-		],
-		"Song Timer" => [
-			true,
-			CHECKMARK,
-			"Makes the song timer visible",
-		],
-		"Song Timer Info" => [
-			"ELAPSED TIME",
-			SELECTOR,
-			"What information appears on the song timer.\nSong Timer must be enabled.",
-			["ELAPSED TIME", "TIME LEFT", "FULL TIMER"],
-		],
-		"Song Timer Style" => [
-			"MIN:SEC",
-			SELECTOR,
-			"How should the song timer look like.\nSong Timer must be enabled.",
-			["MIN:SEC", "MIN'SEC\"MIL"],
+			"The theme of the Window."
 		],
 		/*
 		*
@@ -276,12 +235,14 @@ class SaveData
 	{
 		saveSettings.data.settings = data;
 		saveSettings.flush();
+		FlxG.save.flush();
 		update();
 	}
 
+	static var lastDark:Bool = false;
 	public static function update()
 	{
-		Main.changeFramerate(data.get("Framerate Cap"));
+		Main.changeFramerate(Std.parseInt(data.get("FPS Cap")));
 		
 		if(Main.fpsCounter != null)
 			Main.fpsCounter.visible = data.get("FPS Counter");
@@ -294,13 +255,20 @@ class SaveData
 		Conductor.inputOffset = data.get('Input Offset');
 
 		DiscordIO.check();
+
+		#if windows
+		if(SaveData.data.get("Dark Mode") != lastDark)
+			Windows.setDarkMode(lime.app.Application.current.window.title, SaveData.data.get("Dark Mode"));
+
+		lastDark = SaveData.data.get("Dark Mode");
+		#end
 	}
 
 	public static function updateWindowSize()
 	{
 		#if desktop
 		if(FlxG.fullscreen) return;
-		var ws:Array<String> = data.get("Window Size").split("x");
+		var ws:Array<String> = data.get("Resolution").split("x");
         	var windowSize:Array<Int> = [Std.parseInt(ws[0]),Std.parseInt(ws[1])];
         	FlxG.stage.window.width = windowSize[0];
         	FlxG.stage.window.height= windowSize[1];

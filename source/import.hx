@@ -4,6 +4,7 @@ import backend.game.SaveData;
 import backend.utils.CoolUtil;
 import backend.system.Discord.DiscordIO;
 import backend.system.Logs;
+import backend.game.DevOptions;
 
 using StringTools;
 using flixel.util.FlxArrayUtil;

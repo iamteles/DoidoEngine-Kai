@@ -60,7 +60,7 @@ class VideoPlayerSubState extends MusicBeatSubState
 
     public function pauseVideo()
     {
-        FlxG.sound.play(Paths.sound('menu/cancelMenu'), 0.7);
+        FlxG.sound.play(Paths.sound('menu/cancel'), 0.7);
         video.pause();
         
         openSubState(new subStates.CutscenePauseSubState(function(exit:PauseExit) {

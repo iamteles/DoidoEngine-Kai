@@ -29,7 +29,7 @@ class Timings
 	// note stuff
 	public static var combo:Int = 0;
 	public static var notesHit:Int = 0;
-	public static var misses:Int = 0;
+	public static var breaks:Int = 0;
 	// ratings
 	public static var ratingCount:Map<String, Int> = [];
 
@@ -41,7 +41,7 @@ class Timings
 		accJudge = 0;
 		combo = 0;
 		notesHit = 0;
-		misses = 0;
+		breaks = 0;
 		ratingCount = [
 			"sick" 	=> 0,
 			"good" 	=> 0,
@@ -101,10 +101,10 @@ class Timings
 		accuracy = FlxMath.bound(accuracy, 0, 100);
 	}
 
-	public static function getRank(?accuracy:Float, ?misses:Int, inGame:Bool = true, hasPlus:Bool = true):String
+	public static function getRank(?accuracy:Float, ?breaks:Int, inGame:Bool = true, hasPlus:Bool = true):String
 	{
-		if(misses == null)
-			misses = Timings.misses;
+		if(breaks == null)
+			breaks = Timings.breaks;
 
 		if(accuracy == null)
 			accuracy = Timings.accuracy;
@@ -124,7 +124,7 @@ class Timings
 		calc("S", 100,95);
 
 		// pluses for your rank
-		if(misses == 0) {
+		if(breaks == 0) {
 			if(hasPlus)
 				result += "+";
 			if(accuracy == 100.0)
@@ -132,7 +132,7 @@ class Timings
 		}
 		
 		// you cant give a result without notes :/
-		if(inGame ? (accHit <= 0) : (accuracy == 0 && misses == 0))
+		if(inGame ? (accHit <= 0) : (accuracy == 0 && breaks == 0))
 			result = "N/A";
 
 		return result;

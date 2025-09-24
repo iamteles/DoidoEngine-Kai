@@ -25,6 +25,10 @@ class Strumline extends FlxGroup
 	public var botplay:Bool = false;
 	public var customData:Bool = false;
 
+	public var updatePlz:Bool = false;
+	public var doSplash:Bool = true;
+	public var noteAlpha:Float = 1;
+
 	public var character:CharGroup;
 
 	public function new(x:Float, ?character:CharGroup, ?downscroll:Bool, ?isPlayer = false, ?botplay = true, ?assetModifier:String = "base")
@@ -57,10 +61,14 @@ class Strumline extends FlxGroup
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if(updatePlz)
+			updateHitbox();
 	}
 	
 	public function addNote(note:Note)
 	{
+		note.realAlpha = noteAlpha;
 		allNotes.add(note);
 		if(note.isHold)
 			holdGroup.add(note);
@@ -113,7 +121,8 @@ class Strumline extends FlxGroup
 
 	public function playSplash(note:Note, isHold:Bool = false)
 	{
-		switch(SaveData.data.get("Note Splashes"))
+		if(!doSplash) return;
+		switch(DevOptions.splashes)
 		{
 			case "PLAYER ONLY": if(!isPlayer) return;
 			case "OFF": return;
@@ -135,7 +144,7 @@ class Strumline extends FlxGroup
 		}
 		else
 		{
-			if(!SaveData.data.get("Hold Splashes")) return;
+			if(!DevOptions.holdSplashes) return;
 
 			var splash = new SplashNote(true);
 			splash.holdStrum = thisStrum;

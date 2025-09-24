@@ -53,7 +53,7 @@ class Rating extends FlxGroup
 
 	public function playRating()
 	{
-		var single:Bool = SaveData.data.get("Single Rating");
+		var single:Bool = DevOptions.singleRating;
 
 		if(!single)
 		{

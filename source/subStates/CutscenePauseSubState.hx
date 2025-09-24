@@ -39,7 +39,7 @@ class CutscenePauseSubState extends MusicBeatSubState
         this.finishCallBack = finishCallBack; 
         this.cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
         FlxG.sound.music?.pause();
-        FlxG.sound.play(Paths.sound('menu/cancelMenu'), 0.7);
+        FlxG.sound.play(Paths.sound('menu/cancel'), 0.7);
         
         darkBG = new FlxSprite().makeGraphic(FlxG.width + 10, FlxG.height + 10, 0xFF000000);
         darkBG.alpha = 0.0001;
@@ -50,7 +50,7 @@ class CutscenePauseSubState extends MusicBeatSubState
         {
             var name = buttonNames[i];
             var btn = new FlxSprite(50 + (170 * i), FlxG.height + 20);
-            btn.frames = Paths.getSparrowAtlas('hud/base/cutscene/$name');
+            btn.frames = Paths.getSparrowAtlas('hud/cutscene/$name');
             var anims:Array<Array<Dynamic>> = (name != "skip") ? [
                 ['idle', true],
                 ['click', false],
@@ -149,7 +149,7 @@ class CutscenePauseSubState extends MusicBeatSubState
         if(change != 0) {
             curSelected += change;
 		    curSelected = FlxMath.wrap(curSelected, 0, buttonNames.length - 1);
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+            FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
 
             if(!lockMovement) {
                 for(btn in buttons.members)
@@ -194,16 +194,16 @@ class CutscenePauseSubState extends MusicBeatSubState
                     holdSkip = Controls.pressed(ACCEPT);
                     if(Controls.justPressed(ACCEPT)) {
                         curBtn.animation.play('hold');
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
                     }
                     if(Controls.released(ACCEPT)) {
                         curBtn.animation.play('release');
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/scroll'), 0.7);
                     }
                 case "restart":
                     if(Controls.justPressed(ACCEPT)) {
                         curBtn.animation.play('click');
-                        FlxG.sound.play(Paths.sound('menu/cancelMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/cancel'), 0.7);
 
                         var time:Float = 0.3;
 
@@ -227,7 +227,7 @@ class CutscenePauseSubState extends MusicBeatSubState
                 default:
                     if(Controls.justPressed(ACCEPT)) {
                         curBtn.animation.play('click');
-                        FlxG.sound.play(Paths.sound('menu/cancelMenu'), 0.7);
+                        FlxG.sound.play(Paths.sound('menu/cancel'), 0.7);
                         moveButtons(false);
 
                         new FlxTimer().start(0.9, function(tmr) {

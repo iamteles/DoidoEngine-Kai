@@ -1,5 +1,7 @@
 package backend.utils;
 
+import flixel.util.FlxColor;
+
 typedef DoidoOffsets = {
 	var animOffsets:Array<Array<Dynamic>>;
 	var globalOffset:Array<Float>;
@@ -20,8 +22,36 @@ enum SpriteType {
 	MULTISPARROW;
 }
 
+typedef Rimlight =
+{
+	var ?angle:Int;
+	var ?threshold:Float;
+
+    var ?brightness:Int;
+    var ?hue:Int;
+    var ?contrast:Int;
+    var ?saturation:Int;
+
+    var ?color:FlxColor;
+}
+
 class CharacterUtil
 {
+	inline public static function defaultRim():Rimlight
+	{
+		return {
+			angle: 90,
+			threshold: 0.1,
+
+			brightness: -12,
+			hue: 0,
+			contrast: -20,
+			saturation: 20,
+
+			color: 0xFF5D3CEF
+		};
+	}
+
 	inline public static function defaultOffsets():DoidoOffsets
 	{
 		return {
@@ -47,23 +77,10 @@ class CharacterUtil
 	public static function charList():Array<String>
 	{
 		return [
-			"dad",
+			"face",
 			"gf",
 			"bf",
 			"bf-dead",
-			"bf-pixel",
-			"bf-pixel-dead",
-			"gf-pixel",
-			"spooky",
-			"spooky-player",
-			"luano-day",
-			"luano-night",
-			"senpai",
-			"senpai-angry",
-			"spirit",
-			"gemamugen",
-			"zero",
-			"face"
 		];
 	}
 }

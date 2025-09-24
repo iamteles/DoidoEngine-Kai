@@ -97,7 +97,7 @@ class CharacterEditorState extends MusicBeatState
 	override function create()
 	{
 		super.create();
-		CoolUtil.playMusic('dialogue/lunchbox');
+		CoolUtil.playMusic('freakyMenu');
 		Controls.setSoundKeys(true);
 		FlxG.mouse.visible = true;
 		var grid = FlxGridOverlay.create(32, 32, FlxG.width * 2, FlxG.height * 2);
@@ -464,7 +464,7 @@ class CharacterEditorState extends MusicBeatState
 			if(wasPlayState)
 				Main.switchState(new LoadingState());
 			else
-				Main.switchState(new states.menu.MainMenuState());
+				Main.switchState(new states.DebugState());
 		}
 			
 		if(FlxG.mouse.wheel != 0)

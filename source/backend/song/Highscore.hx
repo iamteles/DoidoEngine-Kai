@@ -3,7 +3,7 @@ package backend.song;
 typedef ScoreData = {
 	var score:Float;
 	var accuracy:Float;
-	var misses:Float;
+	var breaks:Float;
 }
 class Highscore
 {
@@ -22,7 +22,7 @@ class Highscore
 	public static function getScore(song:String):ScoreData
 	{
 		if(!highscoreMap.exists(song))
-			return {score: 0, accuracy: 0, misses: 0};
+			return {score: 0, accuracy: 0, breaks: 0};
 		else
 			return highscoreMap.get(song);
 	}

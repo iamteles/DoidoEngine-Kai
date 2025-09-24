@@ -13,80 +13,67 @@ import flixel.tweens.FlxTween;
 import objects.menu.Alphabet;
 import objects.menu.options.*;
 import states.PlayState;
-import states.menu.MainMenuState;
+import states.DebugState;
 
 class OptionsSubState extends MusicBeatSubState
 {
     var mainShit:Array<String> = [
-        "preferences",
+        "graphics",
         "gameplay",
-        "appearance",
+        "system",
         #if TOUCH_CONTROLS "mobile", #end
-        "adjust offsets",
+        "offsets",
         "controls",
     ];
     var optionShit:Map<String, Array<String>> =
 	[
-        "preferences" => [
-            #if desktop
-            "Window Size",
-            #end
-            "Flashing Lights",
-            "Cutscenes",
-            #if desktop
-            "FPS Counter",
-            "Unfocus Pause",
-            #end
-            #if desktop
-            "Delay on Unpause",
-            #end
-            #if DISCORD_RPC
-            "Discord RPC",
-            #end
+        "graphics" => [
             "Shaders",
             "Low Quality",
-        ],
-		"gameplay" => [
-			"Can Ghost Tap",
-			"Downscroll",
-			"Middlescroll",
-            #if desktop
-            "Framerate Cap",
+            #if windows
+            "Dark Mode",
             #end
+            #if desktop
+            "Antialiasing",
+            "Resolution",
+            "FPS Cap",
+            #end
+		],
+        "gameplay" => [
+			"Ghost Tapping",
+			"Downscroll",
             "Hitsounds",
             "Hitsound Volume",
 		],
-		"appearance" => [
-            "Note Splashes",
-            "Hold Splashes",
-            #if desktop
-			"Antialiasing",
+        "system" => [
+            "Delay on Unpause",
+            #if DISCORD_RPC
+            "Discord RPC",
             #end
-            "Split Holds",
-            "Static Hold Anim",
-            "Single Rating",
-			"Song Timer",
-			"Song Timer Info",
-			"Song Timer Style",
-		],
+            #if desktop
+            "Unfocus Pause",
+            "FPS Counter",
+            #end
+            "Flashing Lights",
+            "Cutscenes",
+        ],
         #if TOUCH_CONTROLS
         "mobile" => [
             "Invert Swipes",
             "Button Opacity",
-            "Hitbox Opacity",
+            "Hitbox Opacity"
         ]
         #end
 	];
     
     var restartTimer:Float = 0;
     var forceRestartOptions:Array<String> = [ // options that you gotta restart the song for them to reload sorry
-        "Can Ghost Tap", // you can't cheat >:]
+        "Ghost Tapping", // you can't cheat >:]
         "Low Quality",
         "Split Holds" // it dont work
     ];
     var reloadOptions:Array<String> = [ // options that need some manual reloading on playstate when changed
         "Antialiasing",
-        "Song Timer",
         "Shaders"
     ];
     // anything else already updates automatically
@@ -109,9 +96,9 @@ class OptionsSubState extends MusicBeatSubState
     var bg:FlxSprite;
     var bgColors:Map<String, FlxColor> = [
 		"main" 		    => 0xFFCF68F7,
-        "preferences"   => 0xFFFF4949,
+        "graphics"   => 0xFFFF4949,
 		"gameplay"	    => 0xFF83E6AA,
-		"appearance"    => 0xFFF36B8F,
+		"system"    => 0xFFF36B8F,
 	];
     
     public function new(?playState:PlayState)
@@ -202,18 +189,13 @@ class OptionsSubState extends MusicBeatSubState
         {
             if(curCat == 'main')
             {
+                CoolUtil.playPrev();
+                close();
                 persistentDraw = true;
-                if(playState == null)
-                    Main.switchState(new MainMenuState());
-                else
-                {
-                    CoolUtil.playMusic();
-                    close();
-                }
             }
             else
             {
-                FlxG.sound.play(Paths.sound('menu/cancelMenu'));
+                FlxG.sound.play(Paths.sound('menu/cancel'));
                 spawnItems('main');
             }
         }
@@ -234,11 +216,11 @@ class OptionsSubState extends MusicBeatSubState
                         Logs.print('FUCK YOU!!', WARNING);*/
                         persistentDraw = false;
                         openSubState(new ControlsSubState());
-                    case "adjust offsets":
+                    case "offsets":
                         persistentDraw = false;
                         openSubState(new OffsetsSubState());
                     default:
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+                        FlxG.sound.play(Paths.sound('menu/scroll'));
                         spawnItems(mainShit[curSelected]);
                 }
             }
@@ -250,7 +232,7 @@ class OptionsSubState extends MusicBeatSubState
             {
                 if(Std.isOfType(curAttach, OptionCheckmark))
                 {
-                    FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+                    FlxG.sound.play(Paths.sound('menu/scroll'));
                     var check:OptionCheckmark = cast curAttach;
                     check.setValue(!check.value);
                     SaveData.data.set(curOption, check.value);
@@ -278,7 +260,7 @@ class OptionsSubState extends MusicBeatSubState
                         SaveData.save();
 
                         // custom stuff
-                        if(selec.label == "Window Size")
+                        if(selec.label == "Resolution")
                             SaveData.updateWindowSize();
                         #if TOUCH_CONTROLS
                         else if(selec.label == "Button Opacity")
@@ -297,7 +279,7 @@ class OptionsSubState extends MusicBeatSubState
                     if(selec.holdTimer >= holdMax)
                         selec.holdTimer = holdMax - 0.005; // 0.02
                     /*else
-                        FlxG.sound.play(Paths.sound('menu/scrollMenu'));*/
+                        FlxG.sound.play(Paths.sound('menu/scroll'));*/
                 }
                 
                 selec.arrowL.animation.play(Controls.pressed(UI_LEFT) ? "push" : "idle", true);
@@ -468,7 +450,7 @@ class OptionsSubState extends MusicBeatSubState
             return;
 
         if(change != 0)
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
         
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, grpItems.length - 1);

@@ -32,7 +32,7 @@ class Init extends MusicBeatState
 		if(FlxG.save.data.beenWarned == null || openWarningMenu)
 			Main.switchState(new WarningState());
 		else
-			Main.switchState(new TitleState());
+			flagState();
 	}
 
 	/*
@@ -41,12 +41,13 @@ class Init extends MusicBeatState
 	*/
 	public static function flagState()
 	{
-		#if MENU
-		Main.switchState(new states.menu.MainMenuState());
+		Main.switchState(new DebugState());
+		/*#if MENU
+		Main.switchState(new states.DebugState());
 		#elseif FREEPLAY
 		Main.switchState(new states.menu.FreeplayState());
 		#else
 		Main.switchState(new TitleState());
-		#end
+		#end*/
 	}
 }

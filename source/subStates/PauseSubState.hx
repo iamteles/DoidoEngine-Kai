@@ -15,6 +15,7 @@ import objects.menu.Alphabet;
 import objects.menu.AlphabetMenu;
 import states.*;
 import subStates.options.OptionsSubState;
+import flixel.math.FlxPoint;
 
 class PauseSubState extends MusicBeatSubState
 {
@@ -22,6 +23,7 @@ class PauseSubState extends MusicBeatSubState
 		"resume",
 		"restart song",
 		"botplay",
+		"photo mode",
 		"options",
 		"exit to menu",
 	];
@@ -80,7 +82,7 @@ class PauseSubState extends MusicBeatSubState
 		
 		var textArray:Array<String> = [
 			PlayState.SONG.song,
-			PlayState.songDiff,
+			//PlayState.songDiff,
 			'BLUEBALLED: ' + PlayState.blueballed,
 		];
 		for(i in 0...textArray.length)
@@ -176,7 +178,7 @@ class PauseSubState extends MusicBeatSubState
 				switch(optionShit[curSelected])
 				{
 					default:
-						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
+						FlxG.sound.play(Paths.sound("menu/cancel"));
 					
 					case "resume":
 						closePause();
@@ -186,7 +188,7 @@ class PauseSubState extends MusicBeatSubState
 						Main.resetState();
 					
 					case "botplay":
-						FlxG.sound.play(Paths.sound("menu/cancelMenu"));
+						FlxG.sound.play(Paths.sound("menu/cancel"));
 						PlayState.botplay = !PlayState.botplay;
 
 					case "options":
@@ -199,6 +201,10 @@ class PauseSubState extends MusicBeatSubState
 						//Main.switchState(new MenuState());
 						persistentDraw = true;
 						PlayState.sendToMenu();
+
+					case "photo mode":
+						persistentDraw = false;
+						this.openSubState(new PhotoSubState());
 				}
 			}
 
@@ -228,6 +234,6 @@ class PauseSubState extends MusicBeatSubState
 		}
 
 		if(change != 0)
-			FlxG.sound.play(Paths.sound("menu/scrollMenu"));
+			FlxG.sound.play(Paths.sound("menu/scroll"));
 	}
 }

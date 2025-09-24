@@ -55,22 +55,42 @@ class ChartingState extends MusicBeatState
 	public static final possibleEvents:Array<Array<String>> = [
 		['none', 				''],
 		// CAMERA (permanent)
-		['Change Cam Zoom', 	'Value 1: New Zoom \nValue 2: Duration (in steps)\nValue 3: $easeDesc'],
+		['Change Cam Zoom', 	'Value 1: New Zoom \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		['Change Tween Zoom', 	'Value 1: New Zoom \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
 		['Change Cam Pos', 		'Value 1: New X \nValue 2: New Y\nValue 3: Camera Speed (Default: 1)\n(Leave Value 1 or 2 empty to revert back to normal camera)'],
 		['Change Cam Section', 	'Value 1: Character to focus (dad/gf/bf/none) \nChoosing NONE returns camera to focusing on mustHitSections'],
-		['Change Cam Angle', 	'Value 1: New Angle \nValue 2: Duration (in steps)\nValue 3: $easeDesc'],
-		// CAMERA (temporary)
-		['Flash Screen',		'Value 1: Duration (in steps)\nValue 2: Color\n$colorDesc'],
-		['Fade Screen',			'Value 1: Fade Out (true/false)\nValue 2: Duration (in steps)\nValue 3: Color\n$colorDesc'],
-		['Shake Screen',		'Value 1: Intensity\nValue 2: Duration (in steps)\nValue 3: Camera? (camGame, camHUD, camStrum)'],
+		['Change Cam Angle', 	'Value 1: New Angle \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		['Change Cam Alpha', 	'Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: Camera? (camGame, camHUD, camStrum)'],
+		// SCREEN
+		['Flash Screen',		'Value 1: Duration (in seconds)\nValue 2: Color\n$colorDesc'],
+		['Fade Screen',			'Value 1: Fade Out (true/false)\nValue 2: Duration (in seconds)\nValue 3: Color\n$colorDesc'],
+		['Shake Screen',		'Value 1: Intensity\nValue 2: Duration (in seconds)\nValue 3: Camera? (camGame, camHUD, camStrum)'],
+		['Single Cam Beat',		'Value 1: Game Zoom\nValue 2: HUD Zoom'],
+		['Change Beat', 		'Value 1: Beat Speed (Default: 4)\nValue 2: Beat Zoom (Default: 0)'],
+		//['Change Gradient Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		['Change Vignette Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+
 		// game objects
 		['Change Character', 	'Value 1: Character to change (dad/gf/bf)\nValue 2: New Character (dad/pico/senpai-angry)'],
 		['Change Stage',		'Value 1: New Stage'],
-		// animation
+		// character
+		['Change Char Zoom', 	'Value 1: Opponent Zoom\nValue 2: Player Zoom\nValue 3: GF Zoom'],
 		['Play Animation',		'Value 1: Character (dad/gf/bf)\nValue 2: Animation to play\nValue 3: Override singing? (true/false)\n(if the character presses a note, does the animation stop?)'],
+		['Change Idle', 	'Value 1: Character (dad/gf/bf)\nValue 2: Idles to play (Separated by commas)'],
 		// notes
 		['Freeze Notes',		'Value 1: Freeze? (true/false)\nValue 2: Strumline? (dad/bf/both)'],
-		['Change Note Speed', 	'Value 1: New Speed\nValue 2: Duration (in steps)\nValue 3: $easeDesc'],
+		['Change Note Speed', 	'Value 1: New Speed\nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		// outras coisas sla
+		['Change Bars',  'Value 1: Position\nValue 2: Speed\nSetting Value 1 to true will default to 20, otherwise will default to 320'],
+		['Change Subtitles', 	'Value 1: Line A\nValue 2: Line B'],
+		['Change Subtitle Alpha','Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		//
+		['Change HudB Alpha',	'Value 1: New Alpha \nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		['Do Note Intro',		''],
+		['Do Countdown',		''],
+		['Change Middlescroll',		'Value 1: Middlescroll (true/false)\nValue 2: Duration (in seconds)\nValue 3: $easeDesc'],
+		['Health Drain', '']
+		//
 	];
 	public var eventsLabels:Array<String> = [];
 

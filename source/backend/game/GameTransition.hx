@@ -9,13 +9,13 @@ import backend.game.MusicBeatData.MusicBeatSubState;
 	Transition between states.
 
 	Usage: When changing between states, you can choose which transition will play.
-	Main.switchState(new states.menu.MainMenuState(), "base");
+	Main.switchState(new states.DebugState(), "base");
 */
 
 class GameTransition extends MusicBeatSubState
 {	
 	var fadeOut:Bool = false;
-	var transition:String = 'funkin';
+	var transition:String = 'base';
 	
 	// Callback at the end of the transition
 	public var finishCallback:Void->Void;
@@ -24,7 +24,7 @@ class GameTransition extends MusicBeatSubState
 	var sprBlack:FlxSprite;
 	var sprGrad:FlxSprite;
 	
-	public function new(fadeOut:Bool = true, transition:String = "funkin")
+	public function new(fadeOut:Bool = true, transition:String = "base")
 	{
 		super();
 		this.fadeOut = fadeOut;

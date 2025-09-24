@@ -33,27 +33,9 @@ class StrumNote extends FlxSprite
 
 		switch(assetModifier)
 		{
-			case "pixel":
-				strumSize = 6;
-				loadGraphic(Paths.image("notes/pixel/notesPixel"), true, 17, 17);
-
-				animation.add("static",  [strumData], 						12, false);
-				animation.add("pressed", [strumData + 8], 					12, false);
-				animation.add("confirm", [strumData + 12, strumData + 16], 	12, false);
-
-				antialiasing = false;
-				isPixelSprite = true;
-
 			default:
 				strumSize = 0.7;
 				frames = Paths.getSparrowAtlas("notes/base/strums");
-				
-				switch(assetModifier)
-				{
-					case "doido":
-						frames = Paths.getSparrowAtlas("notes/doido/strums");
-						strumSize = 0.95;
-				}
 
 				animation.addByPrefix("static",  'strum $direction static',  24, false);
 				animation.addByPrefix("pressed", 'strum $direction pressed', 12, false);

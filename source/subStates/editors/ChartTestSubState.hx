@@ -250,7 +250,7 @@ class ChartTestSubState extends MusicBeatSubState
 		if(!noteInfo) return;
 
 		infoTxt.text = 'Accuracy: ${Timings.accuracy}%' + ' -- Step: ${curStep}\n';
-		infoTxt.text +='Hits: ${Timings.notesHit} -- Misses: ${Timings.misses}';
+		infoTxt.text +='Hits: ${Timings.notesHit} -- Breaks: ${Timings.breaks}';
 		
 		infoTxt.screenCenter(X);
 		infoTxt.y = (downscroll ? 15 : FlxG.height - infoTxt.height - 15);
@@ -467,7 +467,7 @@ class ChartTestSubState extends MusicBeatSubState
 
 		if(miss)
 		{
-			Timings.misses++;
+			Timings.breaks++;
 
 			if(Timings.combo > 0)
 				Timings.combo = 0;
@@ -493,7 +493,7 @@ class ChartTestSubState extends MusicBeatSubState
 		
 		//hudBuild.updateText();
 		var daRating = new Rating(rating, Timings.combo, note.assetModifier);
-		if(SaveData.data.get("Single Rating"))
+		if(DevOptions.singleRating)
 		{
 			if(prevRating != null)
 				prevRating.kill();
@@ -647,7 +647,7 @@ class ChartTestSubState extends MusicBeatSubState
 							hold.noteCrochet * (strumline.scrollSpeed * 0.45) + 1
 						];
 						
-						if(SaveData.data.get("Split Holds"))
+						if(DevOptions.splitHolds)
 							newHoldSize[1] -= 20;
 						
 						hold.setGraphicSize(
@@ -759,7 +759,7 @@ class ChartTestSubState extends MusicBeatSubState
 						if(hold.isHoldEnd)
 							holdID -= 0.4999; // 0.5
 						
-						if(SaveData.data.get("Split Holds"))
+						if(DevOptions.splitHolds)
 							holdID -= 0.2;
 						
 						// calculating the clipping by how much you held the note

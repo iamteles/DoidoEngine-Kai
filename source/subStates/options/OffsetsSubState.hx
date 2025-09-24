@@ -126,7 +126,7 @@ class OffsetsSubState extends MusicBeatSubState
 
     function changeOption(change:Int = 0)
     {
-        if(change != 0) FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+        if(change != 0) FlxG.sound.play(Paths.sound('menu/scroll'));
 
         curSelected += change;
         curSelected = FlxMath.wrap(curSelected, 0, optionShit.length - 1);
@@ -151,7 +151,7 @@ class OffsetsSubState extends MusicBeatSubState
     function changeSelector(change:Int = 0)
     {
         if(change != 0 && holdTimer < 0.5)
-            FlxG.sound.play(Paths.sound('menu/scrollMenu'));
+            FlxG.sound.play(Paths.sound('menu/scroll'));
         
         var selector = grpSelectors.members[curSelected];
         selector.changeSelection(change);
