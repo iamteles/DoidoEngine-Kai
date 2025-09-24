@@ -54,7 +54,7 @@ class PhotoSubState extends MusicBeatSubState
 		{
 			if(textArray[i] == "") continue;
 		
-			var text = new FlxText(0,0,0,textArray[i].toUpperCase());
+			var text = new FlxText(0,0,0,textArray[i]);
 			text.setFormat(Main.gFont, 36, 0xFFFFFFFF, RIGHT);
 			text.setPosition(25, FlxG.height - (text.height*(textArray.length - i)) - 15);
             text.setBorderStyle(OUTLINE, 0xFF000000, 1.5);

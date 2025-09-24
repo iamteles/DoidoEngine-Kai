@@ -25,6 +25,7 @@ import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.addons.display.FlxRuntimeShader;
 import flixel.util.FlxGradient;
+import flixel.util.FlxSpriteUtil;
 import openfl.display.BlendMode;
 import openfl.filters.BitmapFilter;
 import openfl.filters.ShaderFilter;
@@ -33,7 +34,7 @@ import objects.hud.*;
 import objects.hud.game.*;
 import objects.note.*;
 import objects.dialogue.Dialogue;
-import shaders.*;
+import backend.shaders.*;
 import states.editors.*;
 import states.editors.ChartingState;
 import states.menu.*;
@@ -60,6 +61,7 @@ class PlayState extends MusicBeatState
 
 	public static var songLength:Float = 0;
 	public var songSpeed(default, set):Float = 1.0;
+	public static var defaultSongSpeed:Float = 1.0;
 
 	// to avoid updating discord rpc each frame, it only updates each second
 	private var discordUpdateTime:Float = 0;
@@ -187,6 +189,8 @@ class PlayState extends MusicBeatState
 	var vgblack:FlxSprite;
 	var logo:FlxSprite;
 
+	var evilTrailDad:FunkTrail;
+	var evilTrailbf:FunkTrail;
 	public var cinemaBars:CinemaBars;
 
 	public static function resetStatics()
@@ -219,6 +223,8 @@ class PlayState extends MusicBeatState
 		assetModifier = "base";
 		startedCountdown = false;
 		startedSong = false;
+
+		setDefaultSpeed();
 		
 		if(SONG == null) return;
 	}
@@ -382,19 +388,11 @@ class PlayState extends MusicBeatState
 
 		ghostTapping = SaveData.data.get('Ghost Tapping');
 		var downscroll:Bool = SaveData.data.get("Downscroll");
-		//var doidoEasterEgg:Bool = FlxG.random.bool(0.01);
 
 		var noteskins:Array<String> = [];
 
 		for(character in [dad.curChar, boyfriend.curChar]) {
-			/*if(doidoEasterEgg) {
-				noteskins.push("doido");
-				continue;
-			}*/
-			
 			switch(character) {
-				case 'bf-pixel':
-					noteskins.push("pixel");
 				default:
 					noteskins.push(assetModifier);
 			}
@@ -456,6 +454,8 @@ class PlayState extends MusicBeatState
 			vocalsOpp.loadEmbedded(Paths.vocals(daSong, songDiff, '-opp'), false, false);
 			addMusic(vocalsOpp);
 		}
+
+		songSpeed = defaultSongSpeed;
 
 		Conductor.songPos = -Conductor.crochet * 5;
 		
@@ -973,9 +973,9 @@ class PlayState extends MusicBeatState
 
 		if(!miss) {
 			var absNoteDiff = (Math.abs(noteDiff) <= 5 ? 0 : Math.abs(noteDiff));
-			Timings.score += Math.floor((160 - absNoteDiff) / 160 * 350);
+			Timings.score += Math.floor(((160 - absNoteDiff) / 160 * 350) * defaultSongSpeed);
 		} else {
-			Timings.score -= 100;
+			Timings.score -= Math.floor(100 * (1 / defaultSongSpeed));
 		}
 		Timings.addAccuracy(judge);
 
@@ -1862,6 +1862,8 @@ class PlayState extends MusicBeatState
 
 		switch(option)
 		{
+			case 'Song Speed':
+				setDefaultSpeed();
 			case 'Shaders':
 				for(i in ["camGame", "camHUD", "camStrum"])
 					stringToCam(i).filters = (SaveData.data.get("Shaders") ? tempShaders.get(i) : []);
@@ -2281,5 +2283,14 @@ class PlayState extends MusicBeatState
 	{
 		for(script in loadedScripts)
 			script.set(name, value, allowOverride);
+	}
+
+	public static function setDefaultSpeed() {
+		var str:String = SaveData.data.get("Song Speed");
+		var strM = str.substr(0, str.length - 1);
+		var spd:Float = CoolUtil.stringToFloat(strM, 1);
+		defaultSongSpeed = spd;
+		//if(defaultSongSpeed != 1)
+		//	validScore = false;
 	}
 }

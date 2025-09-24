@@ -40,6 +40,7 @@ class OptionsSubState extends MusicBeatSubState
             #end
 		],
         "gameplay" => [
+            "Song Speed",
 			"Ghost Tapping",
 			"Downscroll",
             "Hitsounds",
@@ -121,7 +122,7 @@ class OptionsSubState extends MusicBeatSubState
 		DiscordIO.changePresence("Options - Tweakin' the Settings");
 
         bg = new FlxSprite();
-        if(playState == null)
+        if(playState == null && !DevOptions.subOptions)
             bg.loadGraphic(Paths.image('menu/backgrounds/menuDesat'));
         else
         {

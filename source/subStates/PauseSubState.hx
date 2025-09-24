@@ -122,16 +122,16 @@ class PauseSubState extends MusicBeatSubState
 	function closePause()
 	{
 		pauseSong.stop();
+		playstate.updateOption('Song Speed');
+		playstate.songSpeed = PlayState.defaultSongSpeed;
 		if(SaveData.data.get('Delay on Unpause') && PlayState.startedSong)
 		{
 			playstate.songSpeed = 0.0;
 			if(delayTween != null) delayTween.cancel();
-			delayTween = FlxTween.tween(playstate, {songSpeed: 1.0}, Conductor.crochet * 1 / 1000, {
+			delayTween = FlxTween.tween(playstate, {songSpeed: PlayState.defaultSongSpeed}, Conductor.crochet * 1 / 1000, {
 				ease: FlxEase.sineIn
 			});
 		}
-		else
-			playstate.songSpeed = 1.0;
 
 		close();
 	}

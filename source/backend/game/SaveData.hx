@@ -83,6 +83,12 @@ class SaveData
 		* GAMEPLAY
 		* 
 		*/
+		'Song Speed' => [
+			"1x",
+			SELECTOR,
+			"How fast the songs play. This affects both pitch and note speed. Your score will also be multiplied.",
+			["0.5x", "0.75x", "1x", "1.25x", "1.5x", "1.75x", "2x"],
+		],
 		"Ghost Tapping" => [
 			"WHILE IDLING",
 			SELECTOR,
@@ -103,7 +109,7 @@ class SaveData
 		'Hitsounds' => [
 			"OFF",
 			SELECTOR,
-			"Clicking sounds whenever you hit a note",
+			"Clicking sounds whenever you hit a note.",
 			["OFF", "OSU", "CD"]
 		],
 		'Hitsound Volume' => [

@@ -15,6 +15,7 @@ class DevOptions {
     public static var holdSplashes = true;
     public static var camDisplace = true;
     public static var songTimer = true;
+    public static var subOptions:Bool = true;
     public static var timerInfo:String = "ELAPSED TIME";
     public static var timerStyle:String = "MIN:SEC";
 }
