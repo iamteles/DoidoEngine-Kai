@@ -1,0 +1,6545 @@
+{
+	"speed": 2.5,
+	"notes": [
+		{
+			"length": 5,
+			"stepTime": 272,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 278,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 280,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 11,
+			"stepTime": 284,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 293,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 296,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 302,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 303,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 304,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 308,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 313.999999999999,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 316,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 320,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 324,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 326,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 328,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 330,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 331,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 332,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 334,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 336,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 342,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 344,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 346,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 348,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 354,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 356,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 358,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 360.000000000001,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 362,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 366,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 370,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 372,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 374,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 378,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 380,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 382,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 384.000000000001,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 386,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 388,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 390,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 392,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 394,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 395,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 396,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 408,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 410,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 412,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 400,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 7,
+			"stepTime": 400,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 418,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 420,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 422.000000000001,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 424,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 428,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 428,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 432,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 434,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 438.000000000001,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 438.000000000001,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 7,
+			"stepTime": 444,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 432,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 7,
+			"stepTime": 432,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 456,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 458,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 460,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 456,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 456,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 462.000000000001,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 463,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 7,
+			"stepTime": 464,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 7,
+			"stepTime": 464,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 480,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 484.000000000001,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 488,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 490,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 492.000000000001,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 494,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 11,
+			"stepTime": 496,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 504,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 11,
+			"stepTime": 512,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 528,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 529.802325581396,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 531.604651162792,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 532.505813953489,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 533.406976744186,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 535.209302325582,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 536.11046511628,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 537.011627906977,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 539.71511627907,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 540.165697674419,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 540.616279069768,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 544.220930232559,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 545.122093023257,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 546.023255813954,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 547.825581395349,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 549.627906976745,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 550.529069767443,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 551.43023255814,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 551.880813953489,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 552.331395348837,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 553.232558139535,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 555.034883720931,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 556.837209302326,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 560.441860465117,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 562.244186046512,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 562.244186046512,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 565.848837209302,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 565.848837209302,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 569.453488372094,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 569.453488372094,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 573.058139534884,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 573.959302325582,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 574.86046511628,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 576.662790697675,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 578.46511627907,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 580.267441860466,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 582.069767441861,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 3,
+			"stepTime": 585.674418604651,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 591.081395348837,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 592.883720930233,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 597.389534883721,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 603.697674418606,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 603.697674418606,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 604.598837209303,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 604.598837209303,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 605.5,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 605.5,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 607.302325581396,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 609.104651162792,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 609.104651162792,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 607.302325581396,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 614.511627906978,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 614.511627906978,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 621.720930232559,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 623.523255813954,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 625.325581395349,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 627.127906976745,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 630.732558139535,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 631.633720930233,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 632.534883720931,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 634.337209302326,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 636.139534883721,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 636.139534883721,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 641.546511627908,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 642.447674418606,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 643.348837209303,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 645.151162790698,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 646.953488372094,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 647.854651162792,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 648.755813953489,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 649.656976744186,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 650.558139534884,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 651.459302325582,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 652.36046511628,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 654.162790697675,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 655.96511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 643.348837209303,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 659.569767441861,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 661.372093023257,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 663.174418604652,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 664.976744186047,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 665.427325581396,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 665.877906976745,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 666.779069767443,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 668.581395348837,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 670.383720930233,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 672.186046511629,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 673.988372093024,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 675.790697674419,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 677.593023255815,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 679.39534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 681.197674418606,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 683.000000000001,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 684.802325581396,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 689.007751937986,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 686.604651162792,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 691.410852713179,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 693.813953488372,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 696.517441860466,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 700.122093023257,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 699.220930232559,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 701.023255813954,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 706.430232558141,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 708.232558139535,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 715.441860465117,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 716.343023255815,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 717.244186046512,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 718.14534883721,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 719.046511627908,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 719.046511627908,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 720.848837209302,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 720.848837209302,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 722.651162790698,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 723.552325581396,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 724.453488372094,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 729.86046511628,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 729.86046511628,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 737.069767441861,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 737.069767441861,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 744.279069767443,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 744.279069767443,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 749.686046511628,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 750.587209302326,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 751.488372093024,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 751.488372093024,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 767.709302325582,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 769.511627906977,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 758.697674418606,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 760.5,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 760.5,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 762.302325581396,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 764.104651162791,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 764.104651162791,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 773.116279069768,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 774.017441860465,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 774.918604651163,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 775.819767441861,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 780.325581395349,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 781.226744186047,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 776.720930232559,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 778.523255813953,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 779.424418604651,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 782.127906976745,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 783.93023255814,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 784.831395348837,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 785.732558139535,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 786.633720930233,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 787.534883720931,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 789.337209302326,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 791.139534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 792.941860465116,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 796.546511627908,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 798.348837209302,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 801.953488372094,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 802.854651162791,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 803.755813953489,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 804.656976744186,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 805.558139534884,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 807.360465116279,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 808.261627906977,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 809.162790697675,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 810.063953488372,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 810.96511627907,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 812.767441860465,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 816.372093023257,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 819.976744186047,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 820.877906976745,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 821.779069767442,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 825.383720930233,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 826.28488372093,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 827.186046511628,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 827.186046511628,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 830.790697674419,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 831.691860465116,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 832.593023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 833.494186046512,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 834.39534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 836.197674418604,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 837.098837209302,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 838,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 838.901162790698,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 839.802325581396,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 841.604651162791,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 842.505813953489,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 843.406976744186,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 844.308139534884,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 845.209302325581,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 848.813953488373,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 849.71511627907,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 850.616279069767,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 854.220930232559,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 855.122093023256,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 856.023255813953,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 856.023255813953,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 859.627906976744,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 860.529069767442,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 861.43023255814,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 862.331395348837,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 863.232558139535,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 864.133720930233,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 865.03488372093,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 865.936046511628,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 866.837209302326,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 868.639534883721,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 870.441860465116,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 872.244186046512,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 874.046511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 879.453488372093,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 884.860465116279,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 888.465116279069,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 892.069767441861,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 897.476744186047,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 902.883720930232,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 908.290697674418,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 913.697674418604,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 902.883720930232,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 908.290697674418,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 913.697674418604,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 924.511627906977,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 926.313953488373,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 928.116279069767,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 931.720930232558,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 933.523255813953,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 937.127906976744,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 938.93023255814,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 940.732558139535,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 942.53488372093,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 944.337209302326,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 946.139534883721,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 947.040697674418,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 947.941860465116,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 948.843023255814,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 949.744186046512,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 950.645348837209,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 951.546511627907,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 952.447674418604,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 953.348837209302,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 954.25,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 955.151162790698,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 956.052325581395,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 956.953488372093,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 958.755813953489,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 960.558139534883,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 962.360465116279,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 964.162790697675,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 965.965116279069,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 967.767441860465,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 971.372093023256,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 973.174418604651,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 974.976744186046,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 974.976744186046,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 977.37984496124,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 977.37984496124,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 979.782945736434,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 979.782945736434,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 982.186046511628,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 982.186046511628,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 985.790697674418,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 985.790697674418,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 989.395348837209,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 996.604651162791,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 998.406976744185,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1000.20930232558,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1002.01162790698,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1003.81395348837,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1004.71511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1005.61627906977,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1006.51744186047,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1007.41860465116,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1009.22093023256,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1011.02325581395,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1012.82558139535,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1007.41860465116,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1009.22093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1011.02325581395,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1012.82558139535,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1018.23255813953,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1020.03488372093,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1021.83720930232,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1022.73837209302,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1023.63953488372,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1024.54069767442,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1025.44186046512,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1029.04651162791,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1032.6511627907,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1034.45348837209,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1036.25581395349,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1038.05813953488,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1039.86046511628,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1043.46511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1047.06976744186,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1048.87209302325,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1050.67441860466,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1052.47674418605,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1054.27906976744,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1056.08139534884,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1057.88372093023,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1047.06976744186,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1063.29069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1065.09302325582,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1065.99418604651,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1066.89534883721,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1067.79651162791,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1068.6976744186,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1069.5988372093,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1070.5,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1071.4011627907,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1072.30232558139,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1074.10465116279,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1065.09302325582,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1070.5,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1075.90697674419,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1077.70930232558,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1079.51162790697,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1081.31395348837,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1083.11627906976,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1086.72093023256,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1088.52325581395,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1075.90697674419,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1090.32558139535,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1090.32558139535,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1092.72868217054,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1092.72868217054,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1095.13178294574,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1095.13178294574,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1097.53488372093,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1099.33720930233,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1101.13953488372,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1093.93023255813,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1099.33720930233,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 1104.74418604651,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1104.74418604651,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1111.95348837209,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1113.75581395349,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1115.55813953488,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1117.36046511628,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1104.74418604651,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1119.16279069768,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1120.06395348837,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1120.96511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1121.86627906976,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1122.76744186046,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1122.76744186046,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1124.56976744186,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1124.56976744186,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1126.37209302325,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1126.37209302325,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1128.17441860466,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1128.17441860466,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1122.76744186046,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1128.17441860466,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1133.58139534884,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1137.18604651162,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1138.08720930233,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1138.98837209302,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1139.88953488372,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1140.79069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1144.39534883721,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1133.58139534884,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1148,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1149.80232558139,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1151.60465116279,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1153.40697674419,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1155.20930232558,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1158.81395348837,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1148,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1149.80232558139,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1151.60465116279,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1155.20930232558,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1158.81395348837,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1162.41860465117,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1167.82558139535,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 10,
+			"stepTime": 1173.23255813954,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1162.41860465117,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1167.82558139535,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 10,
+			"stepTime": 1173.23255813954,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1184.04651162791,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1189.45348837209,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1190.35465116279,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1184.04651162791,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1190.35465116279,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1189.45348837209,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1191.25581395349,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1202.06976744186,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1191.25581395349,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1202.06976744186,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1205.67441860465,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1208.07751937984,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1210.48062015504,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1212.88372093023,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1216.48837209302,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1205.67441860465,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1208.07751937984,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1210.48062015504,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1212.88372093023,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1216.48837209302,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1220.09302325582,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 10,
+			"stepTime": 1223.6976744186,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1220.09302325582,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1238.11627906976,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1238.11627906976,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1241.72093023256,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1243.52325581395,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1243.52325581395,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1247.12790697674,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1234.51162790697,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1235.41279069768,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1236.31395348837,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1237.21511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1238.11627906976,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1239.01744186046,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1239.91860465117,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1240.81976744186,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1241.72093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1242.62209302325,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1243.52325581395,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1244.42441860465,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1245.32558139535,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1247.12790697674,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1248.93023255813,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1248.93023255813,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1265.1511627907,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1266.05232558139,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1266.95348837209,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1268.75581395349,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1270.55813953488,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1274.16279069768,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1277.76744186046,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1279.56976744186,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1281.37209302325,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1283.17441860465,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1288.58139534884,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1288.58139534884,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1284.97674418605,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1285.87790697674,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1286.77906976744,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1287.68023255813,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1299.39534883721,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1300.29651162791,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1301.1976744186,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1302.0988372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1292.18604651162,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1293.98837209302,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1295.79069767442,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1297.59302325582,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1303,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1303,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1306.60465116279,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1308.40697674419,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1313.81395348837,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1315.61627906976,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1310.20930232558,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1312.01162790697,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1319.22093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1317.41860465117,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1322.82558139535,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1326.43023255813,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1330.03488372093,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1333.63953488372,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1321.02325581395,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1324.62790697674,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1328.23255813954,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1331.83720930233,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1335.44186046511,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1335.44186046511,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 1443.58139534884,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1447.18604651162,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1450.79069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1452.59302325582,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1454.39534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1459.80232558139,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1461.60465116279,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1463.40697674419,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1450.79069767442,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1456.1976744186,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1465.20930232558,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1467.01162790697,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1474.22093023256,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1476.02325581395,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1477.82558139535,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1468.81395348837,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1470.61627906976,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1479.62790697674,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1485.03488372093,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1490.44186046511,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1479.62790697674,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1485.03488372093,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1490.44186046511,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1495.8488372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1496.75,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1497.6511627907,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1503.05813953488,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1497.6511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1503.05813953488,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1508.46511627907,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1519.27906976744,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1508.46511627907,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1513.87209302325,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1519.27906976744,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1526.48837209303,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1531.89534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1532.79651162791,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1533.6976744186,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1537.3023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1542.70930232558,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1548.11627906977,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1549.91860465117,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1551.72093023256,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1562.53488372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1563.73643410852,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1564.93798449613,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1558.93023255813,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1560.13178294574,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1561.33333333333,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1562.53488372093,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1563.73643410852,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1564.93798449613,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1566.13953488372,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1566.13953488372,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1567.94186046511,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1569.74418604651,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1570.64534883721,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1571.54651162791,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1573.3488372093,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1574.25,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1573.3488372093,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1574.25,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1572.4476744186,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1575.1511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1576.95348837209,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1578.75581395349,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1587.76744186046,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1593.17441860466,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1582.36046511628,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1584.16279069768,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1585.96511627907,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1587.76744186046,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1588.21802325582,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1588.66860465117,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1589.56976744186,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1591.37209302325,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1593.17441860466,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 10,
+			"stepTime": 1594.97674418605,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1596.77906976744,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1594.97674418605,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1598.58139534884,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1600.38372093023,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1602.18604651162,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1603.98837209303,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1605.79069767442,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1607.59302325582,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1609.39534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1611.7984496124,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1614.2015503876,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1616.60465116279,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1609.39534883721,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1609.39534883721,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1611.7984496124,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1611.7984496124,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1614.2015503876,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1614.2015503876,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1616.60465116279,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1622.01162790697,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1622.91279069768,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1623.81395348837,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1629.22093023256,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 1631.02325581395,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1623.81395348837,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1638.23255813954,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1639.13372093023,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1640.03488372093,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1640.93604651162,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1641.83720930233,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1641.83720930233,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1643.63953488372,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1643.63953488372,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1645.44186046511,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1646.34302325582,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1647.24418604652,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1645.44186046511,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1649.9476744186,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1652.6511627907,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1652.6511627907,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1659.86046511628,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1659.86046511628,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1652.6511627907,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1656.25581395349,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1659.86046511628,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1663.46511627907,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1667.06976744186,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1667.06976744186,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1672.47674418605,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1673.37790697674,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1674.27906976744,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1674.27906976744,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1667.06976744186,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1670.67441860466,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 1674.27906976744,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1677.88372093023,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 24,
+			"stepTime": 1681.48837209303,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 24,
+			"stepTime": 1681.48837209303,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1742.76744186046,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1743.66860465117,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1744.56976744186,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1745.47093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1746.37209302326,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1747.27325581395,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1748.17441860466,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1749.07558139535,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1749.97674418605,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1750.87790697674,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1751.77906976744,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1752.68023255814,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1757.18604651163,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1758.08720930233,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1758.98837209303,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1759.88953488372,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1760.79069767442,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1761.69186046511,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1762.59302325582,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1763.49418604652,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1764.39534883721,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1765.29651162791,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1766.1976744186,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1767.0988372093,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1771.60465116279,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1772.50581395349,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1773.40697674419,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1774.30813953489,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1775.20930232558,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1776.11046511628,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1777.01162790697,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1777.91279069768,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1778.81395348838,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1779.71511627907,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1780.61627906977,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1781.51744186046,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1782.41860465117,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1783.31976744186,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1784.22093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1785.12209302326,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1786.02325581395,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1786.92441860466,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1787.82558139535,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1788.72674418605,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1789.62790697674,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1790.52906976744,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1791.43023255814,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1792.33139534884,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1793.23255813954,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1794.13372093023,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1795.03488372093,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1795.93604651163,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1800.44186046511,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1801.34302325582,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1802.24418604652,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1803.14534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1804.04651162791,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1804.9476744186,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1805.8488372093,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1806.75000000001,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1807.6511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1808.5523255814,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1809.45348837209,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1810.35465116279,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1814.86046511628,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1815.76162790697,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1816.66279069768,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1817.56395348838,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1818.46511627907,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1819.36627906977,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1820.26744186046,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1821.16860465117,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1822.06976744186,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1822.97093023256,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1823.87209302326,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1824.77325581395,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1829.27906976744,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1830.18023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1831.08139534884,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1831.98255813954,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1832.88372093023,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1833.78488372093,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1834.68604651163,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1835.58720930233,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1836.48837209303,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1837.38953488372,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1838.29069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1839.19186046512,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1840.09302325582,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1840.99418604652,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1841.89534883721,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1842.79651162791,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1843.6976744186,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1844.5988372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1845.50000000001,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1846.4011627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1847.3023255814,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1848.20348837209,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1849.10465116279,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1850.0058139535,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1850.90697674419,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1851.80813953489,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1852.70930232558,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1853.61046511628,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1858.11627906977,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1859.01744186046,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1859.91860465117,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1860.81976744186,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1861.72093023256,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1862.62209302326,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1864.12403100775,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1866.52713178295,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1868.93023255814,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1870.73255813954,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1874.33720930233,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1877.04069767442,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1879.74418604652,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1883.3488372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1885.1511627907,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1887.85465116279,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1890.55813953489,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1892.36046511628,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1894.16279069768,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1895.96511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1897.76744186046,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 1901.37209302326,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1908.58139534884,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1908.58139534884,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1913.08720930233,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1915.79069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 5,
+			"stepTime": 1918.49418604652,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1924.8023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1924.8023255814,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1935.61627906977,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1944.62790697675,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1950.03488372093,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 1953.63953488372,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1962.6511627907,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1973.46511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1978.87209302326,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 1978.87209302326,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1984.27906976744,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1984.27906976744,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1989.68604651163,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1990.58720930233,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1991.48837209303,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1993.29069767442,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 1995.09302325582,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 1998.69767441861,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2000.50000000001,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2002.3023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2004.10465116279,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2009.51162790699,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2013.11627906977,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2015.51937984497,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2017.92248062016,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2020.32558139535,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2023.93023255814,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 2027.53488372093,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2032.94186046512,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2033.84302325582,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 6,
+			"stepTime": 2034.74418604652,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2045.55813953489,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2050.96511627907,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2056.37209302326,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2059.97674418605,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2060.87790697675,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2061.77906976744,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2062.68023255814,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2063.58139534884,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2064.48255813954,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2065.38372093024,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2066.28488372093,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2067.18604651163,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2068.08720930233,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2068.98837209303,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2069.88953488373,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2070.79069767442,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2071.69186046512,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2072.59302325582,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2073.49418604652,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2074.39534883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2075.29651162791,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2076.19767441861,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2077.0988372093,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2078.00000000001,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2078.9011627907,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2079.8023255814,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2080.7034883721,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2081.60465116279,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2082.5058139535,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2083.40697674419,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2088.81395348838,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2094.22093023256,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2094.22093023256,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 2088.81395348838,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2099.62790697675,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2099.62790697675,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2105.03488372093,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2105.93604651163,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2106.83720930233,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2108.63953488373,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2110.44186046512,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2106.83720930233,
+			"strumline": 0,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2112.24418604652,
+			"strumline": 0,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2113.14534883721,
+			"strumline": 0,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2114.04651162791,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2115.8488372093,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2117.6511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2119.4534883721,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2124.86046511628,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 2114.04651162791,
+			"strumline": 0,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2128.46511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2130.86821705427,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2133.27131782946,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2135.67441860466,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2139.27906976744,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2142.88372093024,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 2142.88372093024,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2160.90697674419,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 4,
+			"stepTime": 2166.31395348838,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2171.72093023256,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2175.32558139536,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2176.22674418605,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2177.12790697675,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2178.02906976744,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2178.93023255814,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2179.83139534885,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2180.73255813954,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2181.63372093024,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2182.53488372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2183.43604651163,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2184.33720930233,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2185.23837209303,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2186.13953488373,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2187.04069767442,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2187.94186046512,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2188.84302325582,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2189.74418604652,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2190.64534883722,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2191.54651162791,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2192.44767441861,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2193.3488372093,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2194.25000000001,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2195.1511627907,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2196.0523255814,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2196.9534883721,
+			"strumline": 1,
+			"lane": 1,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2197.85465116279,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 0,
+			"stepTime": 2198.7558139535,
+			"strumline": 1,
+			"lane": 0,
+			"type": null
+		},
+		{
+			"length": 13,
+			"stepTime": 2200.55813953489,
+			"strumline": 1,
+			"lane": 2,
+			"type": null
+		},
+		{
+			"length": 2,
+			"stepTime": 2200.55813953489,
+			"strumline": 1,
+			"lane": 3,
+			"type": null
+		}
+	],
+	"bpm": 155,
+	"song": "echo"
+}

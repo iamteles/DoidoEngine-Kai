@@ -270,7 +270,7 @@ class OffsetSel extends MusicBeatState
 
 class Freeplay extends MusicBeatState
 {
-    var options:Array<String> = ["bopeebo", "corn-theft", "useless", "bittersweet", "lunar-odyssey", "commotion", #if !mobile "Load Other" #end];
+    var options:Array<String> = ["prismatic", "echo", "introspection"];
     var text:FlxText;
     var title:FlxText;
     var cur:Int = 0;

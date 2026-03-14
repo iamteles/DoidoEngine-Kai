@@ -167,6 +167,21 @@ class Legacy
 
         if (song == null) return [];
 
+		if(song.song == "echo") {
+			return [
+				{
+					stepTime: 528,
+					bpm: 172,
+					songTime: 51096.7741935484 
+				},
+				{
+					stepTime: 2384,
+					bpm: 155,
+					songTime: 212957.239309828 
+				}
+			];
+		}
+
 		var curBPM:Float = song.bpm;
 		var totalSteps:Int = 0;
 		var totalPos:Float = 0;
